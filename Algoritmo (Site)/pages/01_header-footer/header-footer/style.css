@@ -2,6 +2,14 @@ body {
   margin: 0;
   color: white;
 }
+
+/* CONTAINER PARA RESPIRO (MARGEM) DA PÁGINA */
+.container {
+  width: 90%;
+  display: flex;
+}
+
+/* HEADER */
 .header {
   height: 90px;
   width: 100%;
@@ -9,20 +17,21 @@ body {
   background-size: cover;
   border-bottom: 3px solid #8008ff;
 }
-.container {
-  width: 90%;
-  display: flex;
-}
+
+/* CONFIGURAÇÕES DO CONTAINER DO HEADER */
 .header .container {
   justify-content: space-between;
   height: 100%;
   margin: auto;
   align-items: center;
 }
+
+/* LOGO DO HEADER */
 .header img {
   height: 58%;
 }
 
+/* NAVBAR DO HEADER ESPECIFICAMENTE */
 .navbar_header {
   display: flex;
   list-style: none;
@@ -34,6 +43,8 @@ body {
   font-size: 13px;
   font-family: sans-serif;
 }
+
+/* SEPARADOR DOS ITENS (LINHA - TAG HR) */
 .navbar_header hr {
   background-color: white;
   height: 10px;
@@ -41,6 +52,21 @@ body {
   border: 0;
   margin: 0;
 }
+
+/* OPÇÃO DE REDIRECIONAMENTO  */
+.navbar_header a {
+  text-decoration: none;
+  color: white;
+}
+
+/* DECORAÇÃO DE TEXTO PARA INDICAR EM QUE PÁGINA O USUÁRIO ESTÁ */
+.page_selected {
+  text-decoration: underline;
+}
+
+/*------------------------------------------------------------------------------------------------------*/
+
+/* FOOTER */
 .footer {
   background-image: url(../imgs/header-footer/footer.png);
   background-size: cover;
@@ -52,54 +78,81 @@ body {
   border-top: 3px solid #8008ff;
   width: 100%;
 }
+
+/* CONFIGURAÇÕES DO CONTAINER DO FOOTER */
 .footer .container {
   justify-content: space-between;
   align-items: center;
 }
+
+/* BLOCO DE INFORMAÇÃO PADRÃO DO FOOTER */
 .footer .box {
   width: 18%;
 }
+
+/* ESTILIZAÇÃO ESPECÍFICA DO BLOCO DE REPORT */
 .footer .reports {
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
+/* IMAGEM LUPA DA BOX REPORT */
 .reports img {
   height: 20px;
 }
+
+/* TEXTO DA BOX REPORT */
 .reports p {
   margin: 0;
 }
+
+/* ESTILIZAÇÃO ESPECÍFICA DO BLOCO DE CONTATO */
 .contato {
   flex-flow: row wrap;
   text-align: center;
 }
+
+/* TÍTULO DO BLOCO CONTATO */
 .contato h4 {
   margin: 0;
 }
+
+/* LINHA DE SEPARAÇÃO */
 .contato hr {
   margin-top: 0;
   width: 100%;
 }
+
+/* TEXTO DO TELEFONE E EMAIL */
 .contato h5 {
   margin: 0;
   align-items: center;
   display: flex;
 }
+
+/* LOGOS DA BOX DE CONTATO */
 .contato img {
   height: 16px;
   margin-right: 1px;
 }
+
+/* LOGO DA BOX DA OMNI */
 .footer .box h2 img {
   height: 2%;
   width: 26%;
 }
+
+/* TEXTO DA BOX OMNI */
 .box h2 {
   margin: 0;
   align-items: center;
   display: flex;
 }
+
+/*------------------------------------------------------------------------------------------------------*/
+
 .banner {
   height: 556px;
 }
