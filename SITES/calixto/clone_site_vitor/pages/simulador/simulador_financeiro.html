@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../style.css" />
+  <title>SIMULADOR | OMNI Têxtil</title>
+  <link rel="icon" href="../01_header-footer/imgs/header-footer/imgs/logo_imgWHITE.png">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <div class="header">
+    <div class="container">
+      <img src="../01_header-footer/imgs/header-footer/logo-OMNI_Textil.png" alt="OMNI TÊXTIL" />
+      <!-- ALTERAR A CLASSE EM DETERMINADAS PÁGINAS -->
+      <ul class="navbar-header">
+        <li class=""><a href="../home/home.html">Home</a></li>
+        <hr />
+        <li class=""><a href="page_manual.html">Manual</a></li>
+        <hr />
+        <li class=""><a href="page_equipe.html">Equipe</a></li>
+        <hr />
+        <li class="page-selected"><a href="simulador_financeiro.html">Simulador</a></li>
+        <hr />
+        <li class=""><a href="../login/login.html">Login</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- BANNER -->
+  <div class="banner">
+    <div class="container">
+      <!-- CARD CADASTRO -->
+      <div class="card-input card-simulador">
+        <h1>SIMULADOR FINANCEIRO</h1>
+        <div class="form-box">
+          <div class="form-input">
+            <p>Tecido Armazenado:</p>
+            <input type="number" id="input_qntTecido" placeholder="toneladas">
+          </div>
+          <div class="form-input">
+            <p>Valor por Tonelada:</p>
+            <input type="number" id="input_valorTecido" placeholder="R$">
+          </div>
+          <div class="form-input">
+            <p>Toneladas Descartado</p>
+            <input type="number" id="input_tecidoDescartado" placeholder="toneladas">
+          </div>
+        </div>
+        <button onclick="simular()" class="form-button" title="Entrar">
+          calcular
+        </button>
+      </div>
+      <!-- CARD RESULTADO -->
+      <div id="card_simulador" class="card-input simulador-result">
+        <h1>RESULTADO</h1>
+        <div class="div-resultado" id="div_resultado"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="container">
+      <!-- BOX DE REPORT -->
+      <div class="box reports">
+        <img src="../01_header-footer/imgs/header-footer/imgs/logo_lupa.png" alt="lupa" />
+        <p>
+          Feedbacks<br />
+          Reports
+        </p>
+      </div>
+      <!-- BOX DE CONTATO -->
+      <div class="box contato">
+        <h4>Contato</h4>
+        <hr />
+        <h5>
+          <img src="../01_header-footer/imgs/header-footer/imgs/logo_whats.png" alt="whats" />(011)2534-1484
+        </h5>
+        <h5>
+          <img src="../01_header-footer/imgs/header-footer/imgs/logo_email.png" alt="email" />omnisuport@solution.com
+        </h5>
+      </div>
+      <!-- BOX DA OMNI SOLUTIONS -->
+      <div class="box">
+        <h2>OMNI Solution</h2>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
+
+<script src="../script.js"></script>
