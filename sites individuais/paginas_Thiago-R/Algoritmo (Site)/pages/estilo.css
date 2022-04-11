@@ -1,0 +1,243 @@
+body {
+  margin: 0;
+  color: white;
+  font-family: sans-serif;
+  background-color: #b582ec;
+  height: 100vh;
+
+}
+.header {
+  height: 5rem;
+  width: 100%;
+  background-image: url(imgs/header.png);
+  background-size: cover;
+  border-bottom: 3px solid #8008ff;
+}
+.navmask {
+  position: fixed;
+}
+.cont_bases {
+  width: 90%;
+  display: flex;
+}
+.header .container {
+  justify-content: space-between;
+  height: 100%;
+  margin: auto;
+  align-items: center;
+}
+.header img {
+  height: 58%;
+}
+.navbar_header {
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+  padding: 0;
+  width: 300px;
+  align-items: center;
+  flex-flow: row wrap;
+  font-size: 13px;
+}
+li a {
+  color: white;
+  text-decoration: none;
+}
+.navbar_header hr {
+  background-color: white;
+  height: 10px;
+  width: 1px;
+  border: 0;
+  margin: 0;
+}
+.footer {
+  background-image: url(imgs/footer.png);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  font-size: 13px;
+  border-top: 3px solid #8008ff;
+  width: 100%;
+}
+.footer .container {
+  justify-content: space-between;
+  align-items: center;
+}
+.footer .box {
+  width: 18%;
+}
+.footer .reports {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.reports img {
+  height: 20px;
+}
+.reports p {
+  margin: 0;
+}
+.contato {
+  flex-flow: row wrap;
+  text-align: center;
+}
+.contato h4 {
+  margin: 0;
+}
+.contato hr {
+  margin-top: 0;
+  width: 100%;
+}
+.contato h5 {
+  margin: 0;
+  align-items: center;
+  display: flex;
+}
+.contato img {
+  height: 16px;
+  margin-right: 1px;
+}
+.footer .box h2 img {
+  height: 2%;
+  width: 26%;
+}
+.box h2 {
+  margin: 0;
+  align-items: center;
+  display: flex;
+}
+.banner {
+  height: max-content;
+  align-items: center;
+  background-color: #b582ec;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+.banner_cadastro {
+  justify-content: space-evenly;
+  height: 400px;
+}
+.banner_unidade{
+  height: 20rem;
+}.banner_grafico{
+  background-origin: border-box;
+}
+
+.banner .card {
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 400px;
+  height: 350px;
+  background-color: rgba(142, 20, 235, 0.3);
+  border-radius: 15px;
+  display: flex;
+  padding: 10px;
+}
+.banner .card_cadastro{
+  padding: 20px;
+  height: 400px;
+  justify-content: space-between;
+}
+.banner .card_unidade{
+  height: 200px;
+  justify-content: space-evenly;
+}
+.banner .card_grafico{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100vw;
+}
+.card h1 {
+  margin: 0;
+}
+.formbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 150px;
+}
+.fbox_cadastro {
+  height: 250px;
+}
+.formbox input {
+  width: 250px;
+  height: 25px;
+  border-radius: 6px;
+  border: 0;
+  color: #8c14e9;
+  background-color: #F5E9FF;
+}
+ select{
+  width: 150px;
+  height: 25px;
+  border-radius: 6px;
+  border: 0;
+  display: flex;
+  background-color: #F5E9FF;
+}
+.bnt {
+  background-color: #8c14e9;
+  border: 0;
+  color: white;
+  border-radius: 5px;
+  width: 80px;
+  height: 30px;
+}
+.objetivo {
+  background-color: #5e2d92;
+}
+.sustenta {
+  background-color: #c18bfa;
+}
+.banner_index .box {
+  display: flex;
+  align-items: center;
+  width: 900px;
+  justify-content: space-between;
+}
+.banner_index p {
+  width: 600px;
+  font-size: 30px;
+}
+.banner_index img {
+  width: 250px;
+}
+.negocio .container hr {
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  background-color: #8008ff;
+}
+.negocio {
+  background-color: #f0e1ff;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.negocio .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 60%;
+}
+.negocio .container .box {
+  width: 200px;
+  color: black;
+}
+.footer_base {
+margin-top: 33px;
+}
+ canvas{
+  position: relative; 
+  height: 40vh; 
+  width: 40vw;
+  color: white;
+}
+
