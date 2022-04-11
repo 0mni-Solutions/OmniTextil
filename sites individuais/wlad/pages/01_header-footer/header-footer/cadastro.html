@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="estilonav.css" />
+    <title>OMNI - Cadastro</title>
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="container">
+        <img src="../imgs/header-footer/logo-OMNI_Textil.png" alt="OMNI" />
+        <ul class="navbar_header">
+          <li>unidade</li>
+          <hr />
+          <li>Cadastros</li>
+          <hr />
+          <li>Sair</li>
+        </ul>
+      </div>
+    </div>
+    <div class="banner">
+      <div class="card_cadastro">
+        <h3>CADASTRO</h3>
+        Nome completo:
+        <input type="text" id="input_card" placeholder="Ex: Caio ribeiro de almeida">
+        E-mail:
+        <input type="text" id="input_card" placeholder="Ex: exemplo@exemplo.com">
+        Senha:
+        <input type="password" id="input_card" placeholder="minimo 8 caracteres">
+        Identificador: 
+        <input type="text" id="input_card" placeholder="Ex: 01121001">
+        Permissão
+        <select name="permissao" id="select">
+            <option value="nulu"></option>
+            <option value="chefe">chefe</option>
+            <option value="funcionario">funcionario</option>
+        </select>
+        <button id="botao">Entrar</button>
+      </div>
+      <div class="card_membros">
+          <h3>Membros</h3>
+          <table id="tabela">
+              <thead>
+                  <tr>
+                      <th>ID</th>
+                      <th>Nome completo</th>
+                      <th>Cargo</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td>1</td>
+                      <td>Alcino da silva</td>
+                      <td>Admin</td>
+                  </tr>
+                  <tr>
+                      <td>2</td>
+                      <td>Alceu André</td>
+                      <td>Comum</td>
+                  </tr><tr>
+                    <td>2</td>
+                    <td>Alceu André</td>
+                    <td>Comum</td>
+                </tr><tr>
+                  <td>2</td>
+                  <td>Alceu André</td>
+                  <td>Comum</td>
+              </tr><tr>
+                <td>2</td>
+                <td>Alceu André</td>
+                <td>Comum</td>
+            </tr>
+              </tbody>
+          </table>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="container">
+        <div class="box reports">
+          <img src="../imgs/header-footer/imgs/logo_lupa.png" />
+          <p>
+            Feedbacks <br />
+            Reports
+          </p>
+        </div>
+        <div class="box contato">
+          <h4>contato</h4>
+          <hr />
+
+          <h5>
+            <img
+              src="../imgs/header-footer/imgs/logo_whats.png"
+            />(011)2534-1484
+          </h5>
+
+          <h5>
+            <img
+              src="../imgs/header-footer/imgs/logo_email.png"
+            />omnisuport@solution.com
+          </h5>
+        </div>
+        <div class="box">
+          <h2>OMNI Solution</h2>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
