@@ -675,7 +675,7 @@ function TEMP_bar_graph() {
         'sábado',
     ];
 
-    var dataBars = [40, 46, 35, 48, 54, 62, 49];
+    var dataBars = [16, 19, 13, 22, 28, 17, 30];
 
     const dataBAR = {
         labels: dia,
@@ -823,7 +823,7 @@ function TEMP_doughnut_graph() {
         'Livre',
     ];
 
-    var dataUse = [35,];
+    var dataUse = [35, 65];
 
     const dataDOUG = {
         labels: capacidade,
