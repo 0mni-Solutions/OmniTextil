@@ -6,44 +6,48 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="estilonav.css" />
-  <title>OMNI - Login</title>
+  <title>OMNI - Unidade</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="estilo.css" />
+  <link rel="icon" type="imagens/png" href="/calixto/imagens/logo/logo_imgWHITE.png">
 </head>
 
 <body>
-  <div class="header">
-    <div class="container">
-      <img src="imagens/header_footer/logo-OMNI_Textil.png" alt="OMNI" />
-      <ul class="navbar_header">
-        <li><a href="unidade.html">Unidade</a></li>
-        <hr />
-        <li><a href="objetivo.html">Objetivo</a></li>
-        <hr />
-        <li><a href="manual.html">Manual</a></li>
-        <hr />
-        <li><a href="equipe.html">Equipe</a></li>
-        <hr />
-        <li><a href="simulador_financeiro.html">Simulador</a></li>
-        <hr />
-        <li><b>Login</b></li>
-        <hr />
-        <li><a href="cadastro.html">Cadastrar</a></li>
-      </ul>
+    <div class="header">
+      <div class="container">
+        <img src="imagens/header_footer/logo-OMNI_Textil.png" alt="OMNI" />
+        <ul class="navbar_header">
+          <li><b>Unidade</b></li>
+          <hr />
+          <li><a href="objetivo.html">Objetivo</a></li>
+          <hr />
+          <li><a href="manual.html">Manual</a></li>
+          <hr />
+          <li><a href="equipe.html">Equipe</a></li>
+          <hr />
+          <li><a href="simulador_financeiro.html">Simulador</a></li>
+          <hr />
+          <li><a href="login.html">Login</a></li>
+          <hr />
+          <li><a href="cadastro.html">Cadastrar</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
 
   <div class="banner_cadastro">
     <div class="card_cadastro">
-      <h2><b>Login</b></h2>
+      <h2><b>Unidade</b></h2>
       <div class="form-box_cadastro">
-        <h3 style="font-weight: lighter;">E-mail:</h4>
-        <input id="input_email"/>
-        <h3 style="font-weight: lighter;">Senha:</h4>
-        <input type="password" id="input_senha"/>
+        <select class="unidade">
+          <option value="0"></option>
+          <option value="1">Unidade 1</option>
+          <option value="2">Unidade 2</option>
+          <option value="3">Unidade 3</option>
+          <option value="4">Unidade 4</option>
+        </select>
       </div>
       <div>
-        <button class="btn" onclick="login()">Entrar</button>
+        <button class="btn"><a href="dashboard.html">Entrar</a></button>
       </div>
     </div> 
     </div>

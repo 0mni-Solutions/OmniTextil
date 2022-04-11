@@ -135,6 +135,8 @@ body {
 }
 
 .banner .card {
+  height: 600px;
+  width: 550px;
   display: flex;
   margin: auto;
   justify-content: center;
@@ -148,8 +150,11 @@ body {
 }
 
 .banner .card2 {
+  display: flex;
+  height: 600px;
+  width: 550px;
   margin: auto;
-  justify-content: center;
+  justify-content: space-around;
   flex-direction: column;
   align-items: center;
   background-color: rgba(3, 115, 140, 0.55);
@@ -167,7 +172,6 @@ body {
 }
 .card2 .form-box {
   display: flex;
-  flex-direction: column;
   color: white;
   font-family: Carme;
 }
@@ -183,19 +187,19 @@ input {
 
 h4 {
   color: white;
-  font-weight: 100;
+  font-weight: 500;
   font-family: Carme;
 }
 
 h2 {
-  font-weight:400;
+  font-weight: 500;
   font-family: Carme;
 }
 
 .btn {
   display: flex;
   margin-top: 30px;
-  border-radius: 3px;
+  border-radius: 5px;
   color: white;
   background-color: #027C93 ;
   border: #024959 solid 3px;
@@ -203,6 +207,7 @@ h2 {
   justify-content: center;
   align-items: center;
   width: 120px;
+  height: 50px;
   font-size: 18px;
 }
 
@@ -215,3 +220,77 @@ h2 {
   font-weight: 200px;
 }
 
+.identificador {
+  height: 30px;
+  border: #024959;
+  border-radius: 10px;
+  border-radius: 5px;
+  font-family: Carme;
+}
+
+.banner_cadastro {
+  display: flex;
+  height: 750px;
+  background-color: #e5eef0;
+  background-size:cover;
+  justify-content: center;
+}
+
+.banner_cadastro .card_cadastro {
+  height: 600px;
+  width: 550px;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(3, 115, 140, 0.55);
+  color: white; 
+  border-radius: 10px;
+  padding: 30px;
+  font-family: Carme;
+}
+
+.card_cadastro .form-box_cadastro {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-family: Carme;
+}
+
+.form-box_cadastro input {
+  width: 350px;;
+}
+
+.card_cadastro .btn {
+  display: flex;
+  flex-direction: row;
+  font-family: Carme;
+  justify-content: space-around;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  background-color: #024959;
+  border: #027C93 solid 5px;
+  width: 120px;
+}
+
+.unidade {
+  width: 250px;
+  border-radius: 7px;
+  font-family: Carme;
+  height: 40px;
+  align-self: center;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  border: #024959 solid 3px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+
+}
