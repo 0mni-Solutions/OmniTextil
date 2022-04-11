@@ -47,6 +47,11 @@ body {
   font-size: 17px;
 }
 
+.navmask {
+  position: fixed;
+  top: 0;
+}
+
 /* CONFIGURAÇÕES DO CONTAINER DO HEADER */
 .header .container {
   justify-content: space-between;
