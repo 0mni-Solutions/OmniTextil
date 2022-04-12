@@ -190,7 +190,7 @@ function UMI_line_graph() {
         },
     };
 
-    const configLINE = {
+    configLINE = {
         type: 'line',
         data: dataLINE,
         options: settingsLINE,
@@ -200,6 +200,7 @@ function UMI_line_graph() {
         document.getElementById('UMI_ChartLINE'),
         configLINE
     );
+
 }
 // GRÁFICO DE BARRA
 UMI_bar_graph()
@@ -386,7 +387,7 @@ function UMI_doughnut_graph() {
     const settingsDOUG = {
         maintainAspectRatio: false,
         responsive: true,
-
+        
         plugins: {
             // tooltip: {
             //     enabled: true,

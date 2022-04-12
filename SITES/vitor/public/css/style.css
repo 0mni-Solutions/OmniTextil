@@ -1,25 +1,26 @@
 /* IMPORT DE FONTES */
 @font-face {
   font-family: Quicksand_Light;
-  src: url(../fonts/Quicksand_Light.otf);
+  src: url(../assets/fonts/Quicksand_Light.otf);
 }
 @font-face {
   font-family: Quicksand_Book;
-  src: url(../fonts/Quicksand_Book.otf);
+  src: url(../assets/fonts/Quicksand_Book.otf);
 }
 @font-face {
   font-family: Quicksand_Bold;
-  src: url(../fonts/Quicksand_Bold.otf);
+  src: url(../assets/fonts/Quicksand_Bold.otf);
 }
 
 /* CONFIGURAÇÕES DO BODY */
 body {
+  height: 100vh;
   margin: 0;
   color: white;
   font-family: Quicksand_Light;
   display: flex;
   flex-direction: column;
-  background-image: url(login/imgs/background-image-blur.png);
+  background-image: url(../assets/imgs/background-image.png);
   background-size: cover;
   background-color: #F0E1FF;
 }
@@ -41,15 +42,18 @@ body {
 .header {
   height: 100px;
   width: 100%;
-  background-image: url(01_header-footer/imgs/header-footer/header.png);
+  background-image: url(../assets/imgs/header-footer/header.png);
   background-size: cover;
   border-bottom: 3px solid #8008ff;
   font-size: 17px;
 }
 
+/* NAVBAR ESTÁTICO */
 .navmask {
   position: fixed;
-  top: 0;
+  background-image: none;
+  border-bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3) 
 }
 
 /* CONFIGURAÇÕES DO CONTAINER DO HEADER */
@@ -103,13 +107,14 @@ body {
 .footer {
   width: 100%;
   height: 100px;
-  background-image: url(01_header-footer/imgs/header-footer/footer.png);
+  padding: 0.8%;
+  background-image: url(../assets/imgs/header-footer/footer.png);
+  border-top: 3px solid #8008ff;
   background-size: cover;
+  font-size: 16px;
   display: flex;
   align-self: end;
   justify-content: center;
-  font-size: 16px;
-  border-top: 3px solid #8008ff;
 }
 
 /* CONFIGURAÇÕES DO CONTAINER DO FOOTER */
@@ -222,7 +227,7 @@ body {
   flex-flow: row wrap;
 }
 .section img {  
-  height: 50%;
+  height: 45%;
   border-radius: 50px;
 }
 /* TEXTO PRINCIPAL DA SECTION 1/2 */
@@ -236,7 +241,7 @@ body {
 
 /* SECTION 1 */
 .sec1 {
-  background-color: #5E2D92; 
+  background-color: #230f38; 
 }
 .sec1 p {
   color: #ecdaff;
@@ -246,8 +251,8 @@ body {
   border-bottom-left-radius: 0px;
 }
 .sec1 img {
-  border-left: 15px solid #8F00FF;
-  border-top: 10px solid #8F00FF;
+  border-left: 10px solid #431b6d;
+  border-top: 15px solid #431b6d;
 }
 
 /* SECTION 2 */
@@ -281,7 +286,7 @@ body {
 /* CARD IMAGEM-DESC */
 .card-info {
   /* border: 3px solid green; */
-  width: 500px;
+  width: 300px;
   height: 50%;
   display: flex;
   flex-direction: column;
@@ -297,9 +302,10 @@ body {
 .sec3 p{
   width: 80%;
   color: black;
-  font-size: 28px;
+  font-size: 20px;
+  font-weight: 700;
   text-align: center;
-  margin: 0px;
+  margin: 10px;
 }
 /* DIVISÓRIA DA SECTION 3 */
 .sec3 hr {
@@ -316,7 +322,8 @@ body {
 .banner {
   /* border: 3px solid red; */
   width: 100%;
-  height: 731px;
+  /* height: 731px; */
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -430,6 +437,19 @@ body {
 
 /*------------------------------------------------------------------------------------------------------*/
 
+/* LOGIN */
+
+.card-login {
+  height: 70vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  border-right: 15px solid #5E2D92;
+  border-bottom: 15px solid #5E2D92;
+}
+
+/*------------------------------------------------------------------------------------------------------*/
+
 /* SIMULADOR */
 
 .card-simulador {
@@ -462,7 +482,12 @@ body {
 
 /* UNIDADES */
 .card-unidades {
-  height: 400px;
+  height: 50vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-right: 15px solid #5E2D92;
+  border-left: 15px solid #5E2D92;
 }
 
 .form-btn-dashboard {
@@ -477,7 +502,12 @@ body {
 }
 
 .card-cadastro {
-  height: 720px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  height: 80vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   border-right: 10px solid #5E2D92;
 }
 
@@ -490,9 +520,11 @@ body {
 /* MEMBROS */
 .card-membros {
   width: 50%;
-  height: 720px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  height: 80vh;
   display: flex;
-  flex-direction: column;
+  flex-flow: column wrap;
   justify-content: flex-start;
   border-left: 10px solid #5E2D92;
 }
@@ -592,8 +624,7 @@ body {
   height: 15%;
   margin: 0;
   padding: 15px 20px 10px 20px;
-  display: flex;
-  align-items: center;
+  /* display: flex; */
   font-size: 40px;
   border: 3px solid #9d24fa;
   border-bottom: 0px;
@@ -618,6 +649,9 @@ body {
   justify-content: space-center;
   align-items: flex-start;
   flex-direction: row;
+}
+.graph-temp {
+  flex-direction: row-reverse;
 }
 
 /* GRÁFICOS LATERAIS */
@@ -674,6 +708,6 @@ body {
 }
 /* CORES PARA GRÁFICO DE TEMPERATURA */
 .chart-temperatura {
-  background-color: #5E2D92;
+  background-color: #230F38;
   border-color: #8F00FF;
 }
