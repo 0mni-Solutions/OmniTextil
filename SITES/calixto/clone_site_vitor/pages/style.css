@@ -19,17 +19,19 @@ body {
   font-family: Quicksand_Light;
   display: flex;
   flex-direction: column;
-  background-image: url(login/imgs/background-image-blur.png);
+  /* background-image: url(login/imgs/background-image-blur.png); */
   background-size: cover;
-  background-color: #F0E1FF;
+  background-color: #E0D3F5;
 }
 
 /* CONTAINER PARA RESPIRO (MARGEM) DA PÁGINA */
 .container {
   /* border: 3px solid red; */
-  width: 90%;
-  height: 100%;
+  width: 80%;
+  height: 70%;
   display: flex;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 /* ESTILO DE SPAN PARA FONTES */
@@ -39,12 +41,12 @@ body {
 
 /* HEADER */
 .header {
-  height: 100px;
+  height: 70px;
   width: 100%;
   background-image: url(01_header-footer/imgs/header-footer/header.png);
   background-size: cover;
-  border-bottom: 3px solid #8008ff;
-  font-size: 17px;
+  /* border-bottom: 3px solid #AC8FE3; */
+  font-size: 15px;
 }
 
 .navmask {
@@ -62,7 +64,7 @@ body {
 
 /* LOGO DO HEADER */
 .header img {
-  height: 58%;
+  height: 50%;
 }
 
 /* NAVBAR DO HEADER ESPECIFICAMENTE */
@@ -71,7 +73,7 @@ body {
   list-style: none;
   justify-content: space-evenly;
   padding: 0;
-  width: 600px;
+  width: 400px;
   align-items: center;
   flex-flow: row wrap;
 }
@@ -101,21 +103,21 @@ body {
 
 /* FOOTER */
 .footer {
+  display: flex;
   width: 100%;
-  height: 100px;
+  height: 150px;
   background-image: url(01_header-footer/imgs/header-footer/footer.png);
   background-size: cover;
-  display: flex;
-  align-self: end;
+  align-self: flex-end;
   justify-content: center;
-  font-size: 16px;
-  border-top: 3px solid #8008ff;
+  font-size: 13px;
+  /* border-top: 3px solid #AC8FE3; */
 }
 
 /* CONFIGURAÇÕES DO CONTAINER DO FOOTER */
 .footer .container {
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
 }
 
 /* BLOCO DE INFORMAÇÃO PADRÃO DO FOOTER */
@@ -133,7 +135,7 @@ body {
 
 /* IMAGEM LUPA DA BOX REPORT */
 .reports img {
-  height: 20px;
+  height: 16px;
 }
 
 /* TEXTO DA BOX REPORT */
@@ -236,7 +238,7 @@ body {
 
 /* SECTION 1 */
 .sec1 {
-  background-color: #5E2D92; 
+  background-color: #ecdaff; 
 }
 .sec1 p {
   color: #ecdaff;
@@ -246,8 +248,8 @@ body {
   border-bottom-left-radius: 0px;
 }
 .sec1 img {
-  border-left: 15px solid #8F00FF;
-  border-top: 10px solid #8F00FF;
+  border-left: 15px solid #A43BED;
+  border-top: 10px solid #A43BED;
 }
 
 /* SECTION 2 */
@@ -306,7 +308,7 @@ body {
   width: 94%;
   margin: 0px;
   background-color: #8F08FF;
-  border: 3px solid #8F00FF;
+  border: 3px solid #A43BED;
   border-radius: 50px;
 }
 
@@ -333,25 +335,25 @@ body {
 /* CARD COM INPUTS */
 .card-input {
   /* border: 3px solid red; */
-  width: 560px;
-  height: 560px;
+  width: 500px;
+  height: 400px;
   display: flex;
   flex-flow: column wrap;
   justify-content: space-evenly;
   align-items: center;
-  background-color: rgba(143, 0, 255, 0.4);
+  background-color: #AC8FE3;
   border-radius: 15px;
 }
 /* TITLE DO CARD-INPUT */
 .card-input h1 {
-  font-size: 35px;
+  font-size: 28px;
   margin: 0px;
 }
 
 /* FORM_BOX */
 .form-box {
   /* border: 3px solid red; */
-  width: 70%;
+  width: 60%;
   height: 50%;
   display: flex;
   flex-direction: column;
@@ -361,13 +363,13 @@ body {
 .form-box input {
   width: 100%;
   padding: 0;
-  height: 40px;
+  height: 30px;
   border-radius: 10px;
   border: 0;
   background-color: #F5E9FF;
   color: #1e0935;
   font-family: Quicksand_Book;
-  font-size: 25px;
+  font-size: 18px;
   text-align: center;
 }
 
@@ -380,15 +382,15 @@ body {
 /* TÍTULO DAS INPUTS */
 .form-input p {
   margin: 15px 0px 5px 10px;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 1000;
   align-self: flex-start;
 }
 
 /* BOTÃO DE FORM */
 .form-button {
-  width: 115px;
-  height: 45px;
+  width: 100px;
+  height: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -397,7 +399,7 @@ body {
   border: 5px solid #a93dfc;
   border-radius: 5px;
   font-family: Quicksand_Book;
-  font-size: 25px;
+  font-size: 18px;
   cursor: pointer;
 }
 .form-button a {
@@ -412,19 +414,19 @@ body {
 }
 .form-select {
   width: 100%;
-  height: 40px;
+  height: 30px;
   border-radius: 10px;
   border: 0;
   background-color: #F5E9FF;
   color: #1e0935;
   font-family: Quicksand_Book;
-  font-size: 25px;
+  font-size: 18px;
   text-align: center;
   cursor: cell  ;
 }
 .form-select option {
   color: #FFFFFF;
-  background-color: #5E2D92;
+  background-color: #A43BED;
   font-weight: 1000;
 }
 
@@ -433,16 +435,16 @@ body {
 /* SIMULADOR */
 
 .card-simulador {
-  border-left: 10px solid #5E2D92;
-  border-top: 10px solid #5E2D92;
+  border-left: 10px solid rgba(164, 59, 237, 0.6);
+  border-top: 10px solid rgba(164, 59, 237, 0.6);
 }
 
 .simulador-result {
   display: none;
   flex-direction: column;
-  border-right: 10px solid #5E2D92;
-  border-bottom: 10px solid #5E2D92;
-  border-left: 5px dashed #5E2D92;
+  border-right: 10px solid #A43BED;
+  border-bottom: 10px solid #A43BED;
+  border-left: 5px dashed #A43BED;
 }
 .div-resultado {
   width: 60%;
@@ -453,7 +455,7 @@ body {
   justify-content: center;
   text-align: center;
   font-family: Quicksand_Light;
-  background-color: #5E2D92;
+  background-color: #A43BED;
   border-radius: 15px;
 
 }
@@ -477,8 +479,8 @@ body {
 }
 
 .card-cadastro {
-  height: 720px;
-  border-right: 10px solid #5E2D92;
+  height: 600px;
+  border-right: 10px solid rgba(164, 59, 237, 0.5);
 }
 
 .form-cadastro {
@@ -490,11 +492,11 @@ body {
 /* MEMBROS */
 .card-membros {
   width: 50%;
-  height: 720px;
+  height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  border-left: 10px solid #5E2D92;
+  border-left: 10px solid rgba(164, 59, 237, 0.5);
 }
 .card-membros h1 {
   margin: 30px 0px 30px 0px;
@@ -503,9 +505,9 @@ body {
 /* DIV QUE COMPORTARÁ TABLE */
 .div-membros {
   width: 95%;
-  height: 570px;
+  height: 480px;
   overflow: auto;
-  background-color: #5E2D92;
+  background-color: rgba(164, 59, 237, 0.5);
   border-radius: 15px;
 }
 
@@ -520,16 +522,16 @@ body {
   font-size: 16px;
   height: 20px;
   padding: 10px;
-  border-bottom: 1px solid rgba(169, 61, 252, 0.8);
-  border-right: 1px solid rgba(169, 61, 252, 0.8);
+  border-bottom: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
 }
 
 /* CONFIG DAS TABLE HEADS */
 .td-title {
   font-size: 20px;
   font-weight: 1000;
-  background-color: #5E2D92;
-  border-bottom: 5px solid #8008ff;
+  background-color: #A43BED;
+  border-bottom: 3px solid #ffffff;
 }
 
 /* CONFIGS PARA DIFERENTES TAMANHOS */
@@ -585,7 +587,7 @@ body {
   height: 3px;
   margin: 0;
   border: 0px;
-  background-color: #8F00FF;
+  background-color: #A43BED;
 }
 /* TITLE DO HEADER */
 .dash-header h1 {
@@ -602,11 +604,11 @@ body {
 }
 /* COR PARA GRÁFICOS DE UMIDADE */
 .dash-umi h1 {
-  color: #ecdaff;
+  color: #A43BED;
 }
 /* COR PARA GRÁFICOS DE TEMPERATURA */
 .dash-temp h1 {
-  color: #8F00FF;
+  color: #A43BED;
 }
 
 /* ONDE ESTARÃO OS GRÁFICOS */
@@ -653,7 +655,7 @@ body {
   border-right: 10px solid;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  /* border-bottom: 10px solid #8008ff; */
+  /* border-bottom: 10px solid #A43BED; */
 }
 /* GRÁFICO BARRA */
 .div-barchart {
@@ -670,10 +672,10 @@ body {
 /* CORES PARA GRÁFICO DE UMIDADE */
 .chart-umidade {
   background-color: #e2c6ff;
-  border-color: #8008ff;
+  border-color: #A43BED;
 }
 /* CORES PARA GRÁFICO DE TEMPERATURA */
 .chart-temperatura {
-  background-color: #5E2D92;
-  border-color: #8F00FF;
+  background-color: #885aba;
+  border-color: #7c4fab;
 }

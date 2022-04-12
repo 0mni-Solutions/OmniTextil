@@ -48,8 +48,8 @@ function UMI_line_graph() {
                 // MEDIDAS DO SENSOR
                 data: dataPoints,
                 label: 'DHT11',
-                backgroundColor: '#8008FF',
-                borderColor: '#8008FF',
+                backgroundColor: '#A43BED',
+                borderColor: '#A43BED',
                 tension: 0.5,
                 pointRadius: 5,
             }]
@@ -80,7 +80,7 @@ function UMI_line_graph() {
                 display: true,
                 padding: 0,
                 text: "TEMPO REAL",
-                color: '#5E2D92',
+                color: '#A43BED',
                 font: {
                     size: 30,
                     family: 'Quicksand_Bold',
@@ -91,7 +91,7 @@ function UMI_line_graph() {
                 display: true,
                 padding: 20,
                 text: '| HOJE |',
-                color: '#5E2D92',
+                color: '#1e0935',
                 font: {
                     size: 15,
                     family: 'Quicksand_Bold',
@@ -103,7 +103,7 @@ function UMI_line_graph() {
                 labels: {
                     boxHeight: 1,
                     boxWidth: 22,
-                    color: '#5E2D92',
+                    color: '#1e0935',
                     font: {
                         size: 15,
                         family: 'Quicksand_Bold',
@@ -120,7 +120,7 @@ function UMI_line_graph() {
                 padding: 20,
                 cornerRadius: 20,
                 titleAlign: 'center',
-                titleColor: '#e2c6ff',
+                titleColor: '#1e0935',
                 titleFont: {
                     size: 15,
                     family: 'Quicksand_Book',
@@ -224,8 +224,8 @@ function UMI_bar_graph() {
                 // MEDIDAS DO SENSOR
                 data: dataBars,
                 label: 'MÉDIA',
-                backgroundColor: '#8008FF',
-                borderColor: '#8008FF',
+                backgroundColor: '#A43BED',
+                borderColor: '#A43BED',
                 barThickness: 30,
                 borderRadius: 100,
             }]
@@ -256,7 +256,7 @@ function UMI_bar_graph() {
                 display: true,
                 padding: 10,
                 text: "| SEMANAL |",
-                color: '#5E2D92',
+                color: '#A43BED',
                 font: {
                     size: 15,
                     family: 'Quicksand_Bold',
@@ -371,15 +371,15 @@ function UMI_doughnut_graph() {
             {
                 data: dataUse,
                 backgroundColor: [
-                    'rgba(128, 8, 255, 1)',
-                    'rgba(128, 8, 255, 0.4)',
+                    '#A43BED',
+                    '#AC8FE3',
                 ],
                 circumference: 180,
                 rotation: 270,
                 cutout: '35%',
-                borderWidth: 1,
-                borderColor: '#e2c6ff',
-                // borderColor: '#8008FF',
+                borderWidth: 0.1,
+                borderColor: '#A43BED',
+                // borderColor: '#A43BED',
             }]
     };
 
@@ -394,7 +394,7 @@ function UMI_doughnut_graph() {
             tooltip: {
                 enabled: true,
                 // displayColors: false,
-                backgroundColor: 'rgba(67, 27, 109, 0.9)',
+                backgroundColor: '#A43BED',
                 caretSize: 12,
                 caretPadding: 15,
                 padding: 20,
@@ -411,7 +411,7 @@ function UMI_doughnut_graph() {
                 display: true,
                 padding: 10,
                 text: "SENSOR DHT11",
-                color: '#5E2D92',
+                color: '#A43BED',
                 font: {
                     size: 25,
                     family: 'Quicksand_Bold',
@@ -422,7 +422,7 @@ function UMI_doughnut_graph() {
                 display: true,
                 padding: 0,
                 text: '| UMIDADE |',
-                color: '#bf6bff',
+                color: '#5E2D92',
                 font: {
                     size: 15,
                     family: 'Quicksand_Bold',
@@ -540,7 +540,7 @@ function TEMP_line_graph() {
                 display: true,
                 padding: 0,
                 text: "TEMPO REAL",
-                color: '#bf6bff',
+                color: '#ffffff',
                 font: {
                     size: 30,
                     family: 'Quicksand_Bold',
@@ -551,7 +551,7 @@ function TEMP_line_graph() {
                 display: true,
                 padding: 20,
                 text: '| HOJE |',
-                color: '#bf6bff',
+                color: '#ffffff',
                 font: {
                     size: 15,
                     family: 'Quicksand_Bold',
@@ -563,7 +563,7 @@ function TEMP_line_graph() {
                 labels: {
                     boxHeight: 1,
                     boxWidth: 22,
-                    color: '#bf6bff',
+                    color: '#ffffff',
                     font: {
                         size: 15,
                         family: 'Quicksand_Bold',
@@ -580,7 +580,7 @@ function TEMP_line_graph() {
                 padding: 20,
                 cornerRadius: 20,
                 titleAlign: 'center',
-                titleColor: '#8008FF',
+                titleColor: '#ffffff',
                 titleFont: {
                     size: 15,
                     family: 'Quicksand_Book',
@@ -588,7 +588,7 @@ function TEMP_line_graph() {
                 },
                 titleMarginBottom: 10,
                 bodyAlign: 'center',
-                bodyColor: '#5E2D92',
+                bodyColor: '#A43BED',
                 bodyFont: {
                     size: 15,
                     family: 'Quicksand_Bold',
@@ -603,7 +603,7 @@ function TEMP_line_graph() {
                 title: {
                     display: true,
                     text: 'Horário',
-                    color: '#D7B1FF',
+                    color: '#ffffff',
                     font: {
                         size: 20,
                         family: 'Quicksand_Bold',
@@ -614,7 +614,7 @@ function TEMP_line_graph() {
                 ticks: {
                     maxRotation: 90,
                     minRotation: 40,
-                    color: '#D7B1FF',
+                    color: '#ffffff',
                     font: {
                         size: 15,
                         family: 'Quicksand_Bold',
@@ -627,7 +627,7 @@ function TEMP_line_graph() {
                 title: {
                     display: true,
                     text: 'Temperatura',
-                    color: '#D7B1FF',
+                    color: '#ffffff',
                     font: {
                         size: 20,
                         family: 'Quicksand_Bold',
@@ -636,7 +636,7 @@ function TEMP_line_graph() {
                 },
                 // ESTILO DAS DIMENSÕES
                 ticks: {
-                    color: '#D7B1FF',
+                    color: '#ffffff',
                     font: {
                         size: 15,
                         family: 'Quicksand_Bold',
@@ -684,8 +684,8 @@ function TEMP_bar_graph() {
                 // MEDIDAS DO SENSOR
                 data: dataBars,
                 label: 'MÉDIA',
-                backgroundColor: '#bf6bff',
-                borderColor: '#bf6bff',
+                backgroundColor: '#AC8FE3',
+                borderColor: '#ffffff',
                 barThickness: 30,
                 borderRadius: 100,
             }]
@@ -716,7 +716,7 @@ function TEMP_bar_graph() {
                 display: true,
                 padding: 10,
                 text: "| SEMANAL |",
-                color: '#bf6bff',
+                color: '#ffffff',
                 font: {
                     size: 15,
                     family: 'Quicksand_Bold',
@@ -728,7 +728,7 @@ function TEMP_bar_graph() {
                 labels: {
                     boxHeight: 4,
                     boxWidth: 25,
-                    color: '#bf6bff',
+                    color: '#ffffff',
                     font: {
                         size: 15,
                         family: 'Quicksand_Bold',
@@ -745,7 +745,7 @@ function TEMP_bar_graph() {
                 padding: 20,
                 cornerRadius: 20,
                 titleAlign: 'center',
-                titleColor: '#8008FF',
+                titleColor: '#A43BED',
                 titleFont: {
                     size: 15,
                     family: 'Quicksand_Book',
@@ -766,7 +766,7 @@ function TEMP_bar_graph() {
             x: {
                 // ESTILO DAS DIMENSÕES
                 ticks: {
-                    color: '#D7B1FF',
+                    color: '#ffffff',
                     font: {
                         size: 13,
                         family: 'Quicksand_Bold',
@@ -779,7 +779,7 @@ function TEMP_bar_graph() {
                 title: {
                     display: true,
                     text: 'Temperatura',
-                    color: '#D7B1FF',
+                    color: '#ffffff',
                     font: {
                         size: 15,
                         family: 'Quicksand_Bold',
@@ -789,7 +789,7 @@ function TEMP_bar_graph() {
                 // ESTILO DAS DIMENSÕES
                 ticks: {
                     padding: 10,
-                    color: '#D7B1FF',
+                    color: '#ffffff',
                     font: {
                         size: 13,
                         family: 'Quicksand_Bold',
@@ -831,14 +831,14 @@ function TEMP_doughnut_graph() {
             {
                 data: dataUse,
                 backgroundColor: [
-                    'rgba(215, 177, 255, 1)',
-                    'rgba(215, 177, 255, 0.1)',
+                    '#986BE3',
+                    '#AC8FE3',
                 ],
                 circumference: 180,
                 rotation: 270,
                 cutout: '35%',
-                borderWidth: 1,
-                borderColor: '#5E2D92',
+                borderWidth: 0.1,
+                borderColor: '#A43BED',
             }]
     };
 
@@ -853,13 +853,13 @@ function TEMP_doughnut_graph() {
             tooltip: {
                 enabled: true,
                 // displayColors: false,
-                backgroundColor: 'rgba(215, 177, 255, 0.9)',
+                backgroundColor: '#A43BED',
                 caretSize: 12,
                 caretPadding: 15,
                 padding: 20,
                 cornerRadius: 20,
                 bodyAlign: 'center',
-                bodyColor: '#5E2D92',
+                bodyColor: '#AC8FE3',
                 bodyFont: {
                     size: 15,
                     family: 'Quicksand_Bold',
@@ -870,7 +870,7 @@ function TEMP_doughnut_graph() {
                 display: true,
                 padding: 10,
                 text: "SENSOR DHT11",
-                color: '#bf6bff',
+                color: '#ffffff',
                 font: {
                     size: 25,
                     family: 'Quicksand_Bold',
@@ -881,7 +881,7 @@ function TEMP_doughnut_graph() {
                 display: true,
                 padding: 0,
                 text: '| TEMPERATURA |',
-                color: '#bf6bff',
+                color: '#ffffff',
                 font: {
                     size: 15,
                     family: 'Quicksand_Bold',
@@ -893,7 +893,7 @@ function TEMP_doughnut_graph() {
                 labels: {
                     boxHeight: 4,
                     boxWidth: 25,
-                    color: '#bf6bff',
+                    color: '#ffffff',
                     font: {
                         size: 15,
                         family: 'Quicksand_Bold',
