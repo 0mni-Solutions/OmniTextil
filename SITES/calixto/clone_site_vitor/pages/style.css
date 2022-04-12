@@ -437,10 +437,12 @@ body {
 .card-simulador {
   border-left: 10px solid rgba(164, 59, 237, 0.6);
   border-top: 10px solid rgba(164, 59, 237, 0.6);
+  margin-bottom: 100px;
 }
 
 .simulador-result {
   display: none;
+  margin-bottom: 100px;
   flex-direction: column;
   border-right: 10px solid #A43BED;
   border-bottom: 10px solid #A43BED;
@@ -465,6 +467,7 @@ body {
 /* UNIDADES */
 .card-unidades {
   height: 400px;
+  margin-bottom: 100px;
 }
 
 .form-btn-dashboard {
@@ -569,6 +572,7 @@ body {
   flex-flow: row wrap;
   justify-content: center;
   align-items: flex-start;
+  margin-bottom: 400px;
 }
 
 /* HEADER PRÉ-GRÁFICOS */
@@ -583,7 +587,14 @@ body {
 }
 /* LINHA SEPARADORA DO HEADER */
 .dash-header hr {
-  width: 40%;
+  width: 60%;
+  height: 3px;
+  margin: 0;
+  border: 0px;
+  background-color: #A43BED;
+}
+.dash-umi hr {
+  width: 50%;
   height: 3px;
   margin: 0;
   border: 0px;
@@ -620,6 +631,7 @@ body {
   justify-content: space-center;
   align-items: flex-start;
   flex-direction: row;
+  /* margin-top: 50px; */
 }
 
 /* GRÁFICOS LATERAIS */
