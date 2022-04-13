@@ -1,5 +1,4 @@
 -- criação do banco de dados e das tabelas
-drop database omni_textil;
 CREATE DATABASE Omni_Textil;
 USE Omni_Textil;
 
