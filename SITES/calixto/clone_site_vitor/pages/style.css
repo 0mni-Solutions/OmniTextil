@@ -43,7 +43,8 @@ body {
 .header {
   height: 70px;
   width: 100%;
-  background-image: url(01_header-footer/imgs/header-footer/header.png);
+  background-color: rgba(30, 9, 53, 0.8);
+  /* background-image: url(01_header-footer/imgs/header-footer/header.png); */
   background-size: cover;
   /* border-bottom: 3px solid #AC8FE3; */
   font-size: 15px;
@@ -224,16 +225,15 @@ body {
   flex-flow: row wrap;
 }
 .section img {  
-  height: 70%;
+  height: 40%;
   border-radius: 40px;
-  /* border: #A43BED solid 10px; */
   border-bottom: 0px;
 }
 /* TEXTO PRINCIPAL DA SECTION 1/2 */
 .section p {
   width: 750px;
   padding: 0% 2% 0% 2%;
-  font-size: 50px;
+  font-size: 35px;
   text-align: justify;
   color: black;
 }
@@ -245,14 +245,15 @@ body {
 
 .sec1 p {
   color: #ecdaff;
-  border-radius: 10px;
-  border-right: 10px solid #431b6d;
-  border-bottom: 10px solid #431b6d;
+  border-radius: 15px;
+  border-right: 10px solid rgba(67, 27, 109, 0.5);
+  border-bottom: 10px solid rgba(67, 27, 109, 0.5);
   border-bottom-left-radius: 0px;
 }
+
 .sec1 img {
-  border-left: 15px solid #A43BED;
-  border-top: 10px solid #A43BED;
+  border-right: 15px solid rgba(67, 27, 109, 0.5);
+  border-bottom: 10px solid rgba(67, 27, 109, 0.5);
 }
 
 /* SECTION 2 */
@@ -263,35 +264,36 @@ body {
   padding: 1%;
   color: #1e0935;
   border-radius: 10px;
-  border-left: 10px solid #431b6d;
-  border-top: 10px solid #431b6d;
+  border-left: 10px solid rgba(67, 27, 109, 0.5);
+  border-top: 10px solid rgba(67, 27, 109, 0.5);
   border-top-right-radius: 0px;
 }
 .sec2 img {
-  border-right: 15px solid #431b6d;
-  border-bottom: 10px solid #431b6d;
+  border-left: 15px solid rgba(67, 27, 109, 0.5);
+  border-top: 10px solid rgba(67, 27, 109, 0.5);
 }
 
 /* SECTION 3: VISÃO DE NEGÓCIO */
 .sec3 {
+  display: flex;
   /* border: 3px solid red; */
   background-color: #F0E1FF;
-  display: flex;
 }
 .sec3 .container {
   display: flex;
   justify-content: space-evenly;
+  /* border: 3px solid green; */
+  margin-bottom: 200px;
 }
 
 /* CARD IMAGEM-DESC */
 .card-info {
-  /* border: 3px solid green; */
-  width: 800px;
-  height: 20%;
   display: flex;
+  justify-content: center;
+  width: 300px;
+  height: 60%;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 /* LOGOS */
 .sec3 img {
@@ -302,13 +304,13 @@ body {
 .sec3 p{
   width: 80%;
   color: black;
-  font-size: 19px;
+  font-size: 20px;
   text-align: center;
   margin: 0px;
 }
 /* DIVISÓRIA DA SECTION 3 */
 .sec3 hr {
-  width: 70%;
+  width: 100%;
   margin: 0px;
   background-color: #8F08FF;
   border: 3px solid #A43BED;
@@ -438,8 +440,8 @@ body {
 /* SIMULADOR */
 
 .card-simulador {
-  border-left: 10px solid rgba(164, 59, 237, 0.6);
-  border-top: 10px solid rgba(164, 59, 237, 0.6);
+  border-left: 10px solid #A43BED;
+  border-top: 10px solid #A43BED;
   margin-bottom: 100px;
 }
 
@@ -486,7 +488,7 @@ body {
 
 .card-cadastro {
   height: 600px;
-  border-right: 10px solid rgba(164, 59, 237, 0.5);
+  border-right: 10px solid #A43BED;
 }
 
 .form-cadastro {
@@ -502,7 +504,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  border-left: 10px solid rgba(164, 59, 237, 0.5);
+  border-left: 10px solid #A43BED;
 }
 .card-membros h1 {
   margin: 30px 0px 30px 0px;
@@ -513,7 +515,7 @@ body {
   width: 95%;
   height: 480px;
   overflow: auto;
-  background-color: rgba(164, 59, 237, 0.5);
+  background-color: #A43BED;
   border-radius: 15px;
 }
 
@@ -611,7 +613,7 @@ body {
   display: flex;
   align-items: center;
   font-size: 40px;
-  border: 3px solid #9d24fa;
+  border: 3px solid #A43BED;
   border-bottom: 0px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
