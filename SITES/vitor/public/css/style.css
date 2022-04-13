@@ -40,12 +40,11 @@ body {
 
 /* HEADER */
 .header {
+  /* background-image: url(../assets/imgs/header-footer/header.png); */
   height: 100px;
   width: 100%;
-  background-image: url(../assets/imgs/header-footer/header.png);
-  background-size: cover;
-  border-bottom: 3px solid #8008ff;
   font-size: 17px;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 /* NAVBAR ESTÁTICO */
@@ -53,7 +52,8 @@ body {
   position: fixed;
   background-image: none;
   border-bottom: 0;
-  background-color: rgba(0, 0, 0, 0.3) 
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
 }
 
 /* CONFIGURAÇÕES DO CONTAINER DO HEADER */
@@ -67,6 +67,12 @@ body {
 /* LOGO DO HEADER */
 .header img {
   height: 58%;
+}
+
+.href-title {
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 /* NAVBAR DO HEADER ESPECIFICAMENTE */
@@ -108,7 +114,8 @@ body {
   width: 100%;
   height: 100px;
   padding: 0.8%;
-  background-image: url(../assets/imgs/header-footer/footer.png);
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
   border-top: 3px solid #8008ff;
   background-size: cover;
   font-size: 16px;
@@ -194,7 +201,7 @@ body {
 /* HOME */
 .banner-home {
   /* border: 3px solid red; */
-  height: fit-content;
+  height: 1000vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -296,7 +303,7 @@ body {
 /* LOGOS */
 .sec3 img {
   border-radius: 0px;
-  width: 200px;
+  width: 170px;
 }
 /* DESCRIÇÃO */
 .sec3 p{
@@ -453,6 +460,7 @@ body {
 /* SIMULADOR */
 
 .card-simulador {
+  height: 70vh;
   border-left: 10px solid #5E2D92;
   border-top: 10px solid #5E2D92;
 }
