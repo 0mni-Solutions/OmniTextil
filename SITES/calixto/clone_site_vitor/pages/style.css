@@ -199,6 +199,7 @@ body {
   justify-content: center;
   align-items: center;
   font-family: Quicksand_Book;
+  /* background-image: url(../home/imgs/pexels-cottonbro-4621912.jpg); */
 }
 
 /* CONFIGURAÇÕES DO CONTAINER DO BANNER-HOME */
@@ -271,7 +272,7 @@ body {
 }
 
 .sec1 p {
-  color: #ecdaff;
+  color: #eedeff;
   padding: 1%;
   border-radius: 10px;
   border-right: 10px solid rgba(67, 27, 109, 0.5);
