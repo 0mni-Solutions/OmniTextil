@@ -22,7 +22,6 @@ function theme_change() {
 }
 
 /* SIMULADOR */
-
 function simular() {
     var qntTecido = Number(input_qntTecido.value);
     var valorTecido = Number(input_valorTecido.value);
@@ -130,8 +129,5 @@ function cadastrar() {
             </tr>
             `
             alert("Usuário cadastrado com sucesso!");
-        } 
-    else {
-        alert("Algum campo não foi informado")
-    }
+        }
 }
