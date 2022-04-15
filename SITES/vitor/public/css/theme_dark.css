@@ -78,3 +78,13 @@ body {
 .dash-sec2 {
     background-image: linear-gradient(to bottom, #1e0935, #040008);
 }
+
+/*-----------------------------------------------------------------------------------*/
+/* ERROS & LOADING */
+.loading-div img {
+    filter: hue-rotate(300deg);
+}
+
+#div_erros_login {
+    color: #e4c6ff;
+}

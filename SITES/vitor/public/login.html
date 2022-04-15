@@ -54,14 +54,27 @@
             </div>
             <div class="form-input">
               <p>Senha:</p>
-              <input type="password" id="input_senha" />
+              <input type="password" id="input_senha" /> 
             </div>
           </div>
-          <button onclick="login()" class="form-button" title="Entrar">
-            <a href="unidades.html"> entrar </a>
+          <button onclick="entrar()" class="form-button" title="Entrar">
+            entrar
           </button>
+                 <!-- ALERTA DE ERRO -->
+          <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+              <span id="mensagem_erro"></span>
+            </div>
+          </div>
+          <!-- AVISO DE ERRO EM LOGIN -->
+          <div id="div_erros_login"></div>
+          <!-- LOADING EFFECT -->
+          <div id="div_aguardar" class="loading-div">
+            <img src="assets/circle-loading.gif" id="loading-gif" />
+          </div>
         </div>
       </div>
+    </div>
     </div>
 
     <!-- FOOTER -->
@@ -101,4 +114,6 @@
   </body>
 </html>
 
+<script src="js/login.js"></script>
+<script src="js/funcoes.js"></script>
 <script src="js/script.js"></script>

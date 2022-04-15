@@ -330,6 +330,7 @@ body {
   flex-flow: column wrap;
   justify-content: space-evenly;
   align-items: center;
+  align-content: center;
   border-radius: 15px;
 }
 /* TITLE DO CARD-INPUT */
@@ -342,7 +343,7 @@ body {
 .form-box {
   /* border: 3px solid red; */
   width: 70%;
-  height: 50%;
+  height: 40%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -351,7 +352,7 @@ body {
 .form-box input {
   width: 100%;
   padding: 0;
-  height: 40px;
+  height: 30px;
   border-radius: 10px;
   border: 0;
   background-color: #F5E9FF;
@@ -369,7 +370,7 @@ body {
 }
 /* TÍTULO DAS INPUTS */
 .form-input p {
-  margin: 15px 0px 5px 10px;
+  margin: 10px 0px 5px 10px;
   font-size: 25px;
   font-weight: 1000;
   align-self: flex-start;
@@ -402,7 +403,7 @@ body {
 }
 .form-select {
   width: 100%;
-  height: 40px;
+  height: 30px;
   border-radius: 10px;
   border: 0;
   background-color: #F5E9FF;
@@ -483,52 +484,54 @@ body {
 }
 
 .card-cadastro {
-  margin-top: 1%;
-  margin-bottom: 1%;
+  /* margin-top: 1%;
+  margin-bottom: 1%; */
   height: 80vh;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   border-right: 10px solid #5E2D92;
 }
 
 /* ERRO */
 .alerta_erro{
+  width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .card_erro {
   display: none;
-  background-color: #fff;
-  color: black;
-  width: 230px;
-  position: fixed;
-  border-radius: 4px;
-  border: #e6005a 3px solid;
-  padding: 10px;
-  margin-right: 10%;
+  width: 100%;
+  /* position: fixed; */
+  /* background-color: #4A0082;
+  border: 3px solid #9000FF; */
+  border-radius: 15px;
+  text-align: center;
+  color: #f5e7ff;
 }
 
-.card_erro #mensagem_erro{
-  font-weight: 500;
+#mensagem_erro{
+  font-family: Quicksand_Bold;
   font-size: 20px;
 }
 
-.banner #div_erros_login {
+#div_erros_login {
+  font-family: Quicksand_Bold;
   margin-top: 15px;
+  color: #5900a8;
+  font-size: 20px;
 }
 
 /* LOADING */
 .loading-div {
-  width: 50px;
-  margin: auto;
   display: none;
+  width: 50px;
 }
 
 .loading-div img {
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
 }
 
 /*------------------------------------------------------------------------------------------------------*/
@@ -541,7 +544,7 @@ body {
   height: 80vh;
   display: flex;
   flex-flow: column wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   border-left: 10px solid #5E2D92;
 }
 .card-membros h1 {
@@ -551,7 +554,7 @@ body {
 /* DIV QUE COMPORTARÁ TABLE */
 .div-membros {
   width: 95%;
-  height: 500px;
+  height: 60%;
   overflow: auto;
   background-color: #5E2D92;
   border-radius: 15px;
