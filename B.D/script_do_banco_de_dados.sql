@@ -15,8 +15,7 @@ tipo VARCHAR(15),
 temperatura_max INT,
 temperatura_min INT,
 umidade_max INT,
-umidade_min INT,
-qntTecido INT
+umidade_min INT
 );
 
 CREATE TABLE Unidade (
@@ -52,14 +51,13 @@ idUsuario INT PRIMARY KEY AUTO_INCREMENT,
 nome VARCHAR(80),
 email VARCHAR(60),
 senha VARCHAR(40),
-cargo CHAR(5),
+cargo CHAR(5) constraint chkCargo check (cargo = 'ADMIN' or cargo = 'COMUM'),
 dtCadastro DATE,
 fkEmpresa INT,
 FOREIGN KEY (fkEmpresa) REFERENCES Empresa(idEmpresa),
 fkAdmin INT,
 FOREIGN KEY (fkAdmin) REFERENCES Usuario(idUsuario)
 );
-
 
 
 
