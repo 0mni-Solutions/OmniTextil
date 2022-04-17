@@ -22,7 +22,9 @@ function validarSessao() {
 
 function limparSessao() {
     // aguardar();
+    var tema = sessionStorage.theme;
     sessionStorage.clear();
+    sessionStorage.theme = tema;
     // finalizarAguardar();
     window.location = "../login.html";
 }
