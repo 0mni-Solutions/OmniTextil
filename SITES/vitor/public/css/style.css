@@ -21,7 +21,7 @@ body {
   color: white;
   font-family: Quicksand_Book;
   background-size: cover;
-  background-color: #F0E1FF;
+  background-color: #f0e1ff;
 }
 
 /* CONTAINER PARA RESPIRO (MARGEM) DA PÁGINA */
@@ -228,7 +228,7 @@ body {
   display: flex;
   flex-flow: row wrap;
 }
-.section img {  
+.section img {
   height: 45%;
   border-radius: 50px;
 }
@@ -286,7 +286,7 @@ body {
   width: 170px;
 }
 /* DESCRIÇÃO */
-.sec3 p{
+.sec3 p {
   width: 80%;
   color: black;
   font-size: 20px;
@@ -355,7 +355,7 @@ body {
   height: 30px;
   border-radius: 10px;
   border: 0;
-  background-color: #F5E9FF;
+  background-color: #f5e9ff;
   color: #1e0935;
   font-family: Quicksand_Book;
   font-size: 25px;
@@ -384,7 +384,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #FFFFFF;
+  color: #ffffff;
   border: 5px solid #9000ff;
   border-radius: 5px;
   font-family: Quicksand_Book;
@@ -406,15 +406,15 @@ body {
   height: 30px;
   border-radius: 10px;
   border: 0;
-  background-color: #F5E9FF;
+  background-color: #f5e9ff;
   color: #1e0935;
   font-family: Quicksand_Book;
   font-size: 25px;
   text-align: center;
-  cursor: cell  ;
+  cursor: cell;
 }
 .form-select option {
-  color: #FFFFFF;
+  color: #ffffff;
   font-weight: 1000;
 }
 
@@ -436,16 +436,16 @@ body {
 
 .card-simulador {
   height: 70vh;
-  border-left: 10px solid #5E2D92;
-  border-top: 10px solid #5E2D92;
+  border-left: 10px solid #5e2d92;
+  border-top: 10px solid #5e2d92;
 }
 
 .simulador-result {
   display: none;
   flex-direction: column;
-  border-right: 10px solid #5E2D92;
-  border-bottom: 10px solid #5E2D92;
-  border-left: 5px dashed #5E2D92;
+  border-right: 10px solid #5e2d92;
+  border-bottom: 10px solid #5e2d92;
+  border-left: 5px dashed #5e2d92;
 }
 .div-resultado {
   width: 60%;
@@ -457,7 +457,6 @@ body {
   text-align: center;
   font-family: Quicksand_Light;
   border-radius: 15px;
-
 }
 
 /*------------------------------------------------------------------------------------------------------*/
@@ -468,8 +467,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  border-right: 15px solid #5E2D92;
-  border-left: 15px solid #5E2D92;
+  border-right: 15px solid #5e2d92;
+  border-left: 15px solid #5e2d92;
 }
 
 .form-btn-dashboard {
@@ -479,6 +478,14 @@ body {
 /*------------------------------------------------------------------------------------------------------*/
 
 /* CADASTRO */
+/* DESABILITAR OPÇÃO DE CADASTRAR */
+#li_cadastro {
+  display: none;
+}
+#hr_cadastro {
+  display: none;
+}
+
 .banner-cadastro .container {
   justify-content: center;
 }
@@ -490,48 +497,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  border-right: 10px solid #5E2D92;
-}
-
-/* ERRO */
-.alerta_erro{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.card_erro {
-  display: none;
-  width: 100%;
-  /* position: fixed; */
-  /* background-color: #4A0082;
-  border: 3px solid #9000FF; */
-  border-radius: 15px;
-  text-align: center;
-  color: #f5e7ff;
-}
-
-#mensagem_erro{
-  font-family: Quicksand_Bold;
-  font-size: 20px;
-}
-
-#div_erros_login {
-  font-family: Quicksand_Bold;
-  margin-top: 15px;
-  color: #5900a8;
-  font-size: 20px;
-}
-
-/* LOADING */
-.loading-div {
-  display: none;
-  width: 50px;
-}
-
-.loading-div img {
-  height: 60px;
-  width: 60px;
+  border-right: 10px solid #5e2d92;
 }
 
 /*------------------------------------------------------------------------------------------------------*/
@@ -545,7 +511,7 @@ body {
   display: flex;
   flex-flow: column wrap;
   justify-content: space-evenly;
-  border-left: 10px solid #5E2D92;
+  border-left: 10px solid #5e2d92;
 }
 .card-membros h1 {
   margin: 30px 0px 30px 0px;
@@ -556,7 +522,7 @@ body {
   width: 95%;
   height: 60%;
   overflow: auto;
-  background-color: #5E2D92;
+  background-color: #5e2d92;
   border-radius: 15px;
 }
 
@@ -579,7 +545,7 @@ body {
 .td-title {
   font-size: 20px;
   font-weight: 1000;
-  background-color: #5E2D92;
+  background-color: #5e2d92;
   border-bottom: 5px solid #8008ff;
 }
 
@@ -639,7 +605,7 @@ body {
   height: 3px;
   margin: 0;
   border: 0px;
-  background-color: #8F00FF;
+  background-color: #8f00ff;
 }
 /* TITLE DO HEADER */
 .dash-label h1 {
@@ -702,7 +668,7 @@ body {
 /* GRÁFICO PIZZA */
 .div-dougchart {
   /* border: 3px solid red; */
-  width: fit-content; 
+  width: fit-content;
   height: 38%;
   padding-top: 20px;
   border-right: 10px solid;
@@ -728,6 +694,57 @@ body {
 }
 /* CORES PARA GRÁFICO DE TEMPERATURA */
 .chart-temperatura {
-  background-color: #230F38;
-  border-color: #8F00FF;
+  background-color: #230f38;
+  border-color: #8f00ff;
+}
+
+/*------------------------------------------------------------------------------------------------------*/
+
+/* ERRO */
+/* div dos dois próximos itens */
+.alerta_erro {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* div onde ficará mensagem de erro geral */
+.card_erro {
+  display: none;
+  width: 100%;
+  /* position: fixed; */
+  /* background-color: #4A0082;
+  border: 3px solid #9000FF; */
+  border-radius: 15px;
+  text-align: center;
+  color: #f5e7ff;
+}
+/* mensagem geral para erros */
+#mensagem_erro {
+  font-family: Quicksand_Bold;
+  font-size: 20px;
+}
+/* específica para email e senha não encontrada no BD */
+#div_erros_login {
+  font-family: Quicksand_Bold;
+  margin-top: 15px;
+  color: #5900a8;
+  font-size: 20px;
+}
+
+/* aviso de BD sem usuários cadastrados */
+#membros_erro {
+  font-family: Quicksand_Bold;
+  font-size: 20px;
+}
+
+/* LOADING */
+.loading-div {
+  display: none;
+  width: 50px;
+}
+/* GIF de Loading */
+.loading-div img {
+  height: 60px;
+  width: 60px;
 }

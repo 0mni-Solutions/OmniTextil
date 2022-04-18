@@ -10,7 +10,7 @@
     <link rel="icon" href="assets/imgs/header-footer/logo_imgWHITE.png" />
   </head>
 
-  <body>
+  <body onload="carregarUnidades()">
     <!-- HEADER -->
     <div class="header">
       <div class="container">
@@ -24,8 +24,8 @@
         <ul class="navbar-header" id="navbar_cadastro">
           <li class="page-selected"><a href="unidades.html">Unidades</a></li>
           <hr />
-          <li class=""><a href="cadastro.html">Cadastro</a></li>
-          <hr />
+          <li class="" id="li_cadastro"><a href="cadastro.html">Cadastro</a></li>
+          <hr id="hr_cadastro" />
           <li class=""><a onclick="limparSessao()" href="login.html">Sair</a></li>
           <img
             id="img_theme"
@@ -48,10 +48,6 @@
             <div class="form-input form-select-p">
               <select class="form-select" id="select_unidades">
                 <option value="0">-</option>
-                <option value="1">Unidade 1</option>
-                <option value="2">Unidade 2</option>
-                <option value="3">Unidade 3</option>
-                <option value="4">Unidade 4</option>
               </select>
             </div>
           </div>
