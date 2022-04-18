@@ -1,29 +1,31 @@
 var database = require("../database/config");
 
-function listar() {
+function listar(fkEmpresa) {
     console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
     var instrucao = `
-        SELECT 
+            SELECT 
             Admin.nome as nomeAdmin,
             Comum.nome,
             Comum.email,
             Comum.cargo,
             Comum.dtCadastro 
         FROM Usuario as Comum
-        LEFT JOIN Usuario as Admin 
+        JOIN Usuario as Admin 
         ON Admin.idUsuario = Comum.fkAdmin
-
+        WHERE Admin.fkEmpresa = ${fkEmpresa}
+        ORDER BY dtCadastro DESC;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
-function listarUnidades() {
+function listarUnidades(fkEmpresa) {
     console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
     var instrucao = `
         SELECT 
             nomeUnidade
-        FROM Unidade;
+        FROM Unidade
+        WHERE fkEmpresa = ${fkEmpresa};
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);

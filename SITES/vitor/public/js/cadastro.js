@@ -102,34 +102,10 @@ function cadastrar() {
   return false;
 }
 
-function membros() {
-  table_membros.innerHTML += `
-    <tr>
-    <td class="td-custom td-small">${adminVar}</td>
-    <td class="td-custom td-large">${nomeVar}</td>
-    <td class="td-custom td-large">${emailVar}</td>
-    <td class="td-custom td-medium">${cargoVar}</td>
-    <td class="td-custom td-medium">${dtCadastroVar}</td>
-    </tr>
-    `;
-}
-
-function sumirMensagem() {
-  cardErro.style.display = "none";
-  mensagem_erro.innerHTML = "Campo não preenchido!";
-
-  // normalizando bordas
-  input_nome.style.border = "0px";
-  input_email.style.border = "0px";
-  input_senha.style.border = "0px";
-  input_confirmar_senha.style.border = "0px";
-  select_cargo.style.border = "0px";
-}
-
 function atualizarMembros() {
   var empresaVar = sessionStorage.EMPRESA_USUARIO;
   //aguardar();
-  fetch("/avisos/listar")
+  fetch(`/avisos/listar/${sessionStorage.getItem('fkEmpresa')}`)
     .then(function (resposta) {
       if (resposta.ok) {
         if (resposta.status == 204) {
@@ -191,3 +167,16 @@ function atualizarMembros() {
       finalizarAguardar();
     });
 }
+
+function sumirMensagem() {
+  cardErro.style.display = "none";
+  mensagem_erro.innerHTML = "Campo não preenchido!";
+
+  // normalizando bordas
+  input_nome.style.border = "0px";
+  input_email.style.border = "0px";
+  input_senha.style.border = "0px";
+  input_confirmar_senha.style.border = "0px";
+  select_cargo.style.border = "0px";
+}
+

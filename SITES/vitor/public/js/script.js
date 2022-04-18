@@ -111,7 +111,7 @@ function simular() {
 
 function carregarUnidades() {
   //aguardar();
-  fetch("/avisos/listarUnidades")
+  fetch(`/avisos/listarUnidades/${sessionStorage.getItem('fkEmpresa')}`)
     .then(function (resposta) {
       if (resposta.ok) {
         if (resposta.status == 204) {

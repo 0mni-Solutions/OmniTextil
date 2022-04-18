@@ -54,6 +54,7 @@ function entrar() {
           sessionStorage.EMAIL_USUARIO = json.email;
           sessionStorage.CARGO_USUARIO = json.cargo;
           sessionStorage.EMPRESA_USUARIO = json.fkEmpresa;
+          sessionStorage.setItem(`fkEmpresa`, `${json.fkEmpresa}`);
 
           setTimeout(function () {
             window.location = "../unidades.html";
