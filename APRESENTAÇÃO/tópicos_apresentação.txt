@@ -1,0 +1,38 @@
+INTRO FODA
+- intro empresa omni solu..
+- Apresentação individual (ordem alfabetica)
+- disponibilizar dúvidas no final
+
+INICIO
+- contexto da industria (dados / cenário atual)
+- problema analisado (dados + agravantes)
+
+VISÃO e ORGANIZAÇÃO
+- diagrama de visão (premissas/apresentar regra de negócio)
+- diagrama de solução (premissas/restrições)
+- ferramenta de gestão
+
+SITE
+- home (header, banner, footer)
+- simulador (dados inseridos, resultado, meta de redução em % do sistema)
+- login (dados e verificação)
+- unidades (unidades de cada empresa, header diferente)
+- cadastro (dados inseridos, verificação, visualização de membros)
+- dashboard (dados captados, gráficos utilizados, propósito de cada um)
+
+ANALYTICS
+- alertas utilizados e motivo de sua existência (limite de temp. e umidade)
+
+ARDUÍNO
+- explicar/executar código
+- explicar/mostrar gráficos gerados
+
+BANCO DE DADOS
+- modelagem do banco
+- explicar tabelas
+- REGRA DE NEGÓCIO
+
+CONCLUSÃO
+- próximos passos (mostrar site com api [RESSALTAR QUE TODOS AINDA PRECISAM REVISAR E ENTENDER O CÓDIGO])
+- perguntar por dúvidas (se tiver tempo)
+- agradecer com IMPACTO
