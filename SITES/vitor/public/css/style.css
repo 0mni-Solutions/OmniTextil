@@ -653,6 +653,16 @@ body {
   align-items: center;
 }
 
+/* DIV QUE RECEBE A KPI E O GRÁFICO DE DONUT */
+.div-kpi {
+  /* border: 5px solid red; */
+  width: 90%;
+  height: 38%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 /* CHARTS */
 /* GRÁFICO LINHA */
 .div-linechart {
@@ -668,8 +678,7 @@ body {
 /* GRÁFICO PIZZA */
 .div-dougchart {
   /* border: 3px solid red; */
-  width: fit-content;
-  height: 38%;
+  width: 44%;
   padding-top: 20px;
   border-right: 10px solid;
   border-top-left-radius: 15px;
@@ -685,6 +694,37 @@ body {
   border-top: 5px solid;
   border-right: 10px solid;
   border-bottom: 10px solid;
+}
+
+/* KPI DIV */
+.kpi-now {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+.kpi-title {
+  height: 20%;
+  font-size: 25px;
+  font-family: Quicksand_Bold;
+  color: #5e2d92;
+}
+.kpi-data {
+  width: 90%;
+  height: fit-content;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 1000;
+}
+
+/* KPI EM UMIDADE */
+.chart-umidade .kpi-data {
+  color: #8008ff;
+}
+/* KPI EM TEMPERATURA */
+.chart-temperatura .kpi-data {
+  color: #d7b1ff;
 }
 
 /* CORES PARA GRÁFICO DE UMIDADE */

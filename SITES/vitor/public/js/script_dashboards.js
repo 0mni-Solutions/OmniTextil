@@ -75,21 +75,10 @@ function UMI_line_graph() {
         },
         // PARTE SUPERIOR
         plugins: {
-            // TÍTULO NO GRÁFICO
-            title: {
-                display: true,
-                padding: 0,
-                text: "TEMPO REAL",
-                color: '#5E2D92',
-                font: {
-                    size: 30,
-                    family: 'Quicksand_Bold',
-                },
-            },
             // SUBTÍTULO NO GRÁFICO
             subtitle: {
                 display: true,
-                padding: 20,
+                padding: 10,
                 text: '| HOJE |',
                 color: '#5E2D92',
                 font: {
@@ -411,19 +400,8 @@ function UMI_doughnut_graph() {
             title: {
                 display: true,
                 padding: 10,
-                text: "SENSOR DHT11",
+                text: "| CAPACIDADE |",
                 color: '#5E2D92',
-                font: {
-                    size: 25,
-                    family: 'Quicksand_Bold',
-                },
-            },
-            // SUBTÍTULO NO GRÁFICO
-            subtitle: {
-                display: true,
-                padding: 0,
-                text: '| UMIDADE |',
-                color: '#bf6bff',
                 font: {
                     size: 15,
                     family: 'Quicksand_Bold',
@@ -536,21 +514,10 @@ function TEMP_line_graph() {
         },
         // PARTE SUPERIOR
         plugins: {
-            // TÍTULO NO GRÁFICO
-            title: {
-                display: true,
-                padding: 0,
-                text: "TEMPO REAL",
-                color: '#bf6bff',
-                font: {
-                    size: 30,
-                    family: 'Quicksand_Bold',
-                },
-            },
             // SUBTÍTULO NO GRÁFICO
             subtitle: {
                 display: true,
-                padding: 20,
+                padding: 10,
                 text: '| HOJE |',
                 color: '#bf6bff',
                 font: {
@@ -870,18 +837,7 @@ function TEMP_doughnut_graph() {
             title: {
                 display: true,
                 padding: 10,
-                text: "SENSOR DHT11",
-                color: '#bf6bff',
-                font: {
-                    size: 25,
-                    family: 'Quicksand_Bold',
-                },
-            },
-            // SUBTÍTULO NO GRÁFICO
-            subtitle: {
-                display: true,
-                padding: 0,
-                text: '| TEMPERATURA |',
+                text: "| CAPACIDADE |",
                 color: '#bf6bff',
                 font: {
                     size: 15,

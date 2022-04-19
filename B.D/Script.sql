@@ -21,6 +21,7 @@ umidade_min INT
 CREATE TABLE Unidade (
 idUnidade INT PRIMARY  KEY AUTO_INCREMENT,
 nomeUnidade VARCHAR(15),
+fusoHorario CHAR(5) CONSTRAINT chkFuso CHECK (fusoHorario IN('GMT-2', 'GMT-3', 'GMT-4', 'GMT-5'),
 fkEmpresa INT,
 FOREIGN KEY (fkEmpresa) REFERENCES Empresa(idEmpresa),
 fkTecido INT,
@@ -38,7 +39,6 @@ idDados INT PRIMARY KEY AUTO_INCREMENT,
 temperatura INT,
 umidade INT,
 data_hora DATETIME,
-fkUnidade INT,
 fkSensor INT,
 FOREIGN KEY (fkSensor) REFERENCES Sensor(idSensor)
 );
