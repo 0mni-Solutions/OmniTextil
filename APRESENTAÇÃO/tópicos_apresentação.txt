@@ -1,38 +1,45 @@
 INTRO FODA
-- intro empresa omni solu..
-- Apresentação individual (ordem alfabetica)
-- disponibilizar dúvidas no final
+- intro empresa omni solu.. - GABRIEL
+- Apresentação individual (ordem alfabetica) - TODOS
+- disponibilizar dúvidas no final - THIAGO
 
 INICIO
-- contexto da industria (dados / cenário atual)
-- problema analisado (dados + agravantes)
+- contexto da industria (dados / cenário atual) - GABRIEL
+- justificativa (problema + agravantes + dados + objetivo) - FABIO
 
 VISÃO e ORGANIZAÇÃO
-- diagrama de visão (premissas/apresentar regra de negócio)
-- diagrama de solução (premissas/restrições)
-- ferramenta de gestão
+- diagrama de visão (premissas/apresentar regra de negócio) - THIAGO
+- diagrama de solução (premissas/restrições) - VIT
+- ferramenta de gestão - WLA
 
 SITE
-- home (header, banner, footer)
-- simulador (dados inseridos, resultado, meta de redução em % do sistema)
-- login (dados e verificação)
-- unidades (unidades de cada empresa, header diferente)
-- cadastro (dados inseridos, verificação, visualização de membros)
-- dashboard (dados captados, gráficos utilizados, propósito de cada um)
+- home (header, banner, footer, tema escuro/claro, escolha da paleta de cor roxa) - EDU
+- simulador (dados inseridos, resultado, meta de redução em % do sistema) - GABRIEL
+- login (dados e verificação, regra de negócio[primeiro login-mãe]) - FABO
+- unidades (unidades de cada empresa, header diferente) - THI
+- cadastro (dados inseridos, verificação, visualização de membros) - VIT
+- dashboard (dados captados, gráficos utilizados, propósito de cada um) - WLA
 
 ANALYTICS
-- alertas utilizados e motivo de sua existência (limite de temp. e umidade)
-
-ARDUÍNO
-- explicar/executar código
-- explicar/mostrar gráficos gerados
+- alertas utilizados e motivo de sua existência (limite de temp. e umidade) - EDU
 
 BANCO DE DADOS
-- modelagem do banco
-- explicar tabelas
-- REGRA DE NEGÓCIO
+- modelagem do banco - GABRIEL
+- explicar tabelas - FABO
+- REGRA DE NEGÓCIO - THI
+
+ARDUÍNO
+- explicar/executar código - VIT
+- explicar/mostrar gráficos gerados - WLA
 
 CONCLUSÃO
-- próximos passos (mostrar site com api [RESSALTAR QUE TODOS AINDA PRECISAM REVISAR E ENTENDER O CÓDIGO])
-- perguntar por dúvidas (se tiver tempo)
-- agradecer com IMPACTO
+- próximos passos (mostrar site com api [RESSALTAR QUE TODOS AINDA PRECISAM REVISAR E ENTENDER O CÓDIGO]) - EDU
+- perguntar por dúvidas (se tiver tempo) - GABRIEL
+- agradecer com IMPACTO - FABO
+
+EDUARDA
+GABRIEL
+FABO
+THI
+VIT
+WLA

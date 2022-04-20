@@ -46,7 +46,7 @@ function UMI_line_graph() {
             },
             {
                 // MEDIDAS DO SENSOR
-                data: dataPoints,
+                // data: dataPoints,
                 label: 'DHT11',
                 backgroundColor: '#8008FF',
                 borderColor: '#8008FF',
