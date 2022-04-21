@@ -10,11 +10,11 @@
     <link rel="icon" href="assets/imgs/header-footer/logo_imgWHITE.png" />
   </head>
 
-  <body onload="atualizarMembros()">
+  <body onload="atualizarMembros(), verificarVoltar()">
     <!-- HEADER -->
     <div class="header">
       <div class="container">
-        <a href="index.html" class="href-title">
+        <a onclick="limparSessao()" href="index.html" class="href-title">
           <img
             src="assets/imgs/header-footer/logo-OMNI_Textil.png"
             alt="OMNI TÊXTIL"
@@ -155,6 +155,6 @@
   </body>
 </html>
 
-<script src="js/script.js"></script>
-<script src="js/funcoes.js"></script>
 <script src="js/cadastro.js"></script>
+<script src="js/funcoes.js"></script>
+<script src="js/script.js"></script>

@@ -45,6 +45,12 @@ function finalizarAguardar(texto) {
     }
 }
 
+function verificarVoltar() {
+    if (sessionStorage.length == 1) {
+        window.location = "../index.html";
+    }
+}
+
 
 // modal
 function mostrarModal() {

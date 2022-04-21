@@ -401,7 +401,7 @@ body {
   width: 30%;
 }
 .form-select {
-  width: 100%;
+  width: 200px;
   height: 30px;
   border-radius: 10px;
   border: 0;
@@ -566,9 +566,13 @@ body {
 .td-icon {
   width: 10%;
   text-align: center;
-  border: 1px solid rgba(154, 58, 231, 0.2);
-  background-image: url(../assets/imgs/editar.png);
   cursor: pointer;
+  background-image: url(../assets/imgs/editar.png);
+  border: 1px solid;
+  border-top-color: rgba(169, 61, 252, 0.8);
+  border-right-color: rgba(154, 58, 231, 0.1);
+  border-bottom-color: rgba(169, 61, 252, 0.8);
+  border-left-color: rgba(154, 58, 231, 0.1);
 }
 
 /* IMAGEM DAS OPÇÕES */

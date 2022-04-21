@@ -56,16 +56,6 @@ function cadastrar() {
     setInterval(sumirMensagem, 5000);
   }
 
-  // DATA DE CADASTRO VIA JAVASCRIPT
-  /*var data = new Date();
-  var ano = data.getFullYear();
-  var mes = String(data.getMonth() + 1).padStart(2, "0"); // somar +1 por conta do JS contar meses de 0-11
-  var dia = String(data.getDate()).padStart(2, "0"); // "pad start" para adicionar um 0 no início de dias com 1 dígito
-  var segundo = String(data.getSeconds()).padStart(2, "0");
-  var minuto = String(data.getMinutes()).padStart(2, "0");
-  var hora = String(data.getHours()).padStart(2, "0");
-  var dtCadastroVar = `${dia}/${mes}/${ano}<br />${hora}:${minuto}:${segundo}`;*/
-
   fetch("/usuarios/cadastrar", {
     method: "POST",
     headers: {
@@ -86,7 +76,7 @@ function cadastrar() {
       if (resposta.ok) {
         cardErro.style.display = "block";
         mensagem_erro.innerHTML = "Cadastro realizado com sucesso!";
-        atualizarMembros()
+        atualizarMembros();
         finalizarAguardar();
         // window.location = "login.html";
         // limparFormulario();
@@ -102,10 +92,13 @@ function cadastrar() {
   return false;
 }
 
+function sumirMensagem() {
+  cardErro.style.display = "none";
+}
+
 function atualizarMembros() {
-  var empresaVar = sessionStorage.EMPRESA_USUARIO;
   //aguardar();
-  fetch(`/avisos/listar/${sessionStorage.getItem('fkEmpresa')}`)
+  fetch(`/avisos/listar/${sessionStorage.getItem("fkEmpresa")}`)
     .then(function (resposta) {
       if (resposta.ok) {
         if (resposta.status == 204) {
@@ -142,7 +135,7 @@ function atualizarMembros() {
             dataCargo.innerHTML = usuario.cargo;
             dataCadastro.innerHTML = usuario.dtCadastro;
             optEditar.innerHTML = `<img src="../assets/imgs/editar.png" id="edit_logo" title="editar" onclick="editarMembro()" />`;
-            optExcluir.innerHTML = `<img src="../assets/imgs/remover.png" id="edit_logo" title="remover" onclick="removerMembro()" />`;
+            optExcluir.innerHTML = `<img src="../assets/imgs/remover.png" id="edit_logo" title="remover" />`;
 
             // classificando os elementos já criados
             dataAdmin.className = "td-custom td-small";
@@ -152,6 +145,13 @@ function atualizarMembros() {
             dataCadastro.className = "td-custom td-medium";
             optEditar.className = "td-custom td-icon";
             optExcluir.className = "td-custom td-icon";
+
+            // atribuindo função aos botões
+            optExcluir.id = "btnExcluir" + usuario.idUsuario;
+            optExcluir.setAttribute(
+              "onclick",
+              `removerMembro(${usuario.idUsuario})`
+            );
 
             // adicionando todos à um elemento pai pré-existente
             rowUsuario.appendChild(dataAdmin);
@@ -180,8 +180,37 @@ function editarMembro() {
   alert("editando...");
 }
 
-function removerMembro() {
-  alert("removendo...");
+function removerMembro(idUsuario) {
+  if (idUsuario == sessionStorage.ID_USUARIO) {
+    alert("Você não pode se excluir");
+  } else {
+    console.log("Criar função de apagar usuário escolhido - ID" + idUsuario);
+    fetch(`/avisos/deletar/${idUsuario}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then(function (resposta) {
+        if (resposta.ok) {
+          cardErro.style.display = "block";
+          mensagem_erro.innerHTML = "Exclusão realizada com sucesso!";
+          atualizarMembros();
+          finalizarAguardar();
+        } else if (resposta.status == 404) {
+          window.alert("Deu 404!");
+        } else {
+          throw (
+            "Houve um erro ao tentar realizar a exclusão! Código da resposta: " +
+            resposta.status
+          );
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        finalizarAguardar();
+      });
+  }
 }
 
 function sumirMensagem() {
@@ -195,4 +224,3 @@ function sumirMensagem() {
   input_confirmar_senha.style.border = "0px";
   select_cargo.style.border = "0px";
 }
-

@@ -58,10 +58,7 @@ FOREIGN KEY (fkAdmin) REFERENCES Usuario(idUsuario)
 
 
 
-
-
 -- -------------- *SELECTS GERAIS* --------------
-
 -- -------------- SELECT DOS DADOS SEPARADAMENTE  --------------
 SELECT * FROM Empresa;
 SELECT * FROM Usuario;
