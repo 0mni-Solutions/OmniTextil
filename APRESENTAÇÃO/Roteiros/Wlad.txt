@@ -1,0 +1,31 @@
+--- FERRAMENTA DE GESTÃO ---
+No nosso projeto nos utilizamos a ferramenta de gestão Trello, por sua interface didática e por ser uma ferramenta realmente importante na gesta do projeto à distância.
+
+Dentro do nosso Trello colocamos 3 painéis para gerenciar durante o projeto, o primeiro era de tarefas globais o qual indicava tudo o que tinha que ser entregue durante a sprint, ela era dividida por matéria que era indicada por uma determinada cor.
+
+O segundo painel era o de backlog o qual era igualmente dividida por cores classificando por tamanho de  dificuldade, lá nós tínhamos tudo o que o nosso site institucional teria que conter detalhadamente desde a interface até a conexão das API’s entre o site e o banco de dados no geral.
+
+E o terceiro painel era o registro de atas o qual continha a presença, falta ou atraso dos membros da equipe ao todo.
+
+-----------------------------------------------------------
+
+--- DASHBOARD ---
+Na interface da dashboard nos apresentaremos 3 tipos de gráficos.
+
+o 1° é o gráfico de donut, o qual mostrará os sensores e o nível em que está operando.
+
+o 2° gráfico é o de linha, o qual exibirá os dados captados pelo sensor em tempo real, com seus eixos 
+X e Y, que irão mostrar a porcentagem média de umidade por hora durante o dia e, se por algum acaso, a média de umidade for maior que a média prevista, o gráfico mostrará em qual hora a umidade teve essa alta. 
+
+o 3° é um gráfico de barras, que mostra a média semanal de umidade por dia. 
+
+Também na nossa interface terá a KPI principal, que exibirá a temperatura atual do local selecionado na aba anterior. Como nós utilizaremos o sensor DHT11 que, além da função sensorial de captar umidade, também capta temperatura, nós desenvolvemos uma área para a temperatura na nossa dashboard com gráficos e KPI's semelhantes ao da umidade. 
+
+Planejamos futuramente também incrementar novos gráficos KPI's e possíveis estatísticas funcionais para o nosso usuário final.
+
+-----------------------------------------------------------
+
+--- PRÓXIMOS PASSOS ---
+Nós hoje apresentamos com muitos detalhes como nosso projeto funcionará e como está indo o andamento. Vale ressaltar que o nosso site mais atualizado já tem várias funções novas e inclusive tem a API funcionando, já conectada com o nosso Banco de Dados. Não apresentamos ela ainda pois necessitamos analisar e entender melhor o nosso código que tem incrementado muitas funcionalidades que não foram vistas em aula.
+
+Futuramente acrescentaremos novas funcionalidades para o nosso projeto pois planejamos ter funcionalidades úteis e didáticas para nosso cliente final.

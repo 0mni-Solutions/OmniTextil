@@ -1,0 +1,24 @@
+--- DIAGRAMA DE SOLUÇÃO ---
+Sobre o diagrama de solução do Omni Têxtil, podemos segregá-lo em 3 pontos de partida que convergem e formam um ciclo em certo ponto.
+
+Começando pela NUVEM, será lá que nós armazenaremos o nosso sistema WEB, e o Banco de Dados que armazenará informações essenciais para o funcionamento da solução. Essa questão será detalhada mais adiante, por enquanto vamos voltar para esse esquema.
+
+Outro ponto de vista seria do nosso principal ator, o sensor que irá captar os dados que nós iremos exibir mais tarde em uma interface, o DHT11, que funciona tanto para a captura de temperatura, quanto para de umidade ambiente, de forma simultânea. Ele estará acoplado à uma protoboard Mini de 170 pinos, conectada em uma placa Arduíno Uno R3.
+
+Esses conjuntos estarão em determinadas quantidades, localizadas onde nós apelidamos de Unidade, que não necessariamente representam estoques inteiros, mas podem se subdividir em Setores na implantação do hardware e registro dessa Unidade no nosso sistema. Essas unidades serão conectadas à uma máquina, que conectada à internet, enviará os dados coletados para o nosso sistema por meio de uma API em NodeJS, conectando as duas pontas e formatando todo esse processo em informações.
+
+Agora essas informações podem ser finalmente acessadas na última ponta do diagrama: o usuário final, o senhor próprio, ou os seus analistas, que através de uma conexão à internet, acessarão o site do Omni Têxtil, e através das suas contas, terão acesso às Dashboards e que auxiliará no monitoramento da Unidade.
+
+-----------------------------------------------------------
+
+--- CADASTRO ---
+É aqui que o primeiro acesso, provido pela Omni Solutions, poderá iniciar a ramificação de usuários e administradores cadastrados no sistema da sua empresa, que poderão mais tarde, a partir da permissão concedida a cada registro, ter opções adicionais, como cadastrar novos membros, ou ser restringido apenas à visualização dos gráficos.
+
+-----------------------------------------------------------
+
+--- ARDUÍNO ---
+Falando agora sobre o Arduino e seus sensores, apesar de existirem diversos na placa, é esse carinha aqui que vamos usar, o sensor de temperatura E umidade, DHT11. Para uma melhor visualização de como ficaria a arquitetura da placa final, montamos um circuito neste simulador chamado Tinkercad. Como vocês podem perceber, nós não ligamos o VCC, a porta Analógica e o GND direto, visando uma maior facilidade na manutenção caso alguma dessas placas necessite, também usamos uma cor padrão: Azul para X, Branco para X, e Cor para X.
+
+Ele já está conectado à máquina, por meio desse código aqui, ele vai ler e exibir esses dados para a gente em um monitor serial primariamente.
+
+Já utilizando a API em NodeJS, nós conseguiríamos exibir esses mesmos dados, mas dessa vez, direto em um gráfico ChartJS, outra biblioteca que estamos usando no site para gerar gráficos de forma dinâmica e simplificada.

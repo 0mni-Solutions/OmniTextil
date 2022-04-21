@@ -1,0 +1,7 @@
+--- DIAGRAMA DE NEGÓCIO ---
+Nossa regra de negócio parte do pressuposto que o cliente fornecerá o local de armazenamento de seus tecidos, além de nos fornecer os dados da infraestrutura do local para termos melhor controle da instalação dos Arduino e sensores, acreditamos que a instalação dos sensores será concluída entre 5 à 7 dias uteis.
+
+-----------------------------------------------------------
+
+--- UNIDADES ---
+Bom a página unidades será onde você poderá escolher a unidade e o setor que deseja verificar suas respectivas dashboards, e como vocês podem ver no nosso header temos uma pequena alteração que seria o acesso para a página cadastras que só será possível ver caso entre com uma conta admin, com já temos um tópico para ela só direi que ela e onde  poderá gerir as contas dos seus funcionários.

@@ -1,0 +1,21 @@
+--- HOME ---
+Eu vou explicar sobre a composição do site e como nossa equipe fez a escolha dos elementos, em nossas reuniões iniciais decidimos a palheta de cores, sendo o roxo a nossa cor principal, que remete a ....
+
+Com base nisso fizemos a escolha de outros componentes, tais como fonte, posicionamento dos itens na página, imagens e tamanhos.
+
+Todos produziram seus sites com base no protótipo e fizemos uma votação de qual era o melhor header, banner e footer, o header escolhido foi esse, que contem a nossa logo do lado esquerdo superior, e ao lado direito superior tem o menu onde o cliente pode acessar as páginas de login, manual e simulador.
+
+Já a escolha do banner foi uma imagem que remete a indústria têxtil, contendo uma frase de impacto; logo abaixo há também a reutilização do diagrama de visão de negócio, para o cliente entender o passo a passo de como funciona a nossa regra de negócio.
+
+Logo abaixo tem o footer, que contém as formas que o cliente pode nos contatar e nossa marca d'água.
+
+-----------------------------------------------------------
+
+--- ANALYTICS ---
+Nosso site avisa ao cliente quando a temperatura ou a umidade de uma de suas unidades está propensa a danificar os tecidos nela armazenados.
+
+Os tecidos possuem um nível de temperatura e umidade ideal, e se essas medidas estiverem muito baixas ou muito altas pode vir a danificar esses tecidos, pois tornam um ambiente propenso para a proliferação de fungos e bactérias, que podem ocasionar buracos, mofo, alteração de textura e entre outros.
+
+O site alertará o cliente quando o nível de umidade se aproximar dos 40% e dos 60%.
+
+Há também o alerta quando os níveis de estresse térmico se aproximar dos 40°C, temperatura na qual pode causar reduções significativas no pigmento dos tecidos.

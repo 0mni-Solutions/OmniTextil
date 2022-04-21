@@ -82,7 +82,7 @@ body {
 /*-----------------------------------------------------------------------------------*/
 /* ERROS & LOADING */
 .loading-div img {
-    filter: hue-rotate(300deg);
+    filter: hue-rotate(280deg);
 }
 
 #div_erros_login {

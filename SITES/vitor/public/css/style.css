@@ -20,7 +20,7 @@ body {
   flex-direction: column;
   color: white;
   font-family: Quicksand_Book;
-  background-size: cover;
+  background-size: auto;
   background-color: #f0e1ff;
 }
 
@@ -106,7 +106,6 @@ body {
 }
 
 /*------------------------------------------------------------------------------------------------------*/
-
 /* FOOTER */
 .footer {
   width: 100%;
@@ -192,7 +191,6 @@ body {
 }
 
 /*------------------------------------------------------------------------------------------------------*/
-
 /* HOME */
 .banner-home {
   /* border: 3px solid red; */
@@ -283,7 +281,7 @@ body {
 /* LOGOS */
 .sec3 img {
   border-radius: 0px;
-  width: 170px;
+  width: 180px;
 }
 /* DESCRIÇÃO */
 .sec3 p {
@@ -303,7 +301,6 @@ body {
 }
 
 /*------------------------------------------------------------------------------------------------------*/
-
 /* FORMULÁRIO */
 .banner {
   /* border: 3px solid red; */
@@ -363,6 +360,7 @@ body {
 
 /* DIV DE INPUT NO FORM */
 .form-input {
+  width: 392px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -379,7 +377,7 @@ body {
 .form-button {
   width: 115px;
   height: 45px;
-  margin-top: 10%;
+  margin-top: 5%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -418,10 +416,9 @@ body {
 }
 
 /*------------------------------------------------------------------------------------------------------*/
-
 /* LOGIN */
 .card-login {
-  height: 70vh;
+  height: 65vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -430,7 +427,6 @@ body {
 }
 
 /*------------------------------------------------------------------------------------------------------*/
-
 /* SIMULADOR */
 
 .card-simulador {
@@ -459,7 +455,6 @@ body {
 }
 
 /*------------------------------------------------------------------------------------------------------*/
-
 /* UNIDADES */
 .card-unidades {
   height: 50vh;
@@ -475,7 +470,6 @@ body {
 }
 
 /*------------------------------------------------------------------------------------------------------*/
-
 /* CADASTRO */
 /* DESABILITAR OPÇÃO DE CADASTRAR */
 #li_cadastro {
@@ -485,14 +479,20 @@ body {
   display: none;
 }
 
+.banner-cadastro {
+  height: 200vh;
+  /* background-image: url(../assets/imgs/dark-background-image.jpg); */
+}
+
 .banner-cadastro .container {
   justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  /* height: 2000px; */
 }
 
 .card-cadastro {
-  /* margin-top: 1%;
-  margin-bottom: 1%; */
-  height: 80vh;
+  height: 86vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -500,13 +500,12 @@ body {
 }
 
 /*------------------------------------------------------------------------------------------------------*/
-
 /* MEMBROS */
 .card-membros {
-  width: 50%;
+  width: 50vw;
+  height: 86vh;
   margin-top: 1%;
   margin-bottom: 1%;
-  height: 80vh;
   display: flex;
   flex-flow: column wrap;
   justify-content: space-evenly;
@@ -519,7 +518,7 @@ body {
 /* DIV QUE COMPORTARÁ TABLE */
 .div-membros {
   width: 95%;
-  height: 60%;
+  height: 75%;
   overflow: auto;
   background-color: #5e2d92;
   border-radius: 15px;
@@ -582,7 +581,6 @@ body {
 }
 
 /*------------------------------------------------------------------------------------------------------*/
-
 /* DASHBOARDS */
 .dash-header {
   background-color: rgba(91, 18, 100, 0.8);
@@ -761,7 +759,6 @@ body {
 }
 
 /*------------------------------------------------------------------------------------------------------*/
-
 /* ERRO */
 /* div dos dois próximos itens */
 .alerta_erro {
