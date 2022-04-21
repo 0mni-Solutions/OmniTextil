@@ -9,23 +9,12 @@ responsavel VARCHAR(70),
 dtCadastro DATE
 );
 
-CREATE TABLE Tecido (
-idTecido INT PRIMARY KEY AUTO_INCREMENT,
-tipo VARCHAR(15),
-temperatura_max INT,
-temperatura_min INT,
-umidade_max INT,
-umidade_min INT
-);
-
 CREATE TABLE Unidade (
 idUnidade INT PRIMARY  KEY AUTO_INCREMENT,
 nomeUnidade VARCHAR(15),
 fusoHorario CHAR(5) CONSTRAINT chkFuso CHECK (fusoHorario IN('GMT-2', 'GMT-3', 'GMT-4', 'GMT-5'),
 fkEmpresa INT,
-FOREIGN KEY (fkEmpresa) REFERENCES Empresa(idEmpresa),
-fkTecido INT,
-FOREIGN KEY (fkTecido) REFERENCES Tecido(idTecido)
+FOREIGN KEY (fkEmpresa) REFERENCES Empresa(idEmpresa)
 );
 
 CREATE TABLE Sensor (
