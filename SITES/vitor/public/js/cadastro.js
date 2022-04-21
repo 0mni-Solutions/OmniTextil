@@ -132,6 +132,8 @@ function atualizarMembros() {
             var dataEmail = document.createElement("td");
             var dataCargo = document.createElement("td");
             var dataCadastro = document.createElement("td");
+            var optEditar = document.createElement("td");
+            var optExcluir = document.createElement("td");
 
             // colocando valores do select no innerHTML
             dataAdmin.innerHTML = usuario.nomeAdmin;
@@ -139,6 +141,8 @@ function atualizarMembros() {
             dataEmail.innerHTML = usuario.email;
             dataCargo.innerHTML = usuario.cargo;
             dataCadastro.innerHTML = usuario.dtCadastro;
+            optEditar.innerHTML = `<img src="../assets/imgs/editar.png" id="edit_logo" title="editar" onclick="editarMembro()" />`;
+            optExcluir.innerHTML = `<img src="../assets/imgs/remover.png" id="edit_logo" title="remover" onclick="removerMembro()" />`;
 
             // classificando os elementos já criados
             dataAdmin.className = "td-custom td-small";
@@ -146,6 +150,8 @@ function atualizarMembros() {
             dataEmail.className = "td-custom td-large";
             dataCargo.className = "td-custom td-medium";
             dataCadastro.className = "td-custom td-medium";
+            optEditar.className = "td-custom td-icon";
+            optExcluir.className = "td-custom td-icon";
 
             // adicionando todos à um elemento pai pré-existente
             rowUsuario.appendChild(dataAdmin);
@@ -153,6 +159,8 @@ function atualizarMembros() {
             rowUsuario.appendChild(dataEmail);
             rowUsuario.appendChild(dataCargo);
             rowUsuario.appendChild(dataCadastro);
+            rowUsuario.appendChild(optEditar);
+            rowUsuario.appendChild(optExcluir);
             tabela_membros.appendChild(rowUsuario);
           }
 
@@ -166,6 +174,14 @@ function atualizarMembros() {
       console.error(resposta);
       finalizarAguardar();
     });
+}
+
+function editarMembro() {
+  alert("editando...");
+}
+
+function removerMembro() {
+  alert("removendo...");
 }
 
 function sumirMensagem() {
