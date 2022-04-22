@@ -1,5 +1,5 @@
 --- DIAGRAMA DE SOLUÇÃO ---
-Sobre o diagrama de solução do Omni Têxtil, podemos segregá-lo em 3 pontos de partida que convergem e formam um ciclo em certo ponto.
+Sobre o diagrama de solução do Omni Têxtil, podemos segregá-lo em 3 segmentos que convergem e formam um ciclo em certo ponto.
 
 Começando pela NUVEM, será lá que nós armazenaremos o nosso sistema WEB, e o Banco de Dados que armazenará informações essenciais para o funcionamento da solução. Essa questão será detalhada mais adiante, por enquanto vamos voltar para esse esquema.
 
