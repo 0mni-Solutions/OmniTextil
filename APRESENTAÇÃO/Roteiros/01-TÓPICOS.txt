@@ -1,7 +1,6 @@
 INTRO FODA
 - intro empresa omni solu.. - GABRIEL
 - Apresentação individual (ordem alfabetica) - TODOS
-- disponibilizar dúvidas no final - THIAGO
 
 INICIO
 - contexto da industria (dados / cenário atual) - GABRIEL
@@ -25,16 +24,14 @@ ANALYTICS
 
 BANCO DE DADOS
 - modelagem do banco - GABRIEL
-- explicar tabelas - FABO
-- REGRA DE NEGÓCIO - THI
+- explicar tabelas - TODOS
 
 ARDUÍNO
 - explicar/executar código - VIT
-- explicar/mostrar gráficos gerados - WLA
+- explicar/mostrar gráficos gerados - VIT
 
 CONCLUSÃO
-- próximos passos (mostrar site com api [RESSALTAR QUE TODOS AINDA PRECISAM REVISAR E ENTENDER O CÓDIGO]) - EDU
-- perguntar por dúvidas (se tiver tempo) - GABRIEL
+- próximos passos (mostrar site com api [RESSALTAR QUE TODOS AINDA PRECISAM REVISAR E ENTENDER O CÓDIGO]) - WLA
 - agradecer com IMPACTO - FABO
 
 EDUARDA
