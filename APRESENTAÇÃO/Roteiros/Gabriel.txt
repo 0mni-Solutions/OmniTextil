@@ -1,19 +1,28 @@
---Sindicatos--
-sinditextil sp
-Sindicato Indústria de Malharia e Meias Estado São Paulo
-Sindicato Trab Ind Fiação Tecelagem São Paulo
-Sindicato Sindmestres
 
--Associação Brasileira da Indústria Têxtil e de Confecção (Abit)-
+--- Sobre a cor roxa ---
 
------------------------------------------------------------
---- CONTEXTUALIZAÇÃO ---
-A indústria ja gasta muito com agua por exemplo, e isso ja é problema suficiente. 
-
-Hoje, a indústria aceitou que o desperdício faz parte de seu cotidiano, e as medidas tomadas são focadas na reciclagem o que não é funcional, já que é desperdício de insumo e dinheiro. Nós da Omni Solutions, estamos na contramão desse pensamento, vamos oferecer uma nova perspectiva para esta situação, que tal ser mais sustentável, sem se apoiar totalmente na reciclagem para isso.
------------------------------------------------------------
 estilização do site
-Roxo. Remete à espiritualidade. Essa cor pode regenerar o sistema nervoso estressado e com fadiga prolongada. Reduz medos e angústias e traz estabilidade e equilíbrio da consciência.
- 
+Roxo. Remete à espiritualidade. Essa cor pode regenerar o sistema nervoso estressado e com fadiga prol1ongada. Reduz medos e angústias e traz estabilidade e equilíbrio da consciência.
+
 -----------------------------------------------------------
 
+---INTRO---
+
+somos a omni solutions e hj vamos apresentar nosso produto, o omnitextil
+nossa apresentação sera dada por topicos, com espaçopara duvidas ou outras solicitações ao final, 
+ler topicos -- 
+
+--- CONTEXTUALIZAÇÃO ---
+
+A indústria ja gasta muito com agua por exemplo, e isso ja é problema suficiente. 
+Hoje, a indústria aceitou que o desperdício faz parte de seu cotidiano, e as medidas tomadas são focadas na reciclagem o que não é funcional, já que é desperdício de insumo e dinheiro. Nós da Omni Solutions, estamos na contramão desse pensamento, vamos oferecer uma nova perspectiva para esta situação, que tal ser mais sustentável, sem se apoiar totalmente na reciclagem para isso.
+
+--- Simulador financeiro ---
+
+Nossa calculadora tem por entuito prospectar clientes, logo o calculo é focado em denotar resultado, conseguimos isso atraves de 3 fatores, quntidade de tecido em toneladas, valor por tonelada e por fim toneladas perdidas, com essas infos que sao fornecidas pelo propio cliente, conseguimos mensurar o sua perda por disfunçoes e seu lucro por adotar nossos serviços de gerenciamento.
+
+--- Modelagem de dados ---
+
+nossa modelagem é pensada para garantir o melhor aproveitamento dos sistemas e memoria, logo vamos dispor de 5 tabelas que serão apresentadas individualmente, por hora a nossa regra de negocio diz que 1 empresa tem 1 ou mais unidades, uma unidade tem 1 ou mais sensores e um sensor possui 1 ou muitos dados,alem de que nossa empresa detem 1 ou muitos clientes (usuarios)
+
+--- 
