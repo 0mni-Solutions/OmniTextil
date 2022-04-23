@@ -109,7 +109,7 @@ body {
 /* FOOTER */
 .footer {
   width: 100%;
-  height: 100px;
+  height: 120px;
   padding: 0.8%;
   display: flex;
   align-self: end;
@@ -298,6 +298,62 @@ body {
   margin: 0px;
   border: 3px solid;
   border-radius: 50px;
+}
+
+/*------------------------------------------------------------------------------------------------------*/
+/* EQUIPE */
+/* section inteira personalizada */
+.sec2-equipe {
+  height: fit-content;
+}
+
+/* container dos cards de integrante */
+.equipe-imgs {
+  width: 100%;
+  height: fit-content;
+  margin-top: 90px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+/* card de cada integrante */
+.card-equipe {
+  width: 384px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+/* imagem de cada um */
+.card-equipe img {
+  width: 308px;
+  height: 411px;
+  margin: 80px;
+  margin-bottom: 20px;
+  border-radius: 40px;
+  border-right: 10px solid #8008FF;
+  border-bottom: 10px solid #8008FF;
+}
+
+/* descrição */
+.card-equipe p {
+  border: 0;
+  width: 100%;
+  text-align: center;
+  margin-top: 0;
+}
+/* nome */
+.card-equipe .equipe-p-nome {
+  margin-bottom: 0;
+  font-size: 60px;
+  font-family: Quicksand_Bold;
+}
+/* função */
+.card-equipe .equipe-p-desc{
+  margin-bottom: 80px;
+  font-size: 25px;
+  font-family: Quicksand_Bold;
 }
 
 /*------------------------------------------------------------------------------------------------------*/
