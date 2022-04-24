@@ -1,5 +1,5 @@
 --- HOME ---
-Eu vou explicar sobre a composição do site e como nossa equipe fez a escolha dos elementos, em nossas reuniões iniciais decidimos a palheta de cores, sendo o roxo a nossa cor principal, que remete a ....
+Boa tarde, eu vou explicar sobre a composição do site e como nossa equipe fez a escolha dos elementos, em nossas reuniões iniciais decidimos a palheta de cores, sendo o roxo a nossa cor principal, o tom que fica entre o vermelho e o azul. Por isso o roxo é a única cor que une propostas tão diferentes, remetendo a originalidade e estabilidade de acordo com a teoria das cores. 
 
 Com base nisso fizemos a escolha de outros componentes, tais como fonte, posicionamento dos itens na página, imagens e tamanhos.
 
@@ -14,12 +14,11 @@ Logo abaixo tem o footer, que contém as formas que o cliente pode nos contatar 
 --- ANALYTICS ---
 Nosso site avisa ao cliente quando a temperatura ou a umidade de uma de suas unidades está propensa a danificar os tecidos nela armazenados.
 
-Os tecidos possuem um nível de temperatura e umidade ideal, e se essas medidas estiverem muito baixas ou muito altas pode vir a danificar esses tecidos, 
-pois tornam um ambiente propenso para a proliferação de fungos e bactérias, que podem ocasionar buracos, mofo, alteração de textura e entre outros.
+Os tecidos possuem um nível de temperatura e umidade ideal, e se essas medidas estiverem muito baixas ou muito altas pode vir a danificar esses tecidos, pois tornam um ambiente propenso para a proliferação de fungos e bactérias, que podem ocasionar buracos, mofo, alteração de textura e entre outros.
 
 O site alertará o cliente quando o nível de umidade se aproximar dos 40% e dos 60%.
 
 Há também o alerta quando os níveis de estresse térmico se aproximar dos 40°C, temperatura na qual pode causar reduções significativas no pigmento dos tecidos.
 ----------------------------------------------------------
 --- TABELA USUARIO ---
-De acordo com a regra de negócio da nossa empresa, apenas um administrador pode cadastrar outros usuários, então fizemos uma tabela com recursividade, onde quem tem a fkAdmin pode adicionar novos usuários, as informações guardadas englobam nome, email, senha, cargo, data de cadastro, uma fkEmpresa para sinalizar de qual empresa este respectivo funcionário pertence e quem adicionou o funcionário na plataforma. 
+De acordo com a regra de negócio da nossa empresa, apenas um administrador pode cadastrar outros usuários, essa diferenciação é sinalizada pelo campo cargo. Fizemos essa tabela com recursividade, onde a  fkAdmin ira demonstrar qual administrador criou um determinado usuário, as informações guardadas também englobam nome, email, senha, data de cadastro e uma fkEmpresa para sinalizar de qual empresa este respectivo funcionário pertence. 
