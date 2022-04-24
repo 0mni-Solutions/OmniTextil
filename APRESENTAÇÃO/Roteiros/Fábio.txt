@@ -1,0 +1,18 @@
+JUSTIFICATIVA 
+
+- Dentro da Industria Textil, analisamos um problema muito recorrente no cenario mundial e nacional, a perda de tecidos devido a falta de controle no monitoramento de tempedatura e umidade nos armazens de tecido, o que gera o descarte demasiado dos mesmos gerando poluentes no solo e na água.
+É estimado que 1,2 milhões de toneladas de tecido no Brasil sejam produzidas por ano, gerando 2,6 bilhões de dólares com a exportação, entretanto 175 mil toneladas de lixo têxtil são produzidas ao ano, principalmente devido a falta de manuseio da umidade e temperatura no armazenamento destes produtos, gerando uma perca estimada de 500 bilhões de dólares no mundo inteiro, além de gerar graves problemas ao meio ambiente
+Com isso, nosso grupo busca oferecer monitoramento da temperatura e da umidade dentro dos armazens texteis em tempo real, afim de diminuir este grande agravante da industria em questão. 
+
+LOGIN 
+
+- Antes de falar sobre nossas telas de login, é necessario primeiro explicar nossa regra de negocio. Pra isso, utilizarei uma analogia, imaginem que vocês comprem um apartamento, a empresa responsável só lhe dara a chave do local quando estiver tudo nos conformes correto? E apartir do momento que você ganha a chave principal, que quem mora com você pode ganhar uma chave também, a nossa regra de negócio é implementada nesse molde, onde após o cliente entrar em contato conosco, iremos realizar todo o processo de instalação do sistema e das métricas, após isso o cliente ganha um login principal de Administrador, e apartir desse login ele pode cadastrar outros funcionários, básicamente essa é a explicação pela qual q tela de login vem antes que a de cadastro em nosso site.
+Nossa tela de login possui dois campos, para o nome de usuário, a sua senha. 
+
+TABELA EMPRESA : 
+
+- Iniciando a modelagem de dados de nosso projeto, temos aqui a tabela empresa, onde temos um identificador único para cada, o nome, o responsavel pela empresa e qual a data em qual foi realizada o cadastro. 
+
+AGRADECIMENTO 
+
+- A omnisolution agradece imensamente a atenção de todos os presentes pela colaboração e pela atenção a apresentação do nosso produto Omni-solution, desejamos uma excelente segunda feira e um ótimo começo de semana. MUITO OBRIGADO!
