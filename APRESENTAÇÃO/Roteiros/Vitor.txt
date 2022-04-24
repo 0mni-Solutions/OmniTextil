@@ -22,3 +22,11 @@ Falando agora sobre o Arduino e seus sensores, apesar de existirem diversos na p
 Ele já está conectado à máquina, por meio desse código aqui, ele vai ler e exibir esses dados para a gente em um monitor serial primariamente.
 
 Já utilizando a API em NodeJS, nós conseguiríamos exibir esses mesmos dados, mas dessa vez, direto em um gráfico ChartJS, outra biblioteca que estamos usando no site para gerar gráficos de forma dinâmica e simplificada.
+
+-----------------------------------------------------------
+
+--- TABELA UNIDADE ---
+É na tabela Unidade que iremos registrar as unidades onde o cliente queira aplicar o Omni Têxtil. Ela vai contar com: 
+- um ID, criado automaticamente ao registrarmos; 
+- um NOME, para melhor identificação, o FUSO-HORÁRIO ao qual a unidade está situada, pois uma de nossas ideias é adicionar um relógio na Dashboard com esse FUSO, pois um funcionário pode estar analisando uma unidade em outro estado, assim, para não ter conflitos de análise que envolvam as horas, a gente pensou nessa questão do FUSO.
+- e por último, à qual EMPRESA que essa unidade pertence. É por conta disso que a gente irá conseguir te mostrar apenas as unidades que te pertencem, e não mostrar elas para mais nenhum outro cliente.
