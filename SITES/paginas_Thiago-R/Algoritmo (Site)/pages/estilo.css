@@ -4,7 +4,6 @@ body {
   font-family: sans-serif;
   background-color: #b582ec;
   height: 100vh;
-
 }
 .header {
   height: 5rem;
@@ -120,12 +119,12 @@ li a {
   justify-content: space-evenly;
   height: 400px;
 }
-.banner_unidade{
+.banner_unidade {
   height: 20rem;
-}.banner_grafico{
+}
+.banner_grafico {
   background-origin: border-box;
 }
-
 .banner .card {
   flex-direction: column;
   justify-content: space-evenly;
@@ -137,16 +136,25 @@ li a {
   display: flex;
   padding: 10px;
 }
-.banner .card_cadastro{
+.container .card_membros {
+  width: 75%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+}
+.banner .card_cadastro {
   padding: 20px;
+  width: max-content;
   height: 400px;
   justify-content: space-between;
 }
-.banner .card_unidade{
+.banner .card_unidade {
   height: 200px;
   justify-content: space-evenly;
 }
-.banner .card_grafico{
+.banner .card_grafico {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -171,15 +179,15 @@ li a {
   border-radius: 6px;
   border: 0;
   color: #8c14e9;
-  background-color: #F5E9FF;
+  background-color: #f5e9ff;
 }
- select{
+select {
   width: 150px;
   height: 25px;
   border-radius: 6px;
   border: 0;
   display: flex;
-  background-color: #F5E9FF;
+  background-color: #f5e9ff;
 }
 .bnt {
   background-color: #8c14e9;
@@ -232,12 +240,16 @@ li a {
   color: black;
 }
 .footer_base {
-margin-top: 33px;
+  margin-top: 33px;
 }
- canvas{
-  position: relative; 
-  height: 40vh; 
+canvas {
+  position: relative;
+  height: 40vh;
   width: 40vw;
   color: white;
 }
 
+table{
+  border-collapse: collapse;
+  border: 1px solid #8c14e9;
+}

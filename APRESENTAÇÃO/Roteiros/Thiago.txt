@@ -1,17 +1,36 @@
---- DIAGRAMA DE NEGÓCIO ---
+<-- intro -->
+Bom dia! Nos somos a omni solutions meu nome e Thiago, pipipopo
+
+
+
+hoje iremos mostrar nossa solução de negócio o "omni textil" 
+Bom agora o iremos constextualizar industria
+
+
+
 <-- regras de negócio -->
-Nossa regra de negócio parte do pressuposto que o cliente fornecerá o local de armazenamento de seus tecidos além de nos fornecer os dados da infraestrutura do local para termos melhor controle da instalação dos arduinos e sensores, também acreditamos que a instalação dos sensores será concluída entre 5 a 7 dias uteis por unidade.
+Nossa regra de negócio parte do pressuposto que o cliente fornecerá o local de armazenamento 
+de seus tecidos além de nos fornecer os dados da infraestrutura do local para termos melhor controle 
+da instalação dos arduinos e sensores, também acreditamos que a instalação dos sensores será concluída 
+entre 5 a 7 dias uteis por unidade.
 
 <-- visão -->
-Na nossa visão de negócio o cliente entraria em contato com a nossa equipe para contratar nossos serviços, logo após fechamento de contrato, instalaríamos os sensores e arduinos nos 
-armazéns, com isso lhe enviaríamos um ‘login’ de acesso do tipo 'ADMIN' com ele poderá gerir seus funcionários que ele mesmo irá adicionar! Com os dados que serão entregues pelo omni têxtil poderá se planejar melhor. Se planejar lhe dará mais tempo, tempo e dinheiro.
+Na nossa visão de negócio o cliente entraria em contato com a nossa equipe para contratar 
+nossos serviços, logo após fechamento de contrato, instalaríamos os sensores e arduinos nos 
+armazéns, com isso lhe enviaríamos um ‘login’ de acesso do tipo 'ADMIN' com ele poderá gerir 
+seus funcionários que ele mesmo irá adicionar! Com os dados que serão entregues pelo omni têxtil 
+poderá se planejar melhor. Se planejar lhe dará mais tempo, tempo e dinheiro.
 
------------------------------------------------------------
+<-- pagina setores -->
+agora na pagina unidades será onde você poderá escolher a unidade e o setor de sua empresa que deseja verificar suas dashboards, 
+e como vocês podem ver no nosso header temos uma pequena alteração que seria 
+o acesso para a página cadastras que só será possível ver caso entre com uma conta admin, com já temos 
+um tópico para ela só direi que ela e onde poderá gerir as contas dos seus funcionários.
 
---- UNIDADES ---
-Agora na pagina unidades será onde você poderá escolher a unidade e o setor de sua empresa que deseja verificar suas dashboards, e como vocês podem ver no nosso header temos uma pequena alteração que seria o acesso para a página cadastras que só será possível ver caso entre com uma conta admin, com já temos um tópico para ela só direi que ela e onde poderá gerir as contas dos seus funcionários.
-
------------------------------------------------------------
- 
---- TABELAS: sensores e arduinos ---
-Criamos duas tabelas só para os sensores com o intuito delas servirem como um “identificador de falhas”, a primeira delas seria a tabela 'sensor' nela só haverá uma chave primaria que seria o ‘id’ do sensor e uma chave estrangeira da unidade, em seguida temos ligação forte com a tabela 'dados' dos sensores temos um ‘id’ que e sua chave primaria e uma chave estrangeira para tabela Sensor além dos dados capitados pelos sensores e inseridos pela API que é umidade, temperatura, data e hora dessas medições.
+					
+<-- sensores e arduinos -->
+Criamos duas tabelas só para os sensores com o intuito delas servirem como um “identificador de falhas”, a primeira delas seria a 
+tabela 'sensor' nela só haverá uma chave primaria que seria o ‘id’ do sensor e uma chave estrangeira da unidade, em seguida temos 
+ligação forte com a tabela 'dados' dos sensores, nela temos um ‘id’ que e sua chave primaria e uma chave estrangeira para tabela 
+Sensor além dos dados capitados pelos sensores e inseridos pela API que é umidade, temperatura e data e hora das medições 
+que e incrementada pelo proprio banco de dados.
