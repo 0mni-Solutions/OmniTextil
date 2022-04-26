@@ -8,9 +8,9 @@
 
 #include "DHT.h"
  
-#define DHTPIN A1
-#define LM35PIN A5
-#define LUMIPIN A0
+#define DHTPIN A0
+#define LM35PIN A3
+#define LUMIPIN A5
 #define CHAVPIN 7
  
 
