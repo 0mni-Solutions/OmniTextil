@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TAG Table - Vitor</title>
+  </head>
+  <body>
+    <div id="div-table">
+      <table id="table-main">
+        <thead>
+          <tr id="tr-head">
+            <td class="td-title td-clube" colspan="3">Clube</td>
+            <td class="td-title">Pts</td>
+            <td class="td-title">PJ</td>
+            <td class="td-title">VIT</td>
+            <td class="td-title">E</td>
+            <td class="td-title">DER</td>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- SANTOS -->
+          <tr class="tr-time">
+            <td class="td-number">1</td>
+            <td class="td-escudo">
+              <img
+                src="https://ssl.gstatic.com/onebox/media/sports/logos/VHdNOT6wWOw_vJ38GMjMzg_48x48.png"
+              />
+            </td>
+            <td class="td-nome">Santos</td>
+            <td class="td-number">7</td>
+            <td class="td-number">3</td>
+            <td class="td-number">2</td>
+            <td class="td-number">1</td>
+            <td class="td-number">0</td>
+          </tr>
+          <!-- ATLÉTICO-MG -->
+          <tr class="tr-time">
+            <td class="td-number">2</td>
+            <td class="td-escudo">
+              <img
+                src="https://ssl.gstatic.com/onebox/media/sports/logos/q9fhEsgpuyRq58OgmSndcQ_48x48.png"
+              />
+            </td>
+            <td class="td-nome">Atlético-MG</td>
+            <td class="td-number">7</td>
+            <td class="td-number">3</td>
+            <td class="td-number">2</td>
+            <td class="td-number">1</td>
+            <td class="td-number">0</td>
+          </tr>
+          <!-- CORINTHIANS -->
+          <tr class="tr-time">
+            <td class="td-number">3</td>
+            <td class="td-escudo">
+              <img
+                src="https://ssl.gstatic.com/onebox/media/sports/logos/tCMSqgXVHROpdCpQhzTo1g_48x48.png"
+              />
+            </td>
+            <td class="td-nome">Corinthians</td>
+            <td class="td-number">6</td>
+            <td class="td-number">3</td>
+            <td class="td-number">2</td>
+            <td class="td-number">0</td>
+            <td class="td-number">1</td>
+          </tr>
+          <!-- CUIABÁ -->
+          <tr class="tr-time">
+            <td class="td-number">4</td>
+            <td class="td-escudo">
+              <img
+                src="https://ssl.gstatic.com/onebox/media/sports/logos/j6U8Rgt_6yyf0Egs9nREXw_48x48.png"
+              />
+            </td>
+            <td class="td-nome">Cuiabá</td>
+            <td class="td-number">6</td>
+            <td class="td-number">3</td>
+            <td class="td-number">2</td>
+            <td class="td-number">0</td>
+            <td class="td-number">1</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
+
+<style>
+  /* div da tabela */
+  #div-table {
+    width: 100%;
+    height: 98vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /* tabela */
+  #table-main {
+    padding: 2%;
+    background-color: #202124;
+    color: #d9dcdf;
+    font-family: sans-serif;
+  }
+  /* linha do título */
+  #tr-head {
+    color: #929292;
+  }
+  /* células de título */
+  .td-title {
+    text-align: center;
+  }
+  .td-clube {
+      text-align: left;
+  }
+
+  /* linha do time */
+  .tr-time {
+      
+  }
+  /* célula com número */
+  .td-number {
+    width: 50px;
+    text-align: center;
+  }
+  /* célula com img escudo */
+  .td-escudo {
+      
+  }
+  /* célula com nome */
+  .td-nome {
+  }
+</style>
