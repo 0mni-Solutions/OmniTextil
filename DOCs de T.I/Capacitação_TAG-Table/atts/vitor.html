@@ -9,17 +9,17 @@
   <body>
     <div id="div-table">
       <table id="table-main">
-        <thead>
-          <tr id="tr-head">
-            <td class="td-title td-clube" colspan="3">Clube</td>
-            <td class="td-title">Pts</td>
-            <td class="td-title">PJ</td>
-            <td class="td-title">VIT</td>
-            <td class="td-title">E</td>
-            <td class="td-title">DER</td>
+        <thead id="thead-brasil">
+          <tr>
+            <td class="td-clube" colspan="3">Clube</td>
+            <td>Pts</td>
+            <td>PJ</td>
+            <td>VIT</td>
+            <td>E</td>
+            <td>DER</td>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="tbody-brasil">
           <!-- SANTOS -->
           <tr class="tr-time">
             <td class="td-number">1</td>
@@ -100,34 +100,40 @@
     padding: 2%;
     background-color: #202124;
     color: #d9dcdf;
+    text-align: center;
     font-family: sans-serif;
+    border-collapse: collapse;
+  }
+  #table-main tr {
+    border-bottom: 1px solid #929292;
+    font-size: 14px;
+    width: 50px;
   }
   /* linha do título */
-  #tr-head {
+  #thead-brasil {
     color: #929292;
-  }
-  /* células de título */
-  .td-title {
+    font-size: 12px;
     text-align: center;
   }
   .td-clube {
-      text-align: left;
+    text-align: left;
   }
 
-  /* linha do time */
-  .tr-time {
-      
-  }
   /* célula com número */
   .td-number {
-    width: 50px;
-    text-align: center;
+    width: 40px;
   }
   /* célula com img escudo */
   .td-escudo {
-      
+    width: 40px;
+    border: 1px solid red;
+  }
+  .td-escudo img {
+    width: 30px;
   }
   /* célula com nome */
   .td-nome {
+    width: 250px;
+    text-align: left;
   }
 </style>
