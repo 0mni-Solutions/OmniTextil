@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brasileirão</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-image: url(https://radaramazonico.com.br/wp-content/uploads/2020/01/naom_5c499fb76a29c.jpg);
+      background-size: cover;
+      color: aliceblue;
+      font-family: "Courier New", Courier, monospace;
+    }
+
+    table {
+      border-collapse: collapse;
+
+      /* webkit motor de renderização q os navegadores costumam utilizar*/
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      width: 50vw;
+      background-color: rgb(21, 21, 21);
+
+      letter-spacing: 3px;
+      font-size: 17px;
+    }
+    tbody img {
+      width: 15px;
+    }
+    thead th {
+      color: greenyellow;
+      padding: 10px 0 10px 0;
+    }
+    tbody td {
+      font-size: 16px;
+      padding: 10px 10px 10px 13px;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      width: 300px;
+      height: max-content;
+      background-color: rgb(21, 21, 21);
+      border-radius: 10px;
+      padding: 10px;
+    }
+    .container p {
+      margin: 0;
+    }
+    .form-box {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      width: 250px;
+    }
+    .form-btn {
+      display: flex;
+      justify-content: center;
+      margin: 10px 0 10px;
+      height: 35px;
+    }
+    button {
+      border: 0;
+      width: 70px;
+      height: 30px;
+      border-radius: 10px;
+      background-color: greenyellow;
+    }
+    .form-erro {
+      display: flex;
+      justify-content: center;
+    }
+    .tabela_video {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  </style>
+  <body>
+    <div class="tabela_video">
+      <table>
+        <thead>
+          <tr>
+            <th>Clube</th>
+            <th></th>
+            <th></th>
+            <th>Pts</th>
+            <th>PJ</th>
+            <th>VIT</th>
+            <th>EPT</th>
+            <th>DER</th>
+          </tr>
+        </thead>
+        <tbody id="tbody_dados">
+          <tr>
+            <td>1</td>
+            <td>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/3/35/Santos_logo.svg"
+              />
+            </td>
+            <td>Santos</td>
+            <td>7</td>
+            <td>3</td>
+            <td>2</td>
+            <td>2</td>
+            <td>0</td>
+          </tr>
+        </tbody>
+      </table>
+      <iframe
+        width="400"
+        height="300"
+        src="https://www.youtube.com/embed/aXRADOQSa-8"
+      >
+      </iframe>
+    </div>
+    <div class="container">
+      <div class="form-box">
+        <p>Logo:</p>
+        <br />
+        <input id="inp_logo" /> <br />
+        <p>Clube:</p>
+        <br />
+        <input id="inp_nome" /> <br />
+        <p>Pontos:</p>
+        <br />
+        <input id="inp_pts" /> <br />
+        <p>Jogos:</p>
+        <br />
+        <input id="inp_pj" /> <br />
+        <p>Vitorias:</p>
+        <br />
+        <input id="inp_vit" /> <br />
+        <p>Empates:</p>
+        <br />
+        <input id="inp_ept" /> <br />
+        <p>Derotas:</p>
+        <br />
+        <input id="inp_der" />
+        <div class="form-btn">
+          <button onclick="btn_inserir()">Inserir</button>
+        </div>
+        <div class="form-erro">
+          <span id="span_erro"></span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  var idVar = 1;
+  function btn_inserir() {
+    var logoVar = inp_logo.value;
+    var nomeVar = inp_nome.value;
+    var ptsVar = Number(inp_pts.value);
+    var pjVar = Number(inp_pj.value);
+    var vitVar = Number(inp_vit.value);
+    var eptVar = Number(inp_ept.value);
+    var derVar = Number(inp_der.value);
+    if (
+      logoVar.length > 0 &&
+      nomeVar.length > 0 &&
+      ptsVar > 0 &&
+      pjVar > 0 &&
+      vitVar > 0 &&
+      eptVar > 0 &&
+      derVar > 0
+    ) {
+      idVar++;
+      tbody_dados.innerHTML += `
+        <tr>
+          <td>${idVar}</td>
+          <td>
+            <img
+              src="${logoVar}"
+            />
+          </td>
+          <td>${nomeVar}</td>
+          <td>${ptsVar}</td>
+          <td>${pjVar}</td>
+          <td>${vitVar}</td>
+          <td>${eptVar}</td>
+          <td>${derVar}</td>
+        </tr>
+        `;
+    } else {
+      span_erro.innerHTML = `
+        Preencha todos os dados
+        `;
+    }
+  }
+</script>
+<!-- thiago -->
