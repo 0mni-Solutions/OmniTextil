@@ -83,10 +83,27 @@ function publicar(titulo, descricao, idUsuario) {
     return database.executar(instrucao);
 }
 
-function editar(novaDescricao, idAviso) {
-    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function editar(): ", novaDescricao, idAviso);
+function editarList(idUsuario) {
+    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function editar(): ", idUsuario);
     var instrucao = `
-        UPDATE aviso SET descricao = '${novaDescricao}' WHERE id = ${idAviso};
+            SELECT
+            Comum.idUsuario as idUser,
+            Comum.nome,
+            Comum.email,
+            Comum.senha,
+            Comum.cargo
+        FROM Usuario as Comum
+        WHERE Comum.idUsuario = ${idUsuario};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function editarUpdate(idUsuario, nome, email, senha, cargo, fkEmpresa, fkAdmin) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", idUsuario, nome, email, senha, cargo, fkEmpresa, fkAdmin);
+    var instrucao = `
+        INSERT INTO usuario (idUsuario, nome, email, senha, cargo, fkEmpresa, fkAdmin) VALUES 
+                            ('${idUsuario}', '${nome}', '${email}', '${senha}', '${cargo}', '${fkEmpresa}', '${fkAdmin}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -108,6 +125,7 @@ module.exports = {
     listarPorUsuario,
     pesquisarDescricao,
     publicar,
-    editar,
+    editarList,
+    editarUpdate,
     deletar
 }

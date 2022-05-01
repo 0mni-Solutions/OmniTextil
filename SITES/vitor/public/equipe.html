@@ -47,59 +47,81 @@
       <!-- SECTION 1 -->
       <div class="section sec2 sec2-equipe">
         <div class="container">
-            <div class="equipe-imgs">
-                <div class="card-equipe">            
-                    <img src="assets/imgs/equipe/avatar.png" alt="">
-                    <p class="equipe-p-nome">Eduarda Calixto</p>
-                    <p class="equipe-p-desc">Desenvolvedora</p>
-                </div>
-                <div class="card-equipe">
-                    <img src="assets/imgs/equipe/avatar.png" alt="">
-                    <p class="equipe-p-nome">Fábio Ceslaki</p>
-                    <p class="equipe-p-desc">Desenvolvedor</p>
-                </div>
-                <div class="card-equipe">
-                    <img src="assets/imgs/equipe/avatar.png" alt="">
-                    <p class="equipe-p-nome">Gabriel Martins</p>
-                    <p class="equipe-p-desc">Product Owner</p>
-                </div>
+          <div class="equipe-imgs">
+            <div class="card-equipe">
+              <img src="assets/imgs/equipe/avatar.png" alt="" />
+              <p class="equipe-p-nome">Eduarda Calixto</p>
+              <p class="equipe-p-desc">Desenvolvedora</p>
             </div>
+            <div class="card-equipe">
+              <img src="assets/imgs/equipe/avatar.png" alt="" />
+              <p class="equipe-p-nome">Fábio Ceslaki</p>
+              <p class="equipe-p-desc">Desenvolvedor</p>
+            </div>
+            <div class="card-equipe">
+              <img src="assets/imgs/equipe/avatar.png" alt="" />
+              <p class="equipe-p-nome">Gabriel Martins</p>
+              <p class="equipe-p-desc">Product Owner</p>
+            </div>
+          </div>
         </div>
       </div>
       <div class="section sec3 sec2-equipe">
         <div class="container">
-            <div class="equipe-imgs">
-                <div class="card-equipe">            
-                    <img src="assets/imgs/equipe/avatar.png" alt="">
-                    <p class="equipe-p-nome">Thiago Ramos</p>
-                    <p class="equipe-p-desc">Scrum Master</p>
-                </div>
-                <div class="card-equipe">
-                    <img src="assets/imgs/equipe/vitor.png" alt="">
-                    <p class="equipe-p-nome">Vitor Mendes</p>
-                    <p class="equipe-p-desc">Desenvolvedor</p>
-                </div>
-                <div class="card-equipe">
-                    <img src="assets/imgs/equipe/avatar.png" alt="">
-                    <p class="equipe-p-nome">Wladimir Condorini</p>
-                    <p class="equipe-p-desc">Desenvolvedor</p>
-                </div>
+          <div class="equipe-imgs">
+            <div class="card-equipe">
+              <img src="assets/imgs/equipe/avatar.png" alt="" />
+              <p class="equipe-p-nome">Thiago Ramos</p>
+              <p class="equipe-p-desc">Scrum Master</p>
             </div>
+            <div class="card-equipe">
+              <img src="assets/imgs/equipe/vitor.png" alt="" />
+              <p class="equipe-p-nome">Vitor Mendes</p>
+              <p class="equipe-p-desc">Desenvolvedor</p>
+            </div>
+            <div class="card-equipe">
+              <img src="assets/imgs/equipe/avatar.png" alt="" />
+              <p class="equipe-p-nome">Wladimir Condorini</p>
+              <p class="equipe-p-desc">Desenvolvedor</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- FOOTER -->
     <footer class="footer">
+      <!-- FORM-REPORT_FEEDBACKS -->
+      <div class="side-form" id="side_menu">
+        <img
+          onclick="fecharForm()"
+          class="close-window"
+          src="assets/imgs/header-footer/close.png"
+          title="fechar"
+          alt="fechar janela"
+        />
+        <textarea id="textarea_omni" maxlength="220" minlength="30"></textarea>
+        <button
+          onclick="enviarFeedback()"
+          class="form-button side-form-btn"
+          title="Enviar"
+        >
+          enviar
+        </button>
+      </div>
       <div class="container">
         <!-- BOX DE REPORT -->
-        <div class="box reports">
+        <button
+          class="box reports"
+          onclick="mostrarMenu()"
+          title="enviar mensagem"
+        >
           <img src="assets/imgs/header-footer/logo_lupa.png" alt="lupa" />
           <p>
             Feedbacks<br />
             Reports
           </p>
-        </div>
+        </button>
         <!-- BOX DE CONTATO -->
         <div class="box contato">
           <h4>Contato</h4>

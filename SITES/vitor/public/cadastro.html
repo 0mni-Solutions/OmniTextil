@@ -32,7 +32,7 @@
           <img
             id="img_theme"
             onclick="theme_change()"
-            src="assets/imgs/header-footer/sun_on.png"
+            src=""
             title="Mudar tema"
             alt="Sol do Tema"
           />
@@ -45,7 +45,7 @@
       <div class="container">
         <!-- CARD CADASTRO -->
         <div class="card-input card-cadastro">
-          <h1>CADASTRO</h1>
+          <h1 id="title_cadastro">CADASTRO</h1>
           <div class="form-box form-cadastro">
             <div class="form-input">
               <p>Nome:</p>
@@ -73,10 +73,21 @@
             </div>
             <button
               onclick="cadastrar()"
+              id="button_cadastrar"
               class="form-button"
               title="Cadastrar usuário"
+              style="display: flex"
             >
               entrar
+            </button>
+            <button
+              onclick="editarUpdate()"
+              id="button_editar"
+              class="form-button"
+              title="Editar usuário"
+              style="display: none"
+            >
+              editar
             </button>
           </div>
           <!-- ALERTA DE ERRO -->
@@ -118,17 +129,50 @@
       </div>
     </div>
 
+    <!-- CONFIRMAÇÃO -->
+    <div id="div_confirm" class="div-confirm">
+      <div class="div-buttons">
+        <p>Tem certeza que deseja excluir o usuário?</p>
+        <button onclick="removerMembro(idUsuario)" class="form-button">
+          sim
+        </button>
+        <button onclick="fecharConfirm()" class="form-button">não</button>
+      </div>
+    </div>
+
     <!-- FOOTER -->
     <footer class="footer">
+      <!-- FORM-REPORT_FEEDBACKS -->
+      <div class="side-form" id="side_menu">
+        <img
+          onclick="fecharForm()"
+          class="close-window"
+          src="assets/imgs/header-footer/close.png"
+          title="fechar"
+          alt="fechar janela"
+        />
+        <textarea id="textarea_omni" maxlength="220" minlength="30"></textarea>
+        <button
+          onclick="enviarFeedback()"
+          class="form-button side-form-btn"
+          title="Enviar"
+        >
+          enviar
+        </button>
+      </div>
       <div class="container">
         <!-- BOX DE REPORT -->
-        <div class="box reports">
+        <button
+          class="box reports"
+          onclick="mostrarMenu()"
+          title="enviar mensagem"
+        >
           <img src="assets/imgs/header-footer/logo_lupa.png" alt="lupa" />
           <p>
             Feedbacks<br />
             Reports
           </p>
-        </div>
+        </button>
         <!-- BOX DE CONTATO -->
         <div class="box contato">
           <h4>Contato</h4>

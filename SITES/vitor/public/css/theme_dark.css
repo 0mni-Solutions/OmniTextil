@@ -15,9 +15,27 @@ body {
 .navbar-header a {
     color: white;
 }
+.navbar-header a:hover{
+    color: #9d24fa;
+}
+.navbar-header img:hover{
+    filter: grayscale(1);
+}
 
 .footer {
     background-color: #010101;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* REPORT */
+.side-form {
+    /* border: 1px solid red; */
+    background-color: #5e2d92;
+}
+
+#textarea_omni {
+    caret-color: #8F00FF;
+    color: #1e0935;
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -57,6 +75,11 @@ body {
 .card-input {
     background-color: rgba(82, 0, 145, 0.6);
 }
+/* cor do cursor das inputs */
+input{
+    caret-color: #8F00FF;
+    color: #1e0935;
+}
 
 .form-button {
     background-color: rgba(80, 0, 141, 0.8);
@@ -72,6 +95,13 @@ body {
 /* UNIDADES */
 .form-select option {
     background-color: #43107a;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* CADASTRO */
+.div-buttons {
+    background-color: #2a0042;
+    border-color: #9d24fa;
 }
 
 /*-----------------------------------------------------------------------------------*/

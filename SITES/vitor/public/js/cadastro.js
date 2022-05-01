@@ -1,3 +1,8 @@
+div_confirm.style.display = "none";
+
+title_cadastro.innerHTML = "CADASTRO";
+button_cadastrar.style.display = "flex";
+button_editar.style.display = "none";
 function cadastrar() {
   aguardar();
 
@@ -96,6 +101,7 @@ function sumirMensagem() {
   cardErro.style.display = "none";
 }
 
+var idUsuario = 0;
 function atualizarMembros() {
   //aguardar();
   fetch(`/avisos/listar/${sessionStorage.getItem("fkEmpresa")}`)
@@ -134,7 +140,7 @@ function atualizarMembros() {
             dataEmail.innerHTML = usuario.email;
             dataCargo.innerHTML = usuario.cargo;
             dataCadastro.innerHTML = usuario.dtCadastro;
-            optEditar.innerHTML = `<img src="../assets/imgs/editar.png" id="edit_logo" title="editar" onclick="editarMembro()" />`;
+            optEditar.innerHTML = `<img src="../assets/imgs/editar.png" id="edit_logo" title="editar" />`;
             optExcluir.innerHTML = `<img src="../assets/imgs/remover.png" id="edit_logo" title="remover" />`;
 
             // classificando os elementos já criados
@@ -147,11 +153,20 @@ function atualizarMembros() {
             optExcluir.className = "td-custom td-icon";
 
             // atribuindo função aos botões
+            // EDITAR
+            optEditar.id = "btnEditar" + usuario.idUsuario;
+            optEditar.setAttribute(
+              "onclick",
+              `editarList(${usuario.idUsuario})`
+            );
+            // EXCLUIR
             optExcluir.id = "btnExcluir" + usuario.idUsuario;
             optExcluir.setAttribute(
               "onclick",
-              `removerMembro(${usuario.idUsuario})`
+              `confirmarRemover()`
             );
+
+            idUsuario = usuario.idUsuario;
 
             // adicionando todos à um elemento pai pré-existente
             rowUsuario.appendChild(dataAdmin);
@@ -176,8 +191,12 @@ function atualizarMembros() {
     });
 }
 
-function editarMembro() {
-  alert("editando...");
+function confirmarRemover() {
+  div_confirm.style.display = "flex";
+}
+
+function fecharConfirm() {
+  div_confirm.style.display = "none";
 }
 
 function removerMembro(idUsuario) {
@@ -196,6 +215,7 @@ function removerMembro(idUsuario) {
           cardErro.style.display = "block";
           mensagem_erro.innerHTML = "Exclusão realizada com sucesso!";
           atualizarMembros();
+          fecharConfirm();
           finalizarAguardar();
         } else if (resposta.status == 404) {
           window.alert("Deu 404!");
@@ -211,6 +231,153 @@ function removerMembro(idUsuario) {
         finalizarAguardar();
       });
   }
+}
+
+function editarList(idUsuario) {
+  if (idUsuario == sessionStorage.ID_USUARIO) {
+    alert("Você não pode se editar");
+  } else {
+    //aguardar();
+    fetch(`/avisos/editarList/${idUsuario}`)
+    .then(function (resposta) {
+      if (resposta.ok) {
+        if (resposta.status == 204) {
+          var tabela_membros = document.getElementById("card_membros");
+          var mensagem = document.createElement("span");
+          mensagem.innerHTML = "Nenhum resultado encontrado.";
+          mensagem.id = "membros_erro";
+          tabela_membros.appendChild(mensagem);
+          throw "Nenhum resultado encontrado!!";
+        }
+
+        resposta.json().then(function (resposta) {
+          console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+          for (let i = 0; i < resposta.length; i++) {
+            var usuario = resposta[i];
+
+            input_nome.value = usuario.nome;
+            input_email.value = usuario.email;
+            input_senha.value = usuario.senha;
+            input_confirmar_senha.value = usuario.senha;
+            select_cargo.value = usuario.cargo;
+          }
+
+          title_cadastro.innerHTML = "ATUALIZAÇÃO";
+          button_cadastrar.style.display = "none";
+          button_editar.style.display = "flex";          
+          button_editar.setAttribute(
+            "onclick",
+            `editarUpdate(${usuario.idUser})`
+          );
+
+          finalizarAguardar();
+        });
+      } else {
+        throw "Houve um erro na API!";
+      }
+    })
+    .catch(function (resposta) {
+      console.error(resposta);
+      finalizarAguardar();
+    });
+  }
+}
+
+function editarUpdate(idUser) {
+  aguardar();
+
+  // PARAMETRIZANDO VARIÁVEIS
+  var idUsuarioVar = idUser;
+  var nomeVar = input_nome.value;
+  var emailVar = input_email.value;
+  var senhaVar = input_senha.value;
+  var confirmacaoSenhaVar = input_confirmar_senha.value;
+  var cargoVar = select_cargo.value;
+  var empresaVar = sessionStorage.EMPRESA_USUARIO;
+  var adminVar = sessionStorage.ID_USUARIO;
+
+  // CONFIRMAÇÕES DE PREENCHIMENTOS
+  // CAMPO VAZIO
+  if (
+    nomeVar == "" ||
+    emailVar == "" ||
+    senhaVar == "" ||
+    confirmacaoSenhaVar == "" ||
+    cargoVar == "VAZIO"
+  ) {
+    cardErro.style.display = "block";
+    mensagem_erro.innerHTML = "Campo não preenchido!";
+    // ressaltando bordas
+    input_nome.style.border = "3px solid #8008FF";
+    input_email.style.border = "3px solid #8008FF";
+    input_senha.style.border = "3px solid #8008FF";
+    input_confirmar_senha.style.border = "3px solid #8008FF";
+    select_cargo.style.border = "3px solid #8008FF";
+    finalizarAguardar();
+    return false;
+  } else {
+    setInterval(sumirMensagem, 5000);
+  }
+
+  // E-MAIL INVÁLIDO
+  if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+    cardErro.style.display = "block";
+    mensagem_erro.innerHTML = "E-mail inválido!";
+    input_email.style.border = "3px solid #8008FF";
+    finalizarAguardar();
+    return false;
+  } else {
+    setInterval(sumirMensagem, 5000);
+  }
+
+  // SENHA DIFERENTE
+  if (senhaVar != confirmacaoSenhaVar) {
+    cardErro.style.display = "block";
+    mensagem_erro.innerHTML = "As senhas necessitam ser iguais";
+    input_senha.style.border = "3px solid #8008FF";
+    input_confirmar_senha.style.border = "3px solid #8008FF";
+    finalizarAguardar();
+    return false;
+  } else {
+    setInterval(sumirMensagem, 5000);
+  }
+
+  fetch("/avisos/editarUpdate", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      idUsuarioServer: idUsuarioVar,
+      nomeServer: nomeVar,
+      emailServer: emailVar,
+      senhaServer: senhaVar,
+      cargoServer: cargoVar,
+      empresaServer: empresaVar,
+      adminServer: adminVar,
+    }),
+  })
+    .then(function (resposta) {
+      console.log("resposta: ", resposta);
+
+      if (resposta.ok) {
+        cardErro.style.display = "block";
+        mensagem_erro.innerHTML = "Edição realizada com sucesso!";
+        atualizarMembros();
+        finalizarAguardar();
+        // window.location = "login.html";
+        // limparFormulario();
+      } else {
+        throw "Houve um erro ao tentar realizar a atualização!";
+      }
+    })
+    .catch(function (resposta) {
+      console.log(`#ERRO: ${resposta}`);
+      finalizarAguardar();
+    });
+
+  return false;
 }
 
 function sumirMensagem() {

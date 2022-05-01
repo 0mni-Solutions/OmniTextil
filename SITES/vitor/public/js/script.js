@@ -1,7 +1,8 @@
 /* SCRIPT DE TODAS AS PÁGINAS */
 
 /* HABILITAR CADASTRO */
-if (typeof li_cadastro != "undefined") { // verifica se o elemento existe (OBRIGATORIAMENTE USA 3 ===)
+if (typeof li_cadastro != "undefined") {
+  // verifica se o elemento existe (OBRIGATORIAMENTE USA 3 ===)
   var permissao = sessionStorage.CARGO_USUARIO;
   if (permissao == "ADMIN") {
     li_cadastro.style.display = "list-item";
@@ -42,6 +43,21 @@ function theme_change() {
 
     sessionStorage.theme = "dark";
   }
+}
+
+/*------------------------------------------------------------------------------------------------------*/
+/* SIDE MENU */
+side_menu.style.display = "none";
+function mostrarMenu() {
+  if (side_menu.style.display == "none") {
+    side_menu.style.display = "flex";
+  } else {
+    side_menu.style.display = "none";
+  }
+}
+
+function fecharForm() {
+  side_menu.style.display = "none";
 }
 
 /*------------------------------------------------------------------------------------------------------*/
@@ -111,7 +127,7 @@ function simular() {
 
 function carregarUnidades() {
   //aguardar();
-  fetch(`/avisos/listarUnidades/${sessionStorage.getItem('fkEmpresa')}`)
+  fetch(`/avisos/listarUnidades/${sessionStorage.getItem("fkEmpresa")}`)
     .then(function (resposta) {
       if (resposta.ok) {
         if (resposta.status == 204) {

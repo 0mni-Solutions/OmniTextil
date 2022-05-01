@@ -32,7 +32,7 @@
           <img
           id="img_theme"
           onclick="theme_change()"
-          src="assets/imgs/header-footer/sun_on.png"
+          src=""
           title="Mudar tema"
           alt="Sol do Tema"
         />
@@ -77,15 +77,37 @@
 
     <!-- FOOTER -->
     <footer class="footer">
+      <!-- FORM-REPORT_FEEDBACKS -->
+      <div class="side-form" id="side_menu">
+        <img
+          onclick="fecharForm()"
+          class="close-window"
+          src="assets/imgs/header-footer/close.png"
+          title="fechar"
+          alt="fechar janela"
+        />
+        <textarea id="textarea_omni" maxlength="220" minlength="30"></textarea>
+        <button
+          onclick="enviarFeedback()"
+          class="form-button side-form-btn"
+          title="Enviar"
+        >
+          enviar
+        </button>
+      </div>
       <div class="container">
         <!-- BOX DE REPORT -->
-        <div class="box reports">
+        <button
+          class="box reports"
+          onclick="mostrarMenu()"
+          title="enviar mensagem"
+        >
           <img src="assets/imgs/header-footer/logo_lupa.png" alt="lupa" />
           <p>
             Feedbacks<br />
             Reports
           </p>
-        </div>
+        </button>
         <!-- BOX DE CONTATO -->
         <div class="box contato">
           <h4>Contato</h4>

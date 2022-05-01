@@ -27,8 +27,12 @@ router.post("/publicar/:idUsuario", function (req, res) {
     avisoController.publicar(req, res);
 });
 
-router.put("/editar/:idAviso", function (req, res) {
-    avisoController.editar(req, res);
+router.get("/editarList/:idUsuario", function (req, res) {
+    avisoController.editarList(req, res);
+});
+
+router.post("/editarUpdate/:idUsuario", function (req, res) {
+    avisoController.editarUpdate(req, res);
 });
 
 router.delete("/deletar/:idUsuario", function (req, res) {
