@@ -1,0 +1,7 @@
+Na minha opiniao o sensor precisa de um controle,
+por exemplo vai que da algum problema ou talvez por algum motivo do local o sensor acabou captando 
+e mandando informações erradas. isso pode dar problema para nos e para o cliente final.
+por conta disse foi necessario a criação da tabela controle, que tem a função de guardar as datas de instalação,
+o status em que o sensor se encontra se ele esta em otimas condições ou esta em situação precaria,
+a tabela tambem guarda a data da futura nova checagem do status do sensor.
+assim nos teremos um controle maior do sensor a respeito do seu funcionamento atual.
