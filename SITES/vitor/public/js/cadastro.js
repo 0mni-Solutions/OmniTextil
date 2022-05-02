@@ -144,10 +144,10 @@ function atualizarMembros() {
 
             // colocando valores do select no innerHTML
             dataAdmin.innerHTML = usuario.nomeAdmin;
-            dataNome.innerHTML = usuario.nome;
+            dataNome.innerHTML = usuario.nomeUsuario;
             dataEmail.innerHTML = usuario.email;
             dataCargo.innerHTML = usuario.cargo;
-            dataCadastro.innerHTML = usuario.dtCadastro;
+            dataCadastro.innerHTML = usuario.cadastroUsuario;
             optEditar.innerHTML = `<img src="../assets/imgs/editar.png" id="edit_logo" title="editar" />`;
             optExcluir.innerHTML = `<img src="../assets/imgs/remover.png" id="edit_logo" title="remover" />`;
 
@@ -256,7 +256,7 @@ function editarList(idUsuario) {
           for (let i = 0; i < resposta.length; i++) {
             var usuario = resposta[i];
 
-            input_nome.value = usuario.nome;
+            input_nome.value = usuario.nomeUsuario;
             input_email.value = usuario.email;
             input_senha.value = usuario.senha;
             input_confirmar_senha.value = usuario.senha;
@@ -365,8 +365,17 @@ function editarUpdate(idUser) {
         atualizarMembros();
         fecharConfirm();
         finalizarAguardar();
-        // window.location = "login.html";
-        // limparFormulario();
+        
+        // RESET DO CARD DE CADASTRO
+        title_cadastro.innerHTML = "CADASTRO";
+        button_cadastrar.style.display = "flex";
+        button_editar.style.display = "none";
+        // RESET DE INPUTS
+        input_nome.value = "";
+        input_email.value = "";
+        input_senha.value = "";
+        input_confirmar_senha.value = "";
+        select_cargo.value = "VAZIO";
       } else {
         throw "Houve um erro ao tentar realizar a atualização!";
       }

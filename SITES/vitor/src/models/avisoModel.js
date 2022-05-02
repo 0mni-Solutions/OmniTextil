@@ -5,16 +5,16 @@ function listar(fkEmpresa) {
     var instrucao = `
             SELECT
             Comum.idUsuario,
-            Admin.nome as nomeAdmin,
-            Comum.nome,
+            Admin.nomeUsuario as nomeAdmin,
+            Comum.nomeUsuario,
             Comum.email,
             Comum.cargo,
-            DATE_FORMAT(Comum.dtCadastro, '%d/%m/%Y %h:%m') as dtCadastro 
+            DATE_FORMAT(Comum.cadastroUsuario, '%d/%m/%Y %h:%m') as cadastroUsuario 
         FROM Usuario as Comum
         JOIN Usuario as Admin 
         ON Admin.idUsuario = Comum.fkAdmin
         WHERE Admin.fkEmpresa = ${fkEmpresa}
-        ORDER BY dtCadastro DESC;
+        ORDER BY cadastroUsuario DESC;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -89,7 +89,7 @@ function editarList(idUsuario) {
     var instrucao = `
             SELECT
             Comum.idUsuario as idUser,
-            Comum.nome,
+            Comum.nomeUsuario,
             Comum.email,
             Comum.senha,
             Comum.cargo
@@ -104,7 +104,7 @@ function editarUpdate(idUsuario, nome, email, senha, cargo) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", idUsuario, nome, email, senha, cargo);
     var instrucao = `
         UPDATE usuario SET 
-        nome = '${nome}', 
+        nomeUsuario = '${nome}', 
         email = '${email}', 
         senha = '${senha}', 
         cargo = '${cargo}' 
