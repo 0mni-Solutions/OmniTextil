@@ -1,5 +1,3 @@
-div_confirm.style.display = "none";
-
 title_cadastro.innerHTML = "CADASTRO";
 button_cadastrar.style.display = "flex";
 button_editar.style.display = "none";
@@ -14,6 +12,11 @@ function cadastrar() {
   var cargoVar = select_cargo.value;
   var empresaVar = sessionStorage.EMPRESA_USUARIO;
   var adminVar = sessionStorage.ID_USUARIO;
+  
+  // ELIMINAÇÃO DE ESPAÇOS
+  nomeVar.trimStart().trimEnd();
+  emailVar.trimStart().trimEnd();
+  senhaVar.trimStart().trimEnd();
 
   // CONFIRMAÇÕES DE PREENCHIMENTOS
   // CAMPO VAZIO
@@ -43,6 +46,16 @@ function cadastrar() {
     cardErro.style.display = "block";
     mensagem_erro.innerHTML = "E-mail inválido!";
     input_email.style.border = "3px solid #8008FF";
+    finalizarAguardar();
+    return false;
+  } else {
+    setInterval(sumirMensagem, 5000);
+  }
+
+  if (senhaVar.length < 8) {
+    cardErro.style.display = "block";
+    mensagem_erro.innerHTML = "A senha precisa ter no mínimo 8 dígitos";
+    input_senha.style.border = "3px solid #8008FF";
     finalizarAguardar();
     return false;
   } else {
@@ -97,11 +110,6 @@ function cadastrar() {
   return false;
 }
 
-function sumirMensagem() {
-  cardErro.style.display = "none";
-}
-
-var idUsuario = 0;
 function atualizarMembros() {
   //aguardar();
   fetch(`/avisos/listar/${sessionStorage.getItem("fkEmpresa")}`)
@@ -163,12 +171,13 @@ function atualizarMembros() {
             optExcluir.id = "btnExcluir" + usuario.idUsuario;
             optExcluir.setAttribute(
               "onclick",
-              `confirmarRemover()`
+              `confirmarAction('excluir', ${usuario.idUsuario})`
             );
 
             idUsuario = usuario.idUsuario;
 
             // adicionando todos à um elemento pai pré-existente
+            tabela_membros.appendChild(rowUsuario);
             rowUsuario.appendChild(dataAdmin);
             rowUsuario.appendChild(dataNome);
             rowUsuario.appendChild(dataEmail);
@@ -176,7 +185,6 @@ function atualizarMembros() {
             rowUsuario.appendChild(dataCadastro);
             rowUsuario.appendChild(optEditar);
             rowUsuario.appendChild(optExcluir);
-            tabela_membros.appendChild(rowUsuario);
           }
 
           finalizarAguardar();
@@ -189,14 +197,6 @@ function atualizarMembros() {
       console.error(resposta);
       finalizarAguardar();
     });
-}
-
-function confirmarRemover() {
-  div_confirm.style.display = "flex";
-}
-
-function fecharConfirm() {
-  div_confirm.style.display = "none";
 }
 
 function removerMembro(idUsuario) {
@@ -268,7 +268,7 @@ function editarList(idUsuario) {
           button_editar.style.display = "flex";          
           button_editar.setAttribute(
             "onclick",
-            `editarUpdate(${usuario.idUser})`
+            `confirmarAction('editar', ${usuario.idUser})`
           );
 
           finalizarAguardar();
@@ -288,7 +288,6 @@ function editarUpdate(idUser) {
   aguardar();
 
   // PARAMETRIZANDO VARIÁVEIS
-  var idUsuarioVar = idUser;
   var nomeVar = input_nome.value;
   var emailVar = input_email.value;
   var senhaVar = input_senha.value;
@@ -343,13 +342,12 @@ function editarUpdate(idUser) {
     setInterval(sumirMensagem, 5000);
   }
 
-  fetch("/avisos/editarUpdate", {
-    method: "POST",
+  fetch(`/avisos/editarUpdate/${idUser}`, {
+    method: "PUT",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      idUsuarioServer: idUsuarioVar,
       nomeServer: nomeVar,
       emailServer: emailVar,
       senhaServer: senhaVar,
@@ -365,6 +363,7 @@ function editarUpdate(idUser) {
         cardErro.style.display = "block";
         mensagem_erro.innerHTML = "Edição realizada com sucesso!";
         atualizarMembros();
+        fecharConfirm();
         finalizarAguardar();
         // window.location = "login.html";
         // limparFormulario();

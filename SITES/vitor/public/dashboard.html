@@ -31,7 +31,7 @@
           </li>
           <hr id="hr_cadastro" />
           <li class="">
-            <a onclick="limparSessao()" href="login.html">Sair</a>
+            <a onclick="confirmarRemover('sair')">Sair</a>
           </li>
           <img
             id="img_theme"
@@ -101,6 +101,17 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- CONFIRMAÇÃO -->
+    <div id="div_confirm" class="div-confirm">
+      <div class="div-buttons">
+        <p id="p_confirm"></p>
+        <button onclick="" id="button_sim" class="form-button">
+          sim
+        </button>
+        <button onclick="fecharConfirm()" class="form-button">não</button>
       </div>
     </div>
 

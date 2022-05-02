@@ -31,7 +31,7 @@ router.get("/editarList/:idUsuario", function (req, res) {
     avisoController.editarList(req, res);
 });
 
-router.post("/editarUpdate/:idUsuario", function (req, res) {
+router.put("/editarUpdate/:idUsuario", function (req, res) {
     avisoController.editarUpdate(req, res);
 });
 

@@ -24,6 +24,7 @@ function listarUnidades(fkEmpresa) {
     console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
     var instrucao = `
         SELECT 
+            idUnidade,
             nomeUnidade
         FROM Unidade
         WHERE fkEmpresa = ${fkEmpresa};
@@ -99,11 +100,15 @@ function editarList(idUsuario) {
     return database.executar(instrucao);
 }
 
-function editarUpdate(idUsuario, nome, email, senha, cargo, fkEmpresa, fkAdmin) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", idUsuario, nome, email, senha, cargo, fkEmpresa, fkAdmin);
+function editarUpdate(idUsuario, nome, email, senha, cargo) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", idUsuario, nome, email, senha, cargo);
     var instrucao = `
-        INSERT INTO usuario (idUsuario, nome, email, senha, cargo, fkEmpresa, fkAdmin) VALUES 
-                            ('${idUsuario}', '${nome}', '${email}', '${senha}', '${cargo}', '${fkEmpresa}', '${fkAdmin}');
+        UPDATE usuario SET 
+        nome = '${nome}', 
+        email = '${email}', 
+        senha = '${senha}', 
+        cargo = '${cargo}' 
+        WHERE idUsuario = ${idUsuario};
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);

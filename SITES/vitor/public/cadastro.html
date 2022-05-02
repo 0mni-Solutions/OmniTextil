@@ -27,7 +27,7 @@
           <li class="page-selected"><a href="cadastro.html">Cadastro</a></li>
           <hr />
           <li class="">
-            <a onclick="limparSessao()" href="login.html">Sair</a>
+            <a onclick="confirmarRemover('sair')">Sair</a>
           </li>
           <img
             id="img_theme"
@@ -132,8 +132,8 @@
     <!-- CONFIRMAÇÃO -->
     <div id="div_confirm" class="div-confirm">
       <div class="div-buttons">
-        <p>Tem certeza que deseja excluir o usuário?</p>
-        <button onclick="removerMembro(idUsuario)" class="form-button">
+        <p id="p_confirm"></p>
+        <button onclick="" id="button_sim" class="form-button">
           sim
         </button>
         <button onclick="fecharConfirm()" class="form-button">não</button>

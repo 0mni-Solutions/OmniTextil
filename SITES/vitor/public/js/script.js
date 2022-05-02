@@ -23,11 +23,9 @@ img_theme.src = "assets/imgs/header-footer/sun.png";
 if (sessionStorage.theme == "light") {
   link_theme.href = "css/theme_light.css";
   img_theme.src = "assets/imgs/header-footer/moon.png";
-  sessionStorage.theme == "light";
 } else if (sessionStorage.theme == "dark") {
   link_theme.href = "css/theme_dark.css";
   img_theme.src = "assets/imgs/header-footer/sun.png";
-  sessionStorage.theme == "dark";
 } else {
   sessionStorage.theme = "dark";
 }
@@ -40,7 +38,6 @@ function theme_change() {
   } else {
     link_theme.href = "css/theme_dark.css";
     img_theme.src = "assets/imgs/header-footer/sun.png";
-
     sessionStorage.theme = "dark";
   }
 }
@@ -58,6 +55,39 @@ function mostrarMenu() {
 
 function fecharForm() {
   side_menu.style.display = "none";
+}
+
+/*------------------------------------------------------------------------------------------------------*/
+/* CONFIRMAR MENU */
+if (typeof div_confirm != "undefined") {
+  div_confirm.style.display = "none";
+}
+function confirmarAction(condicao, idUsuario) {
+  div_confirm.style.display = "flex";
+  if (condicao == "sair") {
+    p_confirm.innerHTML = `Desconectar sua conta?`;
+    button_sim.setAttribute(
+      "onclick",
+      `limparSessao()`
+    );
+  } else if (condicao == "excluir") {
+    p_confirm.innerHTML = `Excluir o usuário?`;
+    button_sim.setAttribute(
+      "onclick",
+      `removerMembro(${idUsuario})`
+    );
+  } else if (condicao == "editar") {
+    p_confirm.innerHTML = `Editar o usuário?`;
+    button_sim.setAttribute(
+      "onclick",
+      `editarUpdate(${idUsuario})`
+    );
+  }
+  
+}
+
+function fecharConfirm() {
+  div_confirm.style.display = "none";
 }
 
 /*------------------------------------------------------------------------------------------------------*/
@@ -111,20 +141,7 @@ function simular() {
 /* LOGIN */
 
 /*------------------------------------------------------------------------------------------------------*/
-
 /* UNIDADES */
-// var unidade = 0;
-
-// function carregar_dashboard() {
-//   unidade = Number(select_unidades.value);
-
-//   if (unidade > 0) {
-//     alert("Carregando Dashboard");
-//   } else {
-//     alert("Escolha uma Unidade");
-//   }
-// }
-
 function carregarUnidades() {
   //aguardar();
   fetch(`/avisos/listarUnidades/${sessionStorage.getItem("fkEmpresa")}`)
@@ -152,6 +169,53 @@ function carregarUnidades() {
 
             // colocando valores do select no innerHTML
             optionUnidade.innerHTML = unidade.nomeUnidade;
+            optionUnidade.value = unidade.idUnidade;
+
+            // adicionando todos à um elemento pai pré-existente
+            select.appendChild(optionUnidade);
+          }
+
+          finalizarAguardar();
+        });
+      } else {
+        throw "Houve um erro na API!";
+      }
+    })
+    .catch(function (resposta) {
+      console.error(resposta);
+      finalizarAguardar();
+    });
+}
+/*------------------------------------------------------------------------------------------------------*/
+/* SETORES */
+function carregarSetores() {
+  //aguardar();
+  fetch(`/avisos/listarSetores/${sessionStorage.getItem("fkUnidade")}`)
+    .then(function (resposta) {
+      if (resposta.ok) {
+        if (resposta.status == 204) {
+          var select = document.getElementById("select_unidades");
+          var mensagem = document.createElement("span");
+          mensagem.innerHTML = "-";
+          mensagem.value = "0";
+          select.appendChild(mensagem);
+          throw "Nenhum setor registrado";
+        }
+
+        resposta.json().then(function (resposta) {
+          console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+          var select = document.getElementById("select_unidades");
+          select.innerHTML = "";
+          for (let i = 0; i < resposta.length; i++) {
+            var unidade = resposta[i];
+
+            // criando elementos do HTML via JavaScript
+            var optionUnidade = document.createElement("option");
+
+            // colocando valores do select no innerHTML
+            optionUnidade.innerHTML = unidade.nomeUnidade;
+            optionUnidade.value = unidade.idUnidade;
 
             // adicionando todos à um elemento pai pré-existente
             select.appendChild(optionUnidade);

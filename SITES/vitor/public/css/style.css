@@ -92,6 +92,7 @@ body {
 /* OPÇÃO DE REDIRECIONAMENTO  */
 .navbar-header a {
   text-decoration: none;
+  cursor: pointer;
 }
 /* ÍCONE DE TEMA */
 .navbar-header img {
@@ -734,6 +735,10 @@ body {
   width: 80px;
   height: 35px;
   font-size: 20px;
+}
+
+.div-confirm .form-button:hover {
+  width: 85px;
 }
 
 /*------------------------------------------------------------------------------------------------------*/
