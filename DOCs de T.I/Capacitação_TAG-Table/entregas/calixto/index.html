@@ -23,7 +23,7 @@
                         <th>DER</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="table_tabela">
                     <tr>
                         <td class="th1">1 <img src="imagens/santos.png" id="imgs"> Santos</td>
                         <td>7</td>
@@ -57,25 +57,85 @@
                         <td>1</td>
                     </tr>
                 </tbody>
-                <tfoot>
-
-                </tfoot>
             </table>
         </div>
         <div class="container_formulario">
             <div class="formulario">
                 Imagem: (url) <br><input id="input_imagem"> <br> <br>
                 Nome: <br><input id="input_nome"> <br> <br>
-                Pontos: <br><input id="input_pts"> <br> <br>
-                Partidas: <br><input id="input_pj"> <br> <br>
-                Vitórias: <br><input id="input_vit"> <br> <br>
-                Empates: <br><input id="input_e"> <br> <br>
-                Derrotas: <br><input id="input_der">
+                Pontos: <br><input id="input_pts" type="number"> <br> <br>
+                Partidas: <br><input id="input_pj" type="number"> <br> <br>
+                Vitórias: <br><input id="input_vit" type="number"> <br> <br>
+                Empates: <br><input id="input_e" type="number"> <br> <br>
+                Derrotas: <br><input id="input_der" type="number">
                 <br> <br>
                 <button class="btn_adicionar" onclick="adicionar()">ADICIONAR</button>
             </div>
+            <div id="cardErro" class="card_erro" style="display: none";>
+            <span id="mensagem_erro"></span></div>
         </div>
     </div>
 </body>
 
 </html>
+
+<script>
+    //parametrizando as variáveis
+    function adicionar() {
+        var nomeVar = input_nome.value;
+        var pontosVar = input_pts.value;
+        var partidasVar = input_pj.value;
+        var vitoriasVar = input_vit.value;
+        var empatesVar = input_e.value;
+        var derrotasVar = input_der.value;
+
+        if (
+            nomeVar == "" ||
+            pontosVar == "" ||
+            partidasVar == "" ||
+            vitoriasVar == "" ||
+            empatesVar == "" ||
+            derrotasVar == ""
+            ) {
+                cardErro.style.display = "block";
+                mensagem_erro.innerHTML = "Campo não preenchido!"
+        } else {
+            setInterval(sumirMensagem, 5000);
+        }
+        
+  fetch("/usuarios/cadastrar", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      nomeServer: nomeVar,
+      pontosServer: pontosVar,
+      partidasServer: partidasVar,
+      vitoriasServer: vitoriasVar,
+      empatesServer: empatesVar,
+      derrotasServer: derrotasVar,
+    }),
+  })
+    .then(function (resposta) {
+      console.log("resposta: ", resposta);
+
+      if (resposta.ok) {
+        cardErro.style.display = "block";
+        mensagem_erro.innerHTML = "Cadastro realizado com sucesso!";
+        atualizarMembros();
+        finalizarAguardar();
+        // window.location = "login.html";
+        // limparFormulario();
+      } else {
+        throw "Houve um erro ao tentar realizar o cadastro!";
+      }
+    })
+    .catch(function (resposta) {
+      console.log(`#ERRO: ${resposta}`);
+      finalizarAguardar();
+    });
+
+  return false;
+}
+</script>
