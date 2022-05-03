@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="tabela">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="th1">Clube</th>
+                        <th>Pts</th>
+                        <th>PJ</th>
+                        <th>VIT</th>
+                        <th>E</th>
+                        <th>DER</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="th1">1 <img src="imagens/santos.png" id="imgs"> Santos</td>
+                        <td>7</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td class="th1">2 <img src="imagens/atletico.png" id="imgs"> Atlético-MG</td>
+                        <td>7</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td class="th1">3 <img src="imagens/corinthians.png" id="imgs"> Corinthians</td>
+                        <td>6</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td class="th1">4 <img src="imagens/cuiaba.png" id="imgs"> Cuiabá</td>
+                        <td>6</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+
+                </tfoot>
+            </table>
+        </div>
+        <div class="container_formulario">
+            <div class="formulario">
+                Imagem: (url) <br><input id="input_imagem"> <br> <br>
+                Nome: <br><input id="input_nome"> <br> <br>
+                Pontos: <br><input id="input_pts"> <br> <br>
+                Partidas: <br><input id="input_pj"> <br> <br>
+                Vitórias: <br><input id="input_vit"> <br> <br>
+                Empates: <br><input id="input_e"> <br> <br>
+                Derrotas: <br><input id="input_der">
+                <br> <br>
+                <button class="btn_adicionar" onclick="adicionar()">ADICIONAR</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
