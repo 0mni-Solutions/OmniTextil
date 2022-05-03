@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        body {
+            background-image: url(https://media.contentapi.ea.com/content/dam/ea/easports/fifa/news-media/2016/september/12/01-presentation-Suita-Stadium.jpg.adapt.crop16x9.1455w.jpg);
+            background-size: cover;
+            display: flex;
+            justify-content: space-around;
+
+        }
+
+        .tabela {
+            width: 50%;
+            height: 700px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        #tabela {
+            width: 80%;
+            height: auto;
+            background-color: black;
+            color: grey;
+            opacity: 80%;
+
+        }
+
+        .c1 {
+            display: flex;
+            justify-items: left;
+            height: 40px;
+
+        }
+
+        #tabela thead tr th {
+            border-bottom: 1px solid grey;
+        }
+
+        #tabela tbody tr th {
+            border-bottom: 1px solid grey;
+
+        }
+
+        #imgs {
+            width: 35px;
+        }
+        .card_inserir {
+            width: 30%;
+            height: 600px;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-size: 20px;
+            font-family: monospace;
+            color: lightgreen;
+            background-color: black;
+            border-radius: 40px;
+            opacity: 80%;
+        }
+        #botaos{
+            width: 30%;
+            height: 25px;
+            background-color: white;
+            border: 1px solid black;
+            font-family: 'Courier New', Courier, monospace;
+            border-radius: 40px;
+            margin: 10px;
+        }
+        .inputs{
+            border-radius: 30px;
+            border: 2px solid;
+            border-color: lightgreen;
+        }
+    </style>
+    <div class="tabela">
+        <table id="tabela">
+            <thead>
+                <tr>
+                    <th class="c1">Clube</th>
+                    <th>Pts</th>
+                    <th>PJ</th>
+                    <th>VIT</th>
+                    <th>E</th>
+                    <th>DER</th>
+                </tr>
+            </thead>
+            <tbody id="tbody_dados">
+                <tr>
+                    <th class="c1">1 <img src="https://www.santosfc.com.br/wp-content/uploads/2017/08/Escudo-sem-estrelas229x220-1.png" id="imgs"> Santos</th>
+                    <th>7</th>
+                    <th>3</th>
+                    <th>2</th>
+                    <th>1</th>
+                    <th>0</th>
+                </tr>
+                <tr>
+                    <th class="c1">2 <img src="https://ssl.gstatic.com/onebox/media/sports/logos/q9fhEsgpuyRq58OgmSndcQ_48x48.png" id="imgs"> Atlético-MG</th>
+                    <th>7</th>
+                    <th>3</th>
+                    <th>2</th>
+                    <th>1</th>
+                    <th>0</th>
+                </tr>
+                <tr>
+                    <th class="c1">3 <img src="https://ssl.gstatic.com/onebox/media/sports/logos/tCMSqgXVHROpdCpQhzTo1g_48x48.png" id="imgs"> Corinthians</th>
+                    <th>6</th>
+                    <th>3</th>
+                    <th>2</th>
+                    <th>0</th>
+                    <th>1</th>
+                </tr>
+                <tr>
+                    <th class="c1">4 <img src="https://ssl.gstatic.com/onebox/media/sports/logos/j6U8Rgt_6yyf0Egs9nREXw_48x48.png" id="imgs"> Cuiabá</th>
+                    <th>6</th>
+                    <th>3</th>
+                    <th>2</th>
+                    <th>0</th>
+                    <th>1</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="card_inserir">
+        Brasão: <br>
+        <input id="input_brasao" class="inputs"> <br>
+        Nome Clube: <br>
+        <input id="input_nome" class="inputs"> <br>
+        Pontos: <br>
+        <input id="input_pontos" class="inputs"> <br>
+        Jogos: <br>
+        <input id="input_jogos" class="inputs"> <br>
+        Vitórias: <br>
+        <input id="input_vitorias" class="inputs"> <br>
+        Empates: <br>
+        <input id="input_empates" class="inputs"> <br>
+        Derrotas: <br>
+        <input id="input_derrotas" class="inputs"> <br>
+        <button id="botaos" onclick="inserir()">Inserir</button>
+        <div id="txt"></div>
+    </div>
+</body>
+</html>
+<script>
+    var id_clube = 4
+    function inserir(){
+        var brasao = input_brasao.value 
+        var nome = input_nome.value
+        var pontos = Number(input_pontos.value)
+        var jogos = Number(input_jogos.value)
+        var vitorias = Number(input_vitorias.value)
+        var empates = Number(input_empates.value)
+        var derrotas = Number(input_derrotas.value)
+
+        if(brasao == "" || nome == "" || pontos == 0 || jogos == 0 || vitorias == 0 || empates == 0 || derrotas == 0){
+            txt.innerHTML = "*Insira todos os campos*"
+            txt.style.color = `red`
+        }else {
+            id_clube++
+            tbody_dados.innerHTML += `<tr>
+                    <th class="c1">${id_clube} <img src="${brasao}" id="imgs"> ${nome}</th>
+                    <th>${pontos}</th>
+                    <th>${jogos}</th>
+                    <th>${vitorias}</th>
+                    <th>${empates}</th>
+                    <th>${derrotas}</th>
+                </tr>` 
+        }
+    }
+</script>
