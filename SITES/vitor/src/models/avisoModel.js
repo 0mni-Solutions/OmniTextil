@@ -9,16 +9,17 @@ function listar(fkEmpresa) {
             Comum.nomeUsuario,
             Comum.email,
             Comum.cargo,
-            DATE_FORMAT(Comum.cadastroUsuario, '%d/%m/%Y %h:%m') as cadastroUsuario 
+            FORMAT(Comum.cadastroUsuario, 'dd/MM/yy hh:mm') as cadastroUsuario
         FROM Usuario as Comum
         JOIN Usuario as Admin 
         ON Admin.idUsuario = Comum.fkAdmin
         WHERE Admin.fkEmpresa = ${fkEmpresa}
-        ORDER BY cadastroUsuario DESC;
+        ORDER BY Comum.cadastroUsuario DESC;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
+// DATE_FORMAT(Comum.cadastroUsuario, '%d/%m/%Y %h:%m') as cadastroUsuario 
 
 function listarUnidades(fkEmpresa) {
     console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
