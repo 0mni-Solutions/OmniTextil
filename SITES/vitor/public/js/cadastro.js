@@ -112,7 +112,7 @@ function cadastrar() {
 
 function atualizarMembros() {
   //aguardar();
-  fetch(`/avisos/listar/${sessionStorage.getItem("fkEmpresa")}`)
+  fetch(`/avisos/listar/${sessionStorage.EMPRESA_USUARIO}`)
     .then(function (resposta) {
       if (resposta.ok) {
         if (resposta.status == 204) {
@@ -252,7 +252,7 @@ function editarList(idUsuario) {
 
         resposta.json().then(function (resposta) {
           console.log("Dados recebidos: ", JSON.stringify(resposta));
-
+          
           for (let i = 0; i < resposta.length; i++) {
             var usuario = resposta[i];
 

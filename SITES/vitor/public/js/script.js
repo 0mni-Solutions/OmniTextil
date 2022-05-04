@@ -20,25 +20,25 @@ link_theme.href = "css/theme_dark.css";
 img_theme.src = "assets/imgs/header-footer/sun.png";
 
 // definir tema ao carregar a página
-if (sessionStorage.theme == "light") {
+if (sessionStorage.THEME == "light") {
   link_theme.href = "css/theme_light.css";
   img_theme.src = "assets/imgs/header-footer/moon.png";
-} else if (sessionStorage.theme == "dark") {
+} else if (sessionStorage.THEME == "dark") {
   link_theme.href = "css/theme_dark.css";
   img_theme.src = "assets/imgs/header-footer/sun.png";
 } else {
-  sessionStorage.theme = "dark";
+  sessionStorage.THEME = "dark";
 }
 // function para mudar tema ao clicar no Sol;
 function theme_change() {
-  if (sessionStorage.theme == "dark") {
+  if (sessionStorage.THEME == "dark") {
     link_theme.href = "css/theme_light.css";
     img_theme.src = "assets/imgs/header-footer/moon.png";
-    sessionStorage.theme = "light";
+    sessionStorage.THEME = "light";
   } else {
     link_theme.href = "css/theme_dark.css";
     img_theme.src = "assets/imgs/header-footer/sun.png";
-    sessionStorage.theme = "dark";
+    sessionStorage.THEME = "dark";
   }
 }
 
@@ -144,7 +144,7 @@ function simular() {
 /* UNIDADES */
 function carregarUnidades() {
   //aguardar();
-  fetch(`/avisos/listarUnidades/${sessionStorage.getItem("fkEmpresa")}`)
+  fetch(`/avisos/listarUnidades/${sessionStorage.EMPRESA_USUARIO}`)
     .then(function (resposta) {
       if (resposta.ok) {
         if (resposta.status == 204) {
