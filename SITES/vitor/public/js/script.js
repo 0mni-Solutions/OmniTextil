@@ -164,15 +164,21 @@ function carregarUnidades() {
           for (let i = 0; i < resposta.length; i++) {
             var unidade = resposta[i];
 
-            // criando elementos do HTML via JavaScript
-            var optionUnidade = document.createElement("option");
+            // FORMA SIMPLES
+            select.innerHTML += `
+            <option value="${unidade.idUnidade}">${unidade.nomeUnidade}</option>
+            `;
 
-            // colocando valores do select no innerHTML
-            optionUnidade.innerHTML = unidade.nomeUnidade;
-            optionUnidade.value = unidade.idUnidade;
+            // FORMA COMPLEXA
+            // // criando elementos do HTML via JavaScript
+            // var optionUnidade = document.createElement("option");
 
-            // adicionando todos à um elemento pai pré-existente
-            select.appendChild(optionUnidade);
+            // // colocando valores do select no innerHTML
+            // optionUnidade.innerHTML = unidade.nomeUnidade;
+            // optionUnidade.value = unidade.idUnidade;
+
+            // // adicionando todos à um elemento pai pré-existente
+            // select.appendChild(optionUnidade);
           }
 
           finalizarAguardar();

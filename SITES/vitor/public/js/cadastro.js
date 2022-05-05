@@ -12,7 +12,7 @@ function cadastrar() {
   var cargoVar = select_cargo.value;
   var empresaVar = sessionStorage.EMPRESA_USUARIO;
   var adminVar = sessionStorage.ID_USUARIO;
-  
+
   // ELIMINAÇÃO DE ESPAÇOS
   nomeVar.trimStart().trimEnd();
   emailVar.trimStart().trimEnd();
@@ -132,7 +132,24 @@ function atualizarMembros() {
           for (let i = 0; i < resposta.length; i++) {
             var usuario = resposta[i];
 
-            // criando elementos do HTML via JavaScript
+            // FORMA SIMPLES
+            tabela_membros.innerHTML += `
+            <tr>
+              <td class="td-custom td-small">${usuario.nomeAdmin}</td>
+              <td class="td-custom td-large">${usuario.nomeUsuario}</td>
+              <td class="td-custom td-large">${usuario.email}</td>
+              <td class="td-custom td-medium">${usuario.cargo}</td>
+              <td class="td-custom td-medium">${usuario.cadastroUsuario}</td>
+              <td class="td-custom td-icon" id="btnEditar${usuario.idUsuario}" onclick="editarList(${usuario.idUsuario})">
+              <img src="../assets/imgs/editar.png" id="edit_logo" title="editar" /></td>              
+              <td class="td-custom td-icon" id="btnExcluir${usuario.idUsuario}" onclick="confirmarAction('excluir', ${usuario.idUsuario})">
+              <img src="../assets/imgs/remover.png" id="edit_logo" title="remover" /></td>
+            </tr>
+            `;
+
+
+            // FORMA COMPLEXA -----------------------
+            /*// criando elementos do HTML via JavaScript
             var rowUsuario = document.createElement("tr");
             var dataAdmin = document.createElement("td");
             var dataNome = document.createElement("td");
@@ -184,7 +201,7 @@ function atualizarMembros() {
             rowUsuario.appendChild(dataCargo);
             rowUsuario.appendChild(dataCadastro);
             rowUsuario.appendChild(optEditar);
-            rowUsuario.appendChild(optExcluir);
+            rowUsuario.appendChild(optExcluir);*/
           }
 
           finalizarAguardar();
@@ -239,48 +256,48 @@ function editarList(idUsuario) {
   } else {
     //aguardar();
     fetch(`/avisos/editarList/${idUsuario}`)
-    .then(function (resposta) {
-      if (resposta.ok) {
-        if (resposta.status == 204) {
-          var tabela_membros = document.getElementById("card_membros");
-          var mensagem = document.createElement("span");
-          mensagem.innerHTML = "Nenhum resultado encontrado.";
-          mensagem.id = "membros_erro";
-          tabela_membros.appendChild(mensagem);
-          throw "Nenhum resultado encontrado!!";
-        }
-
-        resposta.json().then(function (resposta) {
-          console.log("Dados recebidos: ", JSON.stringify(resposta));
-          
-          for (let i = 0; i < resposta.length; i++) {
-            var usuario = resposta[i];
-
-            input_nome.value = usuario.nomeUsuario;
-            input_email.value = usuario.email;
-            input_senha.value = usuario.senha;
-            input_confirmar_senha.value = usuario.senha;
-            select_cargo.value = usuario.cargo;
+      .then(function (resposta) {
+        if (resposta.ok) {
+          if (resposta.status == 204) {
+            var tabela_membros = document.getElementById("card_membros");
+            var mensagem = document.createElement("span");
+            mensagem.innerHTML = "Nenhum resultado encontrado.";
+            mensagem.id = "membros_erro";
+            tabela_membros.appendChild(mensagem);
+            throw "Nenhum resultado encontrado!!";
           }
 
-          title_cadastro.innerHTML = "ATUALIZAÇÃO";
-          button_cadastrar.style.display = "none";
-          button_editar.style.display = "flex";          
-          button_editar.setAttribute(
-            "onclick",
-            `confirmarAction('editar', ${usuario.idUser})`
-          );
+          resposta.json().then(function (resposta) {
+            console.log("Dados recebidos: ", JSON.stringify(resposta));
 
-          finalizarAguardar();
-        });
-      } else {
-        throw "Houve um erro na API!";
-      }
-    })
-    .catch(function (resposta) {
-      console.error(resposta);
-      finalizarAguardar();
-    });
+            for (let i = 0; i < resposta.length; i++) {
+              var usuario = resposta[i];
+
+              input_nome.value = usuario.nomeUsuario;
+              input_email.value = usuario.email;
+              input_senha.value = usuario.senha;
+              input_confirmar_senha.value = usuario.senha;
+              select_cargo.value = usuario.cargo;
+            }
+
+            title_cadastro.innerHTML = "ATUALIZAÇÃO";
+            button_cadastrar.style.display = "none";
+            button_editar.style.display = "flex";
+            button_editar.setAttribute(
+              "onclick",
+              `confirmarAction('editar', ${usuario.idUser})`
+            );
+
+            finalizarAguardar();
+          });
+        } else {
+          throw "Houve um erro na API!";
+        }
+      })
+      .catch(function (resposta) {
+        console.error(resposta);
+        finalizarAguardar();
+      });
   }
 }
 
@@ -365,7 +382,7 @@ function editarUpdate(idUser) {
         atualizarMembros();
         fecharConfirm();
         finalizarAguardar();
-        
+
         // RESET DO CARD DE CADASTRO
         title_cadastro.innerHTML = "CADASTRO";
         button_cadastrar.style.display = "flex";
