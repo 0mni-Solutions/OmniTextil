@@ -34,6 +34,27 @@ function listarUnidades(fkEmpresa) {
     return database.executar(instrucao);
 }
 
+function listarSetores(fkUnidade) {
+    console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
+    var instrucao = `
+            SELECT
+            fkUnidade,
+            idSetor,
+            nomeSetor,
+            fkLocalidade,
+            descricao
+            FROM Setor
+        JOIN Localidade 
+        ON fkLocalidade = idLocalidade 
+        JOIN Unidade
+        ON fkUnidade = idUnidade
+        WHERE fkUnidade = ${fkUnidade}
+        ORDER BY idSetor;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 function pesquisarDescricao(texto) {
     console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function pesquisarDescricao():");
     var instrucao = `
@@ -133,5 +154,6 @@ module.exports = {
     publicar,
     editarList,
     editarUpdate,
-    deletar
+    deletar,
+    listarSetores,
 }

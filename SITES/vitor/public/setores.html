@@ -10,7 +10,7 @@
     <link rel="icon" href="assets/imgs/header-footer/logo_imgWHITE.png" />
   </head>
 
-  <body>
+  <body onload="listarSetores()">
           <!-- HEADER -->
     <div class="header">
         <div class="container">
@@ -30,7 +30,7 @@
             <img
               id="img_theme"
               onclick="theme_change()"
-              src="assets/imgs/header-footer/sun_off.png"
+              src=""
               title="Mudar tema"
               alt="Sol do Tema"
             />
@@ -40,43 +40,44 @@
       
           <!-- BANNER -->
           <div class="container_setor">
-              <div class="row_setor">
-                  <div class="item_setor"> 
-                      <p class="titulo_setor">Setor 1</p>
-                      <p class="texto_setor">Algodão</p>
-                      <a href="dashboard.html" type="button" onclick="continuar()" class="botao_setor">Continuar</a>
-                  </div>
-                  <div class="item_setor">
-                      <p class="titulo_setor">Setor 2</p>
-                      <p class="texto_setor">Cetim</p>
-                      <a href="dashboard.html" type="button" onclick="continuar()" class="botao_setor">Continuar</a>
-                  </div>
-              </div>
-              <div class="row_setor">
-                  <div class="item_setor">
-                      <p class="titulo_setor">Setor 3</p>
-                      <p class="texto_setor">Moletom</p>
-                      <a href="dashboard.html" type="button" onclick="continuar()" class="botao_setor">Continuar</a>
-                    </div>
-                  <div class="item_setor">
-                      <p class="titulo_setor">Setor 4</p>
-                      <p class="texto_setor">Poliester</p>
-                      <a href="dashboard.html" type="button" onclick="continuar()" class="botao_setor">Continuar</a>
-                    </div>   
-              </div>
+              <div class="row_setor" id="setor_card">
+                <span id="mensagem_erro" style="display: none;"></span>
+                    <!-- INSERÇÃO DOS SETORES -->
           </div>
 
     <!-- FOOTER -->
     <footer class="footer">
+      <!-- FORM-REPORT_FEEDBACKS -->
+      <div class="side-form" id="side_menu">
+        <img
+          onclick="fecharForm()"
+          class="close-window"
+          src="assets/imgs/header-footer/close.png"
+          title="fechar"
+          alt="fechar janela"
+        />
+        <textarea id="textarea_omni" maxlength="220" minlength="30"></textarea>
+        <button
+          onclick="enviarFeedback()"
+          class="form-button side-form-btn"
+          title="Enviar"
+        >
+          enviar
+        </button>
+      </div>
       <div class="container">
         <!-- BOX DE REPORT -->
-        <div class="box reports">
+        <button
+          class="box reports"
+          onclick="mostrarMenu()"
+          title="enviar mensagem"
+        >
           <img src="assets/imgs/header-footer/logo_lupa.png" alt="lupa" />
           <p>
             Feedbacks<br />
             Reports
           </p>
-        </div>
+        </button>
         <!-- BOX DE CONTATO -->
         <div class="box contato">
           <h4>Contato</h4>
@@ -104,3 +105,4 @@
 </html>
 
 <script src="js/script.js"></script>
+<script src="js/funcoes.js"></script>

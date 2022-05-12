@@ -50,7 +50,7 @@
           <h1>UNIDADES</h1>
           <div class="form-box form-unidades">
             <div class="form-input form-select-p">
-              <select class="form-select" id="select_unidades">
+              <select class="form-select" id="select_unidades" onchange="updateValueSelect()">
                 <option value="0">-</option>
               </select>
             </div>
@@ -58,9 +58,9 @@
           <button
             onclick=""
             class="form-button form-btn-dashboard"
-            title="Ir para a dashboard"
+            title="Ir para o setor"
           >
-            <a href="setores.html">DASHBOARD</a>
+            <a href="setores.html">SETORES</a>
           </button>
           <div id="div_aguardar" class="loading-div">
             <img src="assets/circle-loading.gif" id="loading-gif" />

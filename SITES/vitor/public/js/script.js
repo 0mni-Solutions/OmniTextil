@@ -83,7 +83,7 @@ function confirmarAction(condicao, idUsuario) {
       `editarUpdate(${idUsuario})`
     );
   }
-  
+
 }
 
 function fecharConfirm() {
@@ -117,22 +117,22 @@ function simular() {
 
     div_resultado.innerHTML = `Seu lucro atual sem o nosso serviço é de 
         <strong>${lucroAtual.toLocaleString("pt-BR", {
-          style: "currency",
-          currency: "BRL",
-        })}.</strong>
+      style: "currency",
+      currency: "BRL",
+    })}.</strong>
         <br>
         <br>
         Seu lucro total com nosso produto seria de 
         ${lucroTotal.toLocaleString("pt-BR", {
-          style: "currency",
-          currency: "BRL",
-        })}, 
+      style: "currency",
+      currency: "BRL",
+    })}, 
         que equivale a ${porcentagem.toFixed(0)}%
         a mais no seu lucro atual, simbolizando um aumento de 
         <strong>${percaLucro.toLocaleString("pt-BR", {
-          style: "currency",
-          currency: "BRL",
-        })}.</strong>`;
+      style: "currency",
+      currency: "BRL",
+    })}.</strong>`;
   }
 }
 
@@ -169,6 +169,9 @@ function carregarUnidades() {
             <option value="${unidade.idUnidade}">${unidade.nomeUnidade}</option>
             `;
 
+            var fkUnidade = select.options[select.selectedIndex].value;
+            sessionStorage.UNIDADE_USUARIO = fkUnidade;
+
             // FORMA COMPLEXA
             // // criando elementos do HTML via JavaScript
             // var optionUnidade = document.createElement("option");
@@ -180,7 +183,7 @@ function carregarUnidades() {
             // // adicionando todos à um elemento pai pré-existente
             // select.appendChild(optionUnidade);
           }
-
+          
           finalizarAguardar();
         });
       } else {
@@ -190,41 +193,48 @@ function carregarUnidades() {
     .catch(function (resposta) {
       console.error(resposta);
       finalizarAguardar();
-    });
+    }) ;
 }
+
+function updateValueSelect() {
+  var select = document.getElementById('select_unidades');
+  var fkUnidade = select.options[select.selectedIndex].value;
+
+  sessionStorage.UNIDADE_USUARIO = fkUnidade;
+
+} updateValueSelect();
+
 /*------------------------------------------------------------------------------------------------------*/
 /* SETORES */
-function carregarSetores() {
+function listarSetores() {
   //aguardar();
-  fetch(`/avisos/listarSetores/${sessionStorage.getItem("fkUnidade")}`)
+  fetch(`/avisos/listarSetores/${sessionStorage.UNIDADE_USUARIO}`)
     .then(function (resposta) {
       if (resposta.ok) {
         if (resposta.status == 204) {
-          var select = document.getElementById("select_unidades");
-          var mensagem = document.createElement("span");
+          var setorCard = document.getElementById("setor_card");
+          var mensagem = document.createElement("mensagem_erro");
           mensagem.innerHTML = "-";
           mensagem.value = "0";
-          select.appendChild(mensagem);
-          throw "Nenhum setor registrado";
+          setorCard.appendChild(mensagem);
+          throw "Nenhum resultado encontrado!!";
         }
-
         resposta.json().then(function (resposta) {
           console.log("Dados recebidos: ", JSON.stringify(resposta));
 
-          var select = document.getElementById("select_unidades");
-          select.innerHTML = "";
+          var setorCard = document.getElementById("setor_card");
+          setorCard.innerHTML = "";
           for (let i = 0; i < resposta.length; i++) {
-            var unidade = resposta[i];
+            var usuario = resposta[i];
 
-            // criando elementos do HTML via JavaScript
-            var optionUnidade = document.createElement("option");
-
-            // colocando valores do select no innerHTML
-            optionUnidade.innerHTML = unidade.nomeUnidade;
-            optionUnidade.value = unidade.idUnidade;
-
-            // adicionando todos à um elemento pai pré-existente
-            select.appendChild(optionUnidade);
+          // adicionando todos à um elemento pai pré-existente
+          setorCard.innerHTML += `
+          <div class="item_setor"> 
+            <p class="titulo_setor">${usuario.nomeSetor}</p>
+            <p class="texto_setor">${usuario.descricao}</p>
+            <a href="dashboard.html" type="button" onclick="continuar()" class="botao_setor">Continuar</a>
+            </div>
+            `;
           }
 
           finalizarAguardar();
@@ -236,7 +246,17 @@ function carregarSetores() {
     .catch(function (resposta) {
       console.error(resposta);
       finalizarAguardar();
-    });
+    }) ;
 }
+
+function updateValueSelect() {
+  var select = document.getElementById('select_unidades');
+  var fkUnidade = select.options[select.selectedIndex].value;
+
+  sessionStorage.UNIDADE_USUARIO = fkUnidade;
+
+
+
+} updateValueSelect();
 
 /*------------------------------------------------------------------------------------------------------*/

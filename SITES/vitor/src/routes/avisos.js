@@ -14,6 +14,9 @@ router.get("/listar/:fkEmpresa", function (req, res) {
 router.get("/listarUnidades/:fkEmpresa", function (req, res) {
     avisoController.listarUnidades(req, res);
 });
+router.get("/listarSetores/:fkUnidade", function (req, res) {
+    avisoController.listarSetores(req, res);
+});
 
 router.get("/listar/:idUsuario", function (req, res) {
     avisoController.listarPorUsuario(req, res);
