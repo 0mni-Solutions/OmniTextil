@@ -225,14 +225,14 @@ function listarSetores() {
           var setorCard = document.getElementById("setor_card");
           setorCard.innerHTML = "";
           for (let i = 0; i < resposta.length; i++) {
-            var usuario = resposta[i];
+            var setor = resposta[i];
 
           // adicionando todos à um elemento pai pré-existente
           setorCard.innerHTML += `
           <div class="item_setor"> 
-            <p class="titulo_setor">${usuario.nomeSetor}</p>
-            <p class="texto_setor">${usuario.descricao}</p>
-            <a href="dashboard.html" type="button" onclick="continuar()" class="botao_setor">Continuar</a>
+            <p class="titulo_setor">${setor.nomeSetor}</p>
+            <p class="texto_setor">${setor.descricao}</p>
+            <button type="button" onclick="continuar('${setor.nomeSetor}')" class="botao_setor">Continuar</button>
             </div>
             `;
           }
@@ -259,4 +259,34 @@ function updateValueSelect() {
 
 } updateValueSelect();
 
+//  Função que conecta setores a dashboard --------------------
+
+function continuar (nomeSetor) {
+  sessionStorage.NOMESETOR = nomeSetor; 
+  window.location = "dashboard.html"
+}
+
+function listarSet() {
+  //aguardar();
+  fetch(`/avisos/listarSeto/${sessionStorage.SETOR}`)
+    .then(function (resposta) {
+      if (resposta.ok) {
+        resposta.json().then(function (resposta) {
+          console.log("Dados recebidos: ", JSON.stringify(resposta));
+          console.log(resposta)
+          finalizarAguardar();
+        });
+      } else {
+        throw "Houve um erro na API!";
+      }
+    })
+    .catch(function (resposta) {
+      console.error(resposta);
+      finalizarAguardar();
+    }) ;
+}
+// ------------------------------------
+ function trocar_nome (){
+  vitao_feliz.innerHTML = sessionStorage.NOMESETOR;
+}
 /*------------------------------------------------------------------------------------------------------*/

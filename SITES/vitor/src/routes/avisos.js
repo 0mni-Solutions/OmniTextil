@@ -41,5 +41,9 @@ router.put("/editarUpdate/:idUsuario", function (req, res) {
 router.delete("/deletar/:idUsuario", function (req, res) {
     avisoController.deletar(req, res);
 });
+// --------------------------------------------------------------------------------///
+router.get("/listarSeto/:idSeto", function (req, res) {
+    avisoController.listarSeto(req, res);
+});
 
 module.exports = router;

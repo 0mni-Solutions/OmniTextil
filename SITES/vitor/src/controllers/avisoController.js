@@ -179,6 +179,25 @@ function deletar(req, res) {
     });
 }
 
+// ------------------------------------------------------------///
+function listarSeto(req, res) {
+  var idSeto = req.params.idSeto;
+  avisoModel
+    .NomearSetor(idSeto)
+    .then(function (resultado) {
+      if (resultado.length > 0) {
+        res.status(200).json(resultado);
+      } else {
+        res.status(204).send("Nenhum resultado encontrado!");
+      }
+    })
+    .catch(function (erro) {
+      console.log(erro);
+      console.log("Houve um erro ao buscar os avisos: ", erro.sqlMessage);
+      res.status(500).json(erro.sqlMessage);
+    });
+}
+
 module.exports = {
   testar,
   listar,
@@ -190,4 +209,5 @@ module.exports = {
   editarUpdate,
   deletar,
   listarSetores,
+  listarSeto,
 };
