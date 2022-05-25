@@ -145,6 +145,21 @@ function deletar(idUsuario) {
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
+// ------------------------------------------------////////
+function NomearSetor(fkSetor) {
+    console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
+    var instrucao = `
+     select nomeSetor 
+     from setor 
+     where idSetor = ${fkSetor};
+            
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+// lembrar de sempre att os module.exports, sempre que houver
+
 // UPDATE Usuario SET fkAdmin = null WHERE idUsuario = ${idUsuario};
 module.exports = {
     listar,
@@ -156,4 +171,9 @@ module.exports = {
     editarUpdate,
     deletar,
     listarSetores,
+    NomearSetor,
 }
+
+
+
+
