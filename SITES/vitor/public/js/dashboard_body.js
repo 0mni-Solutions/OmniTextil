@@ -4,55 +4,17 @@
 UMI_line_graph()
 function UMI_line_graph() {
     var ctx = document.getElementById('UMI_ChartLINE').getContext("2d");
-
-    const horario = [
-        '00h',
-        '01h',
-        '02h',
-        '03h',
-        '04h',
-        '05h',
-        '06h',
-        '07h',
-        '08h',
-        '09h',
-        '10h',
-        '11h',
-        '12h',
-        '13h',
-        '14h',
-        '15h',
-        '16h',
-        '17h',
-        '18h',
-        '19h',
-        '20h',
-        '21h',
-        '22h',
-        '23h'
-    ];
-
-    var dataPoints = [40, 46, 35, 48, 54, 62, 49, 38, 43, 39, 34, 29, 35, 31, 24, 15, 17, 20, 24, 33, 33, 39, 45, 50];
     
     gradient = ctx.createLinearGradient(0, 0, 0, 450);
     gradient.addColorStop(0, 'rgba(157, 66, 255, 1)');
     gradient.addColorStop(1, 'rgba(157, 66, 255, 0.0)');
 
     const dataLINE = {
-        labels: horario,
+        labels: [],
         datasets: [
             {
-                // LIMITE MÁXIMO
-                data: [60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60],
-                label: 'PERIGO',
-                backgroundColor: 'rgb(230, 0, 0)',
-                borderColor: 'rgb(230, 0, 0)',
-                pointRadius: 0,
-                pointHitRadius: 0,
-            },
-            {
                 // MEDIDAS DO SENSOR
-                data: dataPoints,
+                data: [],
                 label: 'DHT11',
                 fill: true,
                 backgroundColor: gradient,

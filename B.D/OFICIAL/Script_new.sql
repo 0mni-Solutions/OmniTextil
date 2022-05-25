@@ -72,9 +72,9 @@ CREATE TABLE Dados (
 idDados INT PRIMARY KEY AUTO_INCREMENT,
 fkSensor INT, 
 FOREIGN KEY (fkSensor) REFERENCES Sensor(idSensor),
-temperatura INT,
-umidade INT,
-data_hora DATETIME
+temperatura DECIMAL,
+umidade DECIMAL,
+data_hora TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 -- INSERTS INICIAIS
@@ -127,3 +127,14 @@ INSERT INTO Setor VALUES
 (NULL, 3, 3, 'SetorB'),
 (NULL, 4, 1, 'SetorA');
 SELECT * FROM Setor;
+
+-- SENSOR
+INSERT INTO Sensor VALUES
+(NULL, 1, 1, 1);
+SELECT * FROM Sensor;
+
+-- DADOS
+INSERT INTO Dados VALUES
+(null, 1, 28.5, 50, default);
+SELECT * FROM Dados;
+TRUNCATE TABLE Dados;

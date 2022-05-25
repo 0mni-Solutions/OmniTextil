@@ -129,16 +129,15 @@ descricao VARCHAR(50)
 );
 
 CREATE TABLE Setor (
-idSetor INT IDENTITY(1,1),
+idSetor INT PRIMARY KEY IDENTITY(1,1),
 fkUnidade INT FOREIGN KEY REFERENCES Unidade(idUnidade),
 fkLocalidade INT FOREIGN KEY REFERENCES Localidade(idLocalidade),
-PRIMARY KEY (idSetor, fkUnidade, fkLocalidade),
 nomeSetor CHAR(6)
 );
 
 CREATE TABLE Sensor (
 idSensor INT PRIMARY KEY IDENTITY(1,1),
-fkUnidade IN FOREIGN KEY REFERENCES Unidade(idUnidade),
+fkUnidade INT FOREIGN KEY REFERENCES Unidade(idUnidade),
 fkSetor INT FOREIGN KEY REFERENCES Setor(idSetor),
 fkLocalidade INT FOREIGN KEY REFERENCES Localidade(idLocalidade)
 );
