@@ -1,0 +1,33 @@
+Apresentação do grupo – vitu
+
+Visão do projeto – klixtu, Wlad, thi
+*contexto do segmento de atuação – thi
+*problema desafio do segmento – klixtu
+*solução proposta -diagrama e negócio – Wlad
+
+Planejamento – Klixtu
+*tudo 
+
+Desenvolvimento do projeto – gabriel, thi
+*diagrama de solução – gabriel
+*modelo logico – thi
+
+Demonstração do site
+fabio
+- membros
+- cadastro
+- unidades
+- analytics
+
+gabriel
+- login
+- simulador
+- setores
+- dashboard
+
+
+Suporte ao cliente – klixtu, Wlad, thi
+*manual - thi
+*atendimento – kalistu + Wlad
+
+Conclusão - vitu
