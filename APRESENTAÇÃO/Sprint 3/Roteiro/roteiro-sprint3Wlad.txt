@@ -24,4 +24,12 @@ as imagens escolhidas são todas de certa forma co relacionadas ao ramo textil pa
 o tamanho das fontes são para melhor leitura dos clientes para gerar menos estresso na hora de monitorar e analisar os dados.
 com isso temos um equilibrio muito bom para a instabilidade do usuario assim gerando maior conforto pro cliente. 
 
+Suporte ao cliente- atendimento
 
+bom como podemos ver nesta pagina, logo apos o cliente ter aberto o chamado, nos receberemos esta seguinte pagina que
+contem a mensagem que ele enviou, detalhando o pedido dele.
+na aba direita temos um detalhamento mais especifico para nos do helpdesk
+la contem o status se esta em andamento ou nn
+a data de vencimento em que o problema deve ser sanado
+temosos dados do cliente para entrar em contato com ele
+e tambem temos o tipo de prioridade em questao.
