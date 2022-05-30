@@ -1,0 +1,28 @@
+------------------PROBLEMA----------------------
+
+É estimado que 1,2 milhões de toneladas de tecido no Brasil sejam produzidas por ano, gerando 2,6 bilhões de 
+dólares com a exportação, entretanto 175 mil toneladas de lixo têxtil são produzidas ao ano, gerando uma perca 
+estimada de 500 bilhões de dólares no mundo inteiro, além de gerar graves problemas ao meio ambiente.
+
+-------------------PLANEJAMENTO-----------------------
+
+Eu vou explicar um pouco sobre a formação da nossa equipe e como nos organizamos, nosso método de organização 
+foi ágil e útilizamos a ferramenta trello para separarmos as tarefas e registrar as atas das nossas reuniões.
+Dito isso, eu fiquei encarregada de fazer a organização e gerenciamento das tarefas, eu dividi de acordo com as 
+dificuldades técnicas, então foram dadas tarefas mais técnicas relacionadas principalmente a dashoboard do nosso 
+site para o gabriel e o fábio, algumas partes integrações e criações das páginas foram criadas pelo thiago, pelo 
+wlad e por mim, e o vitor ficou como suporte para eventuais dúvidas.
+O papel de Scrum Master no time foi executado pelo thiago e o papel de P.O foi feito pelo gabriel e por mim.
+
+
+-------------------ATENDIMENTO--------------------------
+Eu vou explicar um pouco sobre como funciona a nossa ferramenta de help desk, como citado anteriormente o email 
+para contato fica localizado no footer do nosso site , e quando algum usuário envia um e-mail para o nosso suporte,
+um chamado é automaticamente criado, e nessa primeira tela aparece os emails recebidos e demais funcionalidades, 
+podemos classificar o chamado como fechado, aberto e em espera, e ao clicarmos em algum dos chamados somos 
+direcionados para está página que será detalhada pelo wlad.
+
+
+
+
+
