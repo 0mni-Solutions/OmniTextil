@@ -1,0 +1,35 @@
+
+
+Solução de negocio
+
+nosso produto busca oferecer um melhor monitoramento da temperatura e da umidade dentro dos armazens texteis em tempo real, 
+afim de diminuir este grande agravante da industria em questão.
+Nossa regra de negócio parte do pressuposto que o cliente fornecerá o local de armazenamento 
+de seus tecidos além de nos fornecer os dados da infraestrutura do local para termos melhor controle 
+da instalação dos sensores, também acreditamos que a instalação dos sensores será concluída 
+entre 5 a 7 dias uteis por unidade.
+
+diagrama de negocio 
+Na nossa visão de negócio voces entrariam em contato conosco para contratar os
+nossos serviços, logo após fechamento do contrato, instalaríamos os sensores nos locais pré informados,
+ com isso lhe enviaríamos um ‘login’ de acesso do tipo 'ADMIN', com ele voces poderá gerir 
+seus funcionários que voces mesmo iriam adicionar! Com os dados que serão entregues pelo omni têxtil 
+poderá se planejar melhor e com um bom planejamento tera a oportunidade de obter os melhores resultados.
+
+Page home
+
+A home, irei explicar um pouco sobre a composição do site do porque as imagens, cores e tamanho da fonte das letras.
+a cor escolhida para ser a mais utilizada no site foi a roxo, que remeta a tranquilidade e estabilidade para o usuario, 
+as imagens escolhidas são todas de certa forma co relacionadas ao ramo textil para melhor adaptação com a interface da home
+o tamanho das fontes são para melhor leitura dos clientes para gerar menos estresso na hora de monitorar e analisar os dados.
+com isso temos um equilibrio muito bom para a instabilidade do usuario assim gerando maior conforto pro cliente. 
+
+Suporte ao cliente- atendimento
+
+bom como podemos ver nesta pagina, logo apos o cliente ter aberto o chamado, nos receberemos esta seguinte pagina que
+contem a mensagem que ele enviou, detalhando o pedido dele.
+na aba direita temos um detalhamento mais especifico para nos do helpdesk
+la contem o status se esta em andamento ou nn
+a data de vencimento em que o problema deve ser sanado
+temosos dados do cliente para entrar em contato com ele
+e tambem temos o tipo de prioridade em questao.
