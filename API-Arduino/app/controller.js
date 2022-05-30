@@ -78,6 +78,8 @@ router.post('/sendData', (request, response) => {
     // let lugar = 'dev';
     let lugar = 'prod';
       if(lugar == 'prod'){
+        //   temperatura = 20;
+        // console.log("AAA");
         sql = `Insert INTO Dados(fkSensor, temperatura, umidade) VALUES(1, ${temperatura}, ${umidade})`;
           getConnAzure(sql).then(val=>console.log(val))
       }else{
