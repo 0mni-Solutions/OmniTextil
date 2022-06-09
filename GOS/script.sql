@@ -20,7 +20,7 @@ nome VARCHAR (20)
 );
 
 CREATE TABLE Armas (
-idGun INT PRIMARY KEY AUTO_INCREMENT,
+idWeapon INT PRIMARY KEY AUTO_INCREMENT,
 nome VARCHAR(20),
 tipo VARCHAR(15), check (tipo in ("espada", "escudo", "arma de fogo", "martelo")),
 valor DECIMAL (10,3)
@@ -35,7 +35,7 @@ valor DECIMAL (10,3)
 
 CREATE TABLE Inventario (
 idInvent INT PRIMARY KEY AUTO_INCREMENT,
-fkArma INT, FOREIGN KEY (fkArma) REFERENCES Armas(idGun),
+fkArma INT, FOREIGN KEY (fkArma) REFERENCES Armas(idWeapon),
 fkArtefato INT, FOREIGN KEY (fkArtefato) REFERENCES Artefatos(idArtefact)
 );
 
