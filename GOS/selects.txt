@@ -1,0 +1,203 @@
+1 - informe apenas os nomes dos planetas na coordenada "-23.55803278435977, -46.66162472962092" ordenada de forma decrescente pelo id.
+R: 
+SELECT planeta FROM Lugares 
+	WHERE coordenadas = "-23.55803278435977, -46.66162472962092";
++---------------+
+| planeta       |
++---------------+
+| Consolatveria |
++---------------+	
+
+2 - mostre apenas as coordenadas que contenham "66152" ordenada de forma decrescente pelo nome do planeta.
+R:
+SELECT coordenadas FROM Lugares 
+	WHERE coordenadas LIKE "%66152%";
++----------------------------------------+
+| coordenadas                            |
++----------------------------------------+
+| -23.55803278435977, -46.66152472962092 |
+| -23.55803278435977, -46.66152472962092 |
++----------------------------------------+
+
+3 - Informe o nome das armas de fogo que custam mais de R$400,00 ordenadas de forma crescente pelo custo.
+R: 
+SELECT nome FROM Armas 
+	WHERE valor > 400000 
+		ORDER BY valor ASC;
++----------------+
+| nome           |
++----------------+
+| Honjo Masamune |
+| Porte do Homi  |
++----------------+
+
+4 - Informe a descricao dos artefatos que custam entre R$4.531,99 e R$6.006,99 ordenadas de forma decrescente pelo id.
+R: 
+SELECT descricao FROM Artefatos 
+	WHERE valor >= 4531.99 AND valor <= 6006.99 
+		ORDER BY idArtefact DESC;
++---------------------------------------------------+
+| descricao                                         |
++---------------------------------------------------+
+| Comportam as joias                                |
+| Escritos por Tote. Ele concede magia aos usuários |
++---------------------------------------------------+
+
+5 - Informe o nome das espadas que custam menos de X ordenadas de forma decrescente pelo id.
+R: 
+SELECT nome FROM Armas
+	WHERE valor < 304466.99 
+		ORDER BY idWeapon DESC;
++---------------------+
+| nome                |
++---------------------+
+| Espada da Levitação |
+| MySqlnir            |
++---------------------+
+
+6 - mostre os poderes que tenham a letra anterior à penultima letra igual à "o" ordenados pelo nivel de poder de maneira decrescente.
+R: 
+SELECT * FROM Poderes
+	WHERE nome LIKE "%o__"
+		ORDER BY nivel DESC;
++---------+-----------------+-------+----------+
+| idPower | nome            | nivel | fkPessoa |
++---------+-----------------+-------+----------+
+|       6 | Inner Join      |     5 |        3 |
+|       5 | Olho do Console |     3 |        2 |
++---------+-----------------+-------+----------+
+
+7 - mostre os poderes que tenham a 3ª letra x em que é menor que 3, sendo ordenados pelo nivel de poder de forma decrescente.
+R: 
+SELECT * FROM Poderes 
+	WHERE nome LIKE "___o%" 
+		AND nivel < 3;
++---------+-----------------+-------+----------+
+| idPower | nome            | nivel | fkPessoa |
++---------+-----------------+-------+----------+
+|       5 | Olho do Console |     2 |        2 |
++---------+-----------------+-------+----------+
+
+8 - mostre apenas os poderes que tenham niveis acima de 1 na ordem decrescente.
+R: 
+SELECT * FROM Poderes 
+	WHERE nivel > 1 
+		ORDER BY nivel desc;
+
++---------+-----------------+-------+----------+
+| idPower | nome            | nivel | fkPessoa |
++---------+-----------------+-------+----------+
+|       3 | Vetor Colossal  |     3 |        4 |
+|       6 | Inner Join      |     3 |        3 |
+|       2 | CSS5            |     2 |        2 |
+|       5 | Olho do Console |     2 |        2 |
++---------+-----------------+-------+----------+
+
+9 - mostre apenas o nome dos personagens com a penúltima letra sendo "o" de indole má ordenados de forma crescente pelo id.
+R: SELECT nome FROM Persona 
+	WHERE nome like "%o_" 
+		AND indole = "villain" 
+			ORDER BY idPersonas ASC;
+			
++--------------+
+| nome         |
++--------------+
+| Vi Vian Doom |
+| CaiUltron    |
+| BRANDHANOS   |
++--------------+
+
+10 - mostre apenas os momentos nos quais o id seja entre 4 e 8 ordenados pela data e hora.
+R: SELECT * FROM Momento 
+	WHERE idMomentos >= 4 
+		AND idMomentos <=8 
+			ORDER BY momento;
+			
++------------+---------------------+---------+
+| idMomentos | momento             | fkPlace |
++------------+---------------------+---------+
+|          5 | 2022-04-25 13:30:00 |       5 |
+|          7 | 2022-04-25 13:45:50 |       1 |
+|          4 | 2022-04-25 14:13:20 |       4 |
+|          6 | 2022-04-25 15:45:02 |       6 |
+|          8 | 2022-05-30 11:00:00 |       2 |
++------------+---------------------+---------+
+
+
+11 - liste as joias que contenham a letra "r" e "i" em qualquer posição (não necessariamente o r vem antes de i e vice-versa).
+R: SELECT * FROM Joias
+	WHERE nome LIKE "%i%" 
+		AND nome LIKE "%r%"; 
+		
++--------+--------------------------+----------+--------------+
+| idJoia | nome                     | fkMoment | FkPersonagem |
++--------+--------------------------+----------+--------------+
+|      1 | Ouro Branco da Realidade |        1 |            5 |
+|      1 | Ouro Branco da Realidade |        7 |            2 |
++--------+--------------------------+----------+--------------+
+
+12 - mostre apenas o nome dos personagens que contenham a silaba "an" e são vilões ordenados de forma decrescente pelo id.
+R: SELECT nome FROM Persona
+	WHERE nome LIKE "%an%" AND indole = "villain"
+		ORDER BY idPersonas DESC;
+
++--------------+
+| nome         |
++--------------+
+| BRANDHANOS   |
+| Vi Vian Doom |
++--------------+
+
+13 - Informe o nome das espadas que contenham as letras "a" e "m" e que custam menos de 404466.99 ordenadas de forma decrescente pelo custo.
+R: SELECT nome FROM Armas WHERE tipo = "espada"
+	AND nome LIKE "%a%" AND nome LIKE "%m%" AND  valor < 404466.99 
+		ORDER BY valor DESC;
+
++----------------+
+| nome           |
++----------------+
+| Honjo Masamune |
++----------------+
+
+14 - mostre os poderes que tenham a 2ª letra x e que tenha também a letra Y ordenados pelo nivel de poder de forma crescente e que o nivel seja menor que X e maior que Y.
+
+15 - mostre os poderes que tenham a 2ª letra x e que tenha também a letra Y ordenados pelo nivel de poder de forma decrescente menor igual que X e maior que Y.
+
+------------------MÉDIO------------------
+1 - Mostre o nome, indole, nome do poder e a média dos niveis de poder dos personagens e seus respectivos poderes ordenados pelo nivel de poder crescente.
+
+2 - Mostre o nome do grupo e os nomes dos personagens que pertencem ao grupo ordenado de forma decrescente pela chave estrangeira do chefe.
+
+3 - Mostre a soma e a média do valor das armas que sejam espadas e escudos e que custam entre X e Y.
+
+4 - Mostre a soma das média dos valores das espadas e da média dos valores das armas de fogo, juntamente com a espada mais cara e a arma de fogo mais barata.*
+
+5 - Exiba apenas o nome da joia, seu mantenedor e a quantidade de vezes que a alguma vez a joia pertenceu à alguem.
+
+6 - mostre os a soma dos niveis dos poderes menores que X e maiores que Y que tenham a 2ª letra x e que tenha também a letra Y ordenados pelo nivel de poder de forma decrescente.
+
+7 - mostre o total de planetas, seus nomes e seus momentos registrados ordenados pela data e hora de maneira crescente.
+
+8 - Informe o nome, a descrição e quantidade dos artefatos que contenham as letras A e B, que comecem com C e terminem com D.
+
+9 - Informe a o artefato mais caro, o mais barato, a média de seus custos, e a quantidade dos artefatos que comecem com A e sua antepenúltima letra seja B.
+
+10 - mostre a quantidade de personagens que contenham a silaba "au" e são herois ordenados de forma crescente pelo id.
+
+
+------------------DIFICIL------------------
+1 - Mostre no inventário do Paulo, seu nome, seu chefe, a soma do valor das armas de paulo em que seus preços são maiores que X e a média dos preços de seus artefatos em que seus preços são menores que Y.
+
+2 - Mostre o nome do personagem, o grupo que ele pertence, o nome das joias que ele possuiu, o nome dos seus poderes e a quantidade de itens do inventário dos heróis.
+
+3 - Mostre o nome do personagem, o grupo que ele pertence, o nome das joias que ele possuiu no momento em que estava em uma coordenada X, o nome dos seus poderes e a quantidade de itens do inventário dos vilões ordenado de forma decrescente pelo nivel de poder.
+
+4 - Mostre o nome do personagem que possua um martelo, o grupo que ele pertence, o nome das joias que ele possuiu no momento em que estava em um planeta X, o nome dos seus poderes, a quantidade de itens do inventário, a soma do valor das suas armas e a média do valor de seus artefatos.
+
+5 - Mostre o nome do personagem, o grupo que ele pertence, o nome das joias que ele possuiu, o nome dos seus poderes, todos os artefatos e todas as armas que ele possui.
+
+
+------------------CHALLENGE------------------
+1 - Mostre o nome do personagem que possua um martelo, o grupo que ele pertence, o nome das joias que ele possuiu no momento em que estava em um planeta X, o nome dos seus poderes, a quantidade de itens do inventário, a soma do valor das suas armas e a média do valor de seus artefatos agrupados por heróis e agrupados por vilões.
+
+2 - Mostre o nome do personagem, o nome do grupo que ele pertence, o nome de seus poderes, as joias que ele possuía, o momento que ele possuíu, o planeta que ele capturou, o nome dos itens em seu inventário, juntamente com o seus valores agrupado por vilões e por heróis.
