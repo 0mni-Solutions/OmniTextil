@@ -83,7 +83,6 @@ R:
 SELECT * FROM Poderes 
 	WHERE nivel > 1 
 		ORDER BY nivel desc;
-
 +---------+-----------------+-------+----------+
 | idPower | nome            | nivel | fkPessoa |
 +---------+-----------------+-------+----------+
@@ -94,11 +93,11 @@ SELECT * FROM Poderes
 +---------+-----------------+-------+----------+
 
 9 - mostre apenas o nome dos personagens com a penúltima letra sendo "o" de indole má ordenados de forma crescente pelo id.
-R: SELECT nome FROM Persona 
+R: 
+SELECT nome FROM Persona 
 	WHERE nome like "%o_" 
 		AND indole = "villain" 
-			ORDER BY idPersonas ASC;
-			
+			ORDER BY idPersonas ASC;	
 +--------------+
 | nome         |
 +--------------+
@@ -108,11 +107,11 @@ R: SELECT nome FROM Persona
 +--------------+
 
 10 - mostre apenas os momentos nos quais o id seja entre 4 e 8 ordenados pela data e hora.
-R: SELECT * FROM Momento 
+R: 
+SELECT * FROM Momento 
 	WHERE idMomentos >= 4 
 		AND idMomentos <=8 
 			ORDER BY momento;
-			
 +------------+---------------------+---------+
 | idMomentos | momento             | fkPlace |
 +------------+---------------------+---------+
@@ -123,12 +122,11 @@ R: SELECT * FROM Momento
 |          8 | 2022-05-30 11:00:00 |       2 |
 +------------+---------------------+---------+
 
-
 11 - liste as joias que contenham a letra "r" e "i" em qualquer posição (não necessariamente o r vem antes de i e vice-versa).
-R: SELECT * FROM Joias
+R: 
+SELECT * FROM Joias
 	WHERE nome LIKE "%i%" 
-		AND nome LIKE "%r%"; 
-		
+		AND nome LIKE "%r%"; 		
 +--------+--------------------------+----------+--------------+
 | idJoia | nome                     | fkMoment | FkPersonagem |
 +--------+--------------------------+----------+--------------+
@@ -137,10 +135,10 @@ R: SELECT * FROM Joias
 +--------+--------------------------+----------+--------------+
 
 12 - mostre apenas o nome dos personagens que contenham a silaba "an" e são vilões ordenados de forma decrescente pelo id.
-R: SELECT nome FROM Persona
+R: 
+SELECT nome FROM Persona
 	WHERE nome LIKE "%an%" AND indole = "villain"
 		ORDER BY idPersonas DESC;
-
 +--------------+
 | nome         |
 +--------------+
@@ -149,53 +147,254 @@ R: SELECT nome FROM Persona
 +--------------+
 
 13 - Informe o nome das espadas que contenham as letras "a" e "m" e que custam menos de 404466.99 ordenadas de forma decrescente pelo custo.
-R: SELECT nome FROM Armas WHERE tipo = "espada"
+R: 
+SELECT nome FROM Armas WHERE tipo = "espada"
 	AND nome LIKE "%a%" AND nome LIKE "%m%" AND  valor < 404466.99 
 		ORDER BY valor DESC;
-
 +----------------+
 | nome           |
 +----------------+
 | Honjo Masamune |
 +----------------+
 
-14 - mostre os poderes que tenham a 2ª letra x e que tenha também a letra Y ordenados pelo nivel de poder de forma crescente e que o nivel seja menor que X e maior que Y.
+14 - mostre os poderes que tenham a 4ª letra "l" e que tenha também a letra "h" ordenados pelo nivel de poder de forma crescente e que o nivel seja menor que 3 e maior que 1.
+R:
+SELECT * FROM Poderes 
+    WHERE nome LIKE "___l%" 
+        AND nome LIKE "%h%" 
+            AND nivel > 1 
+                AND nivel < 3 
+                    ORDER BY nivel ASC; 
+EMPTY
 
-15 - mostre os poderes que tenham a 2ª letra x e que tenha também a letra Y ordenados pelo nivel de poder de forma decrescente menor igual que X e maior que Y.
+15 - mostre os poderes que tenham a letra "i" e que tenha também a letra "a" ordenados pelo nivel de poder de forma decrescente menor igual que 3 e maior que 0.
+R: 
+SELECT * FROM Poderes 
+    WHERE nome LIKE "%i%" 
+        AND nome LIKE "%a%" 
+            AND nivel > 0 
+                AND nivel < 3 
+                    ORDER BY nivel DESC;
++---------+--------------------------+-------+----------+
+| idPower | nome                     | nivel | fkPessoa |
++---------+--------------------------+-------+----------+
+|       4 | Javascriptadotrs         |     1 |        4 |
+|       7 | Magia Proibida dos Dados |     1 |        3 |
++---------+--------------------------+-------+----------+
 
 ------------------MÉDIO------------------
-1 - Mostre o nome, indole, nome do poder e a média dos niveis de poder dos personagens e seus respectivos poderes ordenados pelo nivel de poder crescente.
+1 - Mostre o nome, indole e a média dos niveis de poder dos personagens ordenados de forma crescente pelo nivel de poder e decrescente pelo nome do personagem, sendo agrupados pelos personagens.
+R: 
+SELECT Persona.nome, indole, AVG(nivel) FROM Persona 
+	JOIN Poderes ON idPersonas = fkPessoa 
+        GROUP BY Persona.nome 
+			ORDER BY nivel ASC, Persona.nome DESC;
++--------------+---------+------------+
+| nome         | indole  | AVG(nivel) |
++--------------+---------+------------+
+| Paulo        | hero    |     1.6667 |
+| Vi Vian Doom | villain |     2.0000 |
+| CaiUltron    | villain |     2.0000 |
++--------------+---------+------------+
 
-2 - Mostre o nome do grupo e os nomes dos personagens que pertencem ao grupo ordenado de forma decrescente pela chave estrangeira do chefe.
+2 - Mostre o nome do grupo e os nomes dos personagens que pertencem ao grupo ordenados de forma decrescente pela chave estrangeira do chefe, e de forma crescente pelo nome do personagem e sendo agrupados pelos personagens. Além disso, mostre também à frente de todos os registros, a quantidade de outros integrantes que fazem parte do grupo daquele personagem (a quantidade não considera o personagem da tupla).
+R: 
+SELECT Persona.nome AS "personagem", Grupos.nome AS "grupo", SUM(fkGroup) FROM Persona 
+	JOIN Grupos ON idGrupo = fkGroup 
+		GROUP BY Persona.nome 
+			ORDER BY fkChefe DESC, Persona.nome ASC;
++-----------------+-----------------------+--------------+
+| personagem      | grupo                 | SUM(fkGroup) |
++-----------------+-----------------------+--------------+
+| CaiUltron       | Diretoria do infinito |            2 |
+| Vi Vian Doom    | Diretoria do infinito |            2 |
+| DANtor Estranho | SPtechers             |            1 |
+| BRANDHANOS      | Diretoria do infinito |            2 |
+| Paulo           | SPtechers             |            1 |
++-----------------+-----------------------+--------------+
 
-3 - Mostre a soma e a média do valor das armas que sejam espadas e escudos e que custam entre X e Y.
+3 - Mostre a soma e a média do valor das armas que custem entre 302000 e 401000, e que não sejam martelos ou armas de fogo.
+R: 
+SELECT SUM(valor), AVG(valor) FROM Armas 
+	WHERE tipo != 'martelo' 
+		AND tipo != 'arma de fogo' 
+			AND valor > 302000 
+				AND valor < 401000;
++------------+---------------+
+| SUM(valor) | AVG(valor)    |
++------------+---------------+
+|  704507.98 | 352253.990000 |
++------------+---------------+				
 
-4 - Mostre a soma das média dos valores das espadas e da média dos valores das armas de fogo, juntamente com a espada mais cara e a arma de fogo mais barata.*
+4 - Mostre a soma, a média, o maior e o menor valor das armas que não sejam uma espada.
+R: 
+SELECT SUM(valor), AVG(valor), MAX(valor), MIN(valor) FROM Armas 
+	WHERE tipo != "espada";
++------------+---------------+------------+------------+
+| SUM(valor) | AVG(valor)    | MAX(valor) | MIN(valor) |
++------------+---------------+------------+------------+
+|  725134.97 | 241711.656667 |  410666.99 |   10000.99 |
++------------+---------------+------------+------------+	
 
-5 - Exiba apenas o nome da joia, seu mantenedor e a quantidade de vezes que a alguma vez a joia pertenceu à alguem.
+5 - Exiba apenas o nome do personagem e a quantidade de vezes que ele capturou uma joia, ordenando pela índole de forma decrescente e sendo agrupados pelos personagens.
+R: 
+SELECT Persona.nome, COUNT(fkPersonagem) AS "capturas" FROM Joias 
+	JOIN Persona ON idPersonas = fkPersonagem 
+		GROUP BY fkPersonagem 
+			ORDER BY Persona.indole DESC;
++------------+----------+
+| nome       | capturas |
++------------+----------+
+| BRANDHANOS |        6 |
+| Paulo      |        6 |
++------------+----------+			
 
-6 - mostre os a soma dos niveis dos poderes menores que X e maiores que Y que tenham a 2ª letra x e que tenha também a letra Y ordenados pelo nivel de poder de forma decrescente.
+6 - mostre os a soma dos niveis dos poderes menores que 3 e maiores que 0 que tenham a 2ª letra 'a' e que tenha também a letra 'j'.
+R: 
+SELECT sum(nivel) FROM Poderes 
+	WHERE nivel < 3 AND nivel > 0
+		AND nome LIKE '_a%' AND nome LIKE '%j%'; 
++------------+
+| sum(nivel) |
++------------+
+|          1 |
++------------+
 
-7 - mostre o total de planetas, seus nomes e seus momentos registrados ordenados pela data e hora de maneira crescente.
+7 - Mostre a nomenclatura de cada planeta apenas uma vez, juntamente com o primeiro momento em que aparecem na história, ordenado de maneira decrescente pela hora de aparição sendo agrupados pelos planetas.
+R: 
+SELECT planeta, momento FROM Lugares 
+	JOIN Momento ON idLugar = fkPlace 
+		GROUP BY planeta 
+			ORDER BY momento DESC;
++-------------------+---------------------+
+| planeta           | momento             |
++-------------------+---------------------+
+| Terceiro WakAndar | 2022-03-14 15:15:11 |
+| Planeta 11Handar  | 2022-03-14 14:30:00 |
+| Consolatveria     | 2022-03-14 13:32:32 |
++-------------------+---------------------+
 
-8 - Informe o nome, a descrição e quantidade dos artefatos que contenham as letras A e B, que comecem com C e terminem com D.
+8 - Informe a soma do valor do Anel de Gyges e do Telescópio de Galileu.
+R: 
+SELECT SUM(valor) FROM Artefatos 
+	WHERE nome LIKE '%a%' 
+		AND descricao LIKE 'p%';
++------------+
+| SUM(valor) |
++------------+
+|    3046.98 |
++------------+
 
-9 - Informe a o artefato mais caro, o mais barato, a média de seus custos, e a quantidade dos artefatos que comecem com A e sua antepenúltima letra seja B.
+9 - Dos artefatos mais baratos que 45000 e mais caros 2.0, informe o valor do artefato mais caro, o valor do artefato mais barato, a quantidade de artefatos considerados e a média entre todos eles.
+R: 
+SELECT MAX(valor) AS 'máximo', MIN(valor) AS 'mínimo', COUNT(nome) AS 'quantidade', AVG(valor) AS 'média' 
+	FROM Artefatos 
+		WHERE valor < 45000 
+			AND valor > 2;
++---------+---------+------------+-------------+
+| máximo  | mínimo  | quantidade | média       |
++---------+---------+------------+-------------+
+| 6006.99 | 3044.99 |          3 | 4527.990000 |
++---------+---------+------------+-------------+			
 
-10 - mostre a quantidade de personagens que contenham a silaba "au" e são herois ordenados de forma crescente pelo id.
-
+10 - Mostre a média do id do grupo, a soma do id do inventário, e a quantidade de personagens que tem um chefe, dentre os personagens que contenham a sílaba "ul" no nome.
+R: 
+SELECT AVG(fkGroup) AS 'média do grupo', SUM(fkInventory) AS 'soma do inventário', COUNT(fkChefe) AS 'quem tem chefe' 
+	FROM Persona 
+		WHERE nome LIKE '%ul%';
++----------------+--------------------+----------------+
+| média do grupo | soma do inventário | quem tem chefe |
++----------------+--------------------+----------------+
+|         1.5000 |                  3 |              1 |
++----------------+--------------------+----------------+
 
 ------------------DIFICIL------------------
-1 - Mostre no inventário do Paulo, seu nome, seu chefe, a soma do valor das armas de paulo em que seus preços são maiores que X e a média dos preços de seus artefatos em que seus preços são menores que Y.
+1 - Mostre o artefato mais caro, seu valor, assim como o mais barato e seu valor.
+R: 
+SELECT artefato1.nome AS "artefato caro", artefato1.valor AS "artefato caro", artefato2.nome AS "artefato barato", artefato2.valor AS "artefato barato" 
+	FROM Artefatos AS artefato1 
+		JOIN Artefatos AS Artefato2 
+			WHERE artefato1.valor = (SELECT MAX(valor) FROM Artefatos) 
+				AND artefato2.valor = (SELECT MIN(valor) FROM Artefatos); 
++---------------+---------------+-----------------------+-----------------+
+| artefato caro | artefato caro | artefato barato       | artefato barato |
++---------------+---------------+-----------------------+-----------------+
+| Book of Life  |      45358.99 | Telescópio de Galileu |            1.99 |
++---------------+---------------+-----------------------+-----------------+
 
-2 - Mostre o nome do personagem, o grupo que ele pertence, o nome das joias que ele possuiu, o nome dos seus poderes e a quantidade de itens do inventário dos heróis.
+2 - Mostre a soma de todos os valores de armas, artefatos juntos, e a soma das somas.
+R: 
+SELECT SUM(Armas.valor) AS "armas", SUM(Artefatos.valor) AS "artefatos", SUM(Armas.valor + Artefatos.valor) AS "total" 
+	FROM Armas 
+		JOIN Inventario ON idWeapon = fkArma 
+			JOIN Artefatos ON idArtefact = fkArtefato;
++------------+-----------+------------+
+| armas      | artefatos | total      |
++------------+-----------+------------+
+| 1425842.95 |  58944.95 | 1484787.90 |
++------------+-----------+------------+			
 
-3 - Mostre o nome do personagem, o grupo que ele pertence, o nome das joias que ele possuiu no momento em que estava em uma coordenada X, o nome dos seus poderes e a quantidade de itens do inventário dos vilões ordenado de forma decrescente pelo nivel de poder.
+3 - Mostre do personagem que possua a arma mais cara, o nome do personagem, o grupo que ele pertence, a arma que ele porta, o valor dela, e o nome do seu poder mais fraco.
+R: 
+SELECT Persona.nome AS 'persona', Grupos.nome AS 'grupo', Poderes.nome AS 'poder', Armas.nome AS 'arma', Armas.valor FROM Persona 
+	JOIN Inventario ON idInvent = fkInventory 
+		JOIN Grupos ON idGrupo = fkGroup 
+			JOIN Poderes ON idPersonas = fkPessoa 
+				JOIN Armas ON idWeapon = fkArma 
+					WHERE Armas.valor = (SELECT MAX(valor) FROM Armas) 
+						AND Poderes.nome = 
+							(SELECT nome FROM Poderes 
+								WHERE nivel = (SELECT MIN(nivel) FROM Poderes) 
+									AND fkPessoa = 
+										(SELECT Persona.idPersonas FROM Persona 
+											JOIN Inventario ON idInvent = fkInventory 
+												JOIN Armas ON idWeapon = fkArma 
+													WHERE Armas.valor = (SELECT MAX(valor) FROM Armas)));
++--------------+-----------------------+--------------------------+---------------+-----------+
+| persona      | grupo                 | poder                    | arma          | valor     |
++--------------+-----------------------+--------------------------+---------------+-----------+
+| Vi Vian Doom | Diretoria do infinito | Magia Proibida dos Dados | Porte do Homi | 410666.99 |
++--------------+-----------------------+--------------------------+---------------+-----------+
 
-4 - Mostre o nome do personagem que possua um martelo, o grupo que ele pertence, o nome das joias que ele possuiu no momento em que estava em um planeta X, o nome dos seus poderes, a quantidade de itens do inventário, a soma do valor das suas armas e a média do valor de seus artefatos.
+4 - Exiba o nome do personagem, a equipe que ele pertence, sua arma, seu artefato, o primeiro momento e planeta em que ele teve uma aparição, tudo agrupado pelo personagem e ordenado primeiramente pelo momento de forma crescente, e também pelo nome do personagem de forma crescente.
+R: 
+SELECT Lugares.planeta, Momento.momento, Grupos.nome AS 'equipes', Persona.nome AS 'personagens', Armas.nome AS 'armas', Artefatos.nome AS 'artefatos' FROM Lugares 
+	JOIN Momento ON idLugar = fkPlace 
+		JOIN Joias ON idMomentos = fkMoment 
+			RIGHT JOIN Persona ON idPersonas = fkPersonagem 
+				JOIN Grupos ON idGrupo = fkGroup 
+					JOIN Inventario ON idInvent = fkInventory 
+						JOIN Armas ON idWeapon = fkArma 
+							JOIN Artefatos ON idArtefact = fkArtefato 
+								GROUP BY Persona.nome 
+									ORDER BY momento ASC, Persona.nome ASC;
++---------------+---------------------+-----------------------+-----------------+---------------------+-----------------------+
+| planeta       | momento             | equipes               | personagens     | armas               | artefatos             |
++---------------+---------------------+-----------------------+-----------------+---------------------+-----------------------+
+| NULL          | NULL                | Diretoria do infinito | CaiUltron       | Honjo Masamune      | Livro de Thoth        |
+| NULL          | NULL                | SPtechers             | DANtor Estranho | Espada da Levitação | Book of Life          |
+| NULL          | NULL                | Diretoria do infinito | Vi Vian Doom    | Porte do Homi       | Telescópio de Galileu |
+| Consolatveria | 2022-03-14 13:32:32 | Diretoria do infinito | BRANDHANOS      | Égide               | Luva de Pedreiro      |
+| Consolatveria | 2022-04-25 13:45:50 | SPtechers             | Paulo           | MySqlnir            | Anel de Gyges         |
++---------------+---------------------+-----------------------+-----------------+---------------------+-----------------------+
 
-5 - Mostre o nome do personagem, o grupo que ele pertence, o nome das joias que ele possuiu, o nome dos seus poderes, todos os artefatos e todas as armas que ele possui.
-
+5 - Exiba o nome do personagem, a equipe que ele pertence, sua arma, o valor dela, seu artefato e seu valor, o primeiro momento e planeta em que ele teve uma aparição, tudo agrupado por personagens que sejam heróis.
+R: 
+SELECT Lugares.planeta, Momento.momento, Grupos.nome AS 'equipes', Persona.nome AS 'personagens', Armas.nome AS 'armas', Armas.valor AS 'valor da arma', Artefatos.nome AS 'artefatos', Artefatos.valor AS 'valor do artefato' FROM Lugares 
+	JOIN Momento ON idLugar = fkPlace 
+		JOIN Joias ON idMomentos = fkMoment 
+			JOIN Persona ON idPersonas = fkPersonagem 
+				JOIN Grupos ON idGrupo = fkGroup 
+					JOIN Inventario ON idInvent = fkInventory 
+						JOIN Armas ON idWeapon = fkArma 
+							JOIN Artefatos ON idArtefact = fkArtefato 
+								WHERE indole = 'hero' 
+									GROUP BY Persona.nome;
++---------------+---------------------+-----------+-------------+----------+---------------+---------------+-------------------+
+| planeta       | momento             | equipes   | personagens | armas    | valor da arma | artefatos     | valor do artefato |
++---------------+---------------------+-----------+-------------+----------+---------------+---------------+-------------------+
+| Consolatveria | 2022-04-25 13:45:50 | SPtechers | Paulo       | MySqlnir |      10000.99 | Anel de Gyges |           3044.99 |
++---------------+---------------------+-----------+-------------+----------+---------------+---------------+-------------------+
 
 ------------------CHALLENGE------------------
 1 - Mostre o nome do personagem que possua um martelo, o grupo que ele pertence, o nome das joias que ele possuiu no momento em que estava em um planeta X, o nome dos seus poderes, a quantidade de itens do inventário, a soma do valor das suas armas e a média do valor de seus artefatos agrupados por heróis e agrupados por vilões.
