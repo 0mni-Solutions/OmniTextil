@@ -372,15 +372,47 @@ SELECT Lugares.planeta, Momento.momento, Grupos.nome AS 'equipes', Persona.nome 
 									GROUP BY Persona.nome;
 -- CHALLENGE
 -- 1
+SELECT Persona.nome AS 'persona', Grupos.nome AS 'grupo', Poderes.nome AS 'poder', Armas.nome AS 'arma', Armas.valor AS 'valor da arma', Artefatos.nome AS 'artefato', Artefatos.valor AS 'valor do artefato' FROM Persona 
+	JOIN Inventario ON idInvent = fkInventory 
+		JOIN Grupos ON idGrupo = fkGroup 
+			JOIN Poderes ON idPersonas = fkPessoa 
+				JOIN Artefatos ON idArtefact = fkArtefato 
+					JOIN Armas ON idWeapon = fkArma 
+						WHERE Armas.valor = (SELECT MAX(valor) FROM Armas) 
+							AND Poderes.nome = 
+								(SELECT nome FROM Poderes 
+									WHERE nivel = (SELECT MAX(nivel) FROM Poderes) 
+										AND fkPessoa = 
+											(SELECT Persona.idPersonas FROM Persona 
+												JOIN Inventario ON idInvent = fkInventory 
+													JOIN Armas ON idWeapon = fkArma 
+														WHERE Armas.valor = (SELECT MAX(valor) FROM Armas))) 
+															UNION 
+SELECT Persona.nome AS 'persona', Grupos.nome AS 'grupo', Poderes.nome AS 'poder', Armas.nome AS 'arma', Armas.valor AS 'valor da arma', Artefatos.nome AS 'artefato', Artefatos.valor AS 'valor do artefato' FROM Persona 
+	JOIN Inventario ON idInvent = fkInventory 
+		JOIN Grupos ON idGrupo = fkGroup 
+			JOIN Poderes ON idPersonas = fkPessoa 
+				JOIN Artefatos ON idArtefact = fkArtefato 
+					JOIN Armas ON idWeapon = fkArma 
+						WHERE Armas.valor = (SELECT MIN(valor) FROM Armas) 
+							AND Poderes.nome = 
+								(SELECT nome FROM Poderes 
+									WHERE nivel = (SELECT MIN(nivel) FROM Poderes) 
+										AND fkPessoa = 
+											(SELECT Persona.idPersonas FROM Persona 
+												JOIN Inventario ON idInvent = fkInventory 
+													JOIN Armas ON idWeapon = fkArma 
+														WHERE Armas.valor = (SELECT MIN(valor) FROM Armas)));
 -- 2
-
-SELECT * FROM Momento 
-	JOIN Lugares on fkPlace = idLugar 
-		JOIN Joias ON fkMoment = idMomentos 
-			RIGHT JOIN Persona ON fkPersonagem = idPersonas 
-				JOIN Grupos ON fkGroup = idGrupo 
-					LEFT JOIN Persona as Boss ON Boss.fkChefe = Persona.idPersonas 
-						JOIN Inventario ON Persona.fkInventory = Inventario.idInvent 
-							JOIN Armas ON fkArma = idWeapon 
-								JOIN Artefatos ON fkArtefato = idArtefact 
-									JOIN Poderes ON Poderes.fkPessoa = Persona.idPersonas;
+SELECT Persona.nome AS 'Personagem', Boss.nome AS 'Chefe', Grupos.nome AS 'Grupo', Poderes.nome AS 'Poder', Armas.nome AS 'Arma', Armas.valor AS 'Valor', Artefatos.nome AS 'Artefato', Artefatos.valor AS 'Valor', Lugares.planeta AS 'Planeta', Joias.nome AS 'Joia', Momento AS 'Data e Hora'
+	FROM Momento 
+		JOIN Lugares ON fkPlace = idLugar 
+			JOIN Joias ON fkMoment = idMomentos 
+				RIGHT JOIN Persona ON fkPersonagem = idPersonas 
+					JOIN Grupos ON fkGroup = idGrupo 
+						LEFT JOIN Persona AS Boss ON Boss.fkChefe = Persona.idPersonas 
+							JOIN Inventario ON Persona.fkInventory = Inventario.idInvent 
+								JOIN Armas ON fkArma = idWeapon 
+									JOIN Artefatos ON fkArtefato = idArtefact 
+										JOIN Poderes ON Poderes.fkPessoa = Persona.idPersonas 
+											ORDER BY nivel DESC,  Persona.nome DESC LIMIT 3;

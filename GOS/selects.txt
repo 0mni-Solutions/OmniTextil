@@ -1,4 +1,4 @@
-1 - informe apenas os nomes dos planetas na coordenada "-23.55803278435977, -46.66162472962092" ordenada de forma decrescente pelo id.
+1 - Informe apenas os nomes dos planetas na coordenada "-23.55803278435977, -46.66162472962092" ordenada de forma decrescente pelo id.
 R: 
 SELECT planeta FROM Lugares 
 	WHERE coordenadas = "-23.55803278435977, -46.66162472962092";
@@ -8,7 +8,7 @@ SELECT planeta FROM Lugares
 | Consolatveria |
 +---------------+	
 
-2 - mostre apenas as coordenadas que contenham "66152" ordenada de forma decrescente pelo nome do planeta.
+2 - Mostre apenas as coordenadas que contenham "66152" ordenada de forma decrescente pelo nome do planeta.
 R:
 SELECT coordenadas FROM Lugares 
 	WHERE coordenadas LIKE "%66152%";
@@ -43,7 +43,7 @@ SELECT descricao FROM Artefatos
 | Escritos por Tote. Ele concede magia aos usuários |
 +---------------------------------------------------+
 
-5 - Informe o nome das espadas que custam menos de X ordenadas de forma decrescente pelo id.
+5 - Informe o nome das espadas que custam menos de 304466.99 ordenadas de forma decrescente pelo id.
 R: 
 SELECT nome FROM Armas
 	WHERE valor < 304466.99 
@@ -55,7 +55,7 @@ SELECT nome FROM Armas
 | MySqlnir            |
 +---------------------+
 
-6 - mostre os poderes que tenham a letra anterior à penultima letra igual à "o" ordenados pelo nivel de poder de maneira decrescente.
+6 - Mostre os poderes que tenham a letra anterior à penultima letra igual à "o" ordenados pelo nivel de poder de maneira decrescente.
 R: 
 SELECT * FROM Poderes
 	WHERE nome LIKE "%o__"
@@ -67,7 +67,7 @@ SELECT * FROM Poderes
 |       5 | Olho do Console |     3 |        2 |
 +---------+-----------------+-------+----------+
 
-7 - mostre os poderes que tenham a 3ª letra x em que é menor que 3, sendo ordenados pelo nivel de poder de forma decrescente.
+7 - Mostre os poderes que tenham a 3ª letra x em que é menor que 3, sendo ordenados pelo nivel de poder de forma decrescente.
 R: 
 SELECT * FROM Poderes 
 	WHERE nome LIKE "___o%" 
@@ -78,7 +78,7 @@ SELECT * FROM Poderes
 |       5 | Olho do Console |     2 |        2 |
 +---------+-----------------+-------+----------+
 
-8 - mostre apenas os poderes que tenham niveis acima de 1 na ordem decrescente.
+8 - Mostre apenas os poderes que tenham niveis acima de 1 na ordem decrescente.
 R: 
 SELECT * FROM Poderes 
 	WHERE nivel > 1 
@@ -92,7 +92,7 @@ SELECT * FROM Poderes
 |       5 | Olho do Console |     2 |        2 |
 +---------+-----------------+-------+----------+
 
-9 - mostre apenas o nome dos personagens com a penúltima letra sendo "o" de indole má ordenados de forma crescente pelo id.
+9 - Mostre apenas o nome dos personagens com a penúltima letra sendo "o" de indole má ordenados de forma crescente pelo id.
 R: 
 SELECT nome FROM Persona 
 	WHERE nome like "%o_" 
@@ -106,7 +106,7 @@ SELECT nome FROM Persona
 | BRANDHANOS   |
 +--------------+
 
-10 - mostre apenas os momentos nos quais o id seja entre 4 e 8 ordenados pela data e hora.
+10 - Mostre apenas os momentos nos quais o id seja entre 4 e 8 ordenados pela data e hora.
 R: 
 SELECT * FROM Momento 
 	WHERE idMomentos >= 4 
@@ -122,7 +122,7 @@ SELECT * FROM Momento
 |          8 | 2022-05-30 11:00:00 |       2 |
 +------------+---------------------+---------+
 
-11 - liste as joias que contenham a letra "r" e "i" em qualquer posição (não necessariamente o r vem antes de i e vice-versa).
+11 - Liste as joias que contenham a letra "r" e "i" em qualquer posição (não necessariamente o r vem antes de i e vice-versa).
 R: 
 SELECT * FROM Joias
 	WHERE nome LIKE "%i%" 
@@ -134,7 +134,7 @@ SELECT * FROM Joias
 |      1 | Ouro Branco da Realidade |        7 |            2 |
 +--------+--------------------------+----------+--------------+
 
-12 - mostre apenas o nome dos personagens que contenham a silaba "an" e são vilões ordenados de forma decrescente pelo id.
+12 - Mostre apenas o nome dos personagens que contenham a silaba "an" e são vilões ordenados de forma decrescente pelo id.
 R: 
 SELECT nome FROM Persona
 	WHERE nome LIKE "%an%" AND indole = "villain"
@@ -157,7 +157,7 @@ SELECT nome FROM Armas WHERE tipo = "espada"
 | Honjo Masamune |
 +----------------+
 
-14 - mostre os poderes que tenham a 4ª letra "l" e que tenha também a letra "h" ordenados pelo nivel de poder de forma crescente e que o nivel seja menor que 3 e maior que 1.
+14 - Mostre os poderes que tenham a 4ª letra "l" e que tenha também a letra "h" ordenados pelo nivel de poder de forma crescente e que o nivel seja menor que 3 e maior que 1.
 R:
 SELECT * FROM Poderes 
     WHERE nome LIKE "___l%" 
@@ -167,7 +167,7 @@ SELECT * FROM Poderes
                     ORDER BY nivel ASC; 
 EMPTY
 
-15 - mostre os poderes que tenham a letra "i" e que tenha também a letra "a" ordenados pelo nivel de poder de forma decrescente menor igual que 3 e maior que 0.
+15 - Mostre os poderes que tenham a letra "i" e que tenha também a letra "a" ordenados pelo nivel de poder de forma decrescente menor igual que 3 e maior que 0.
 R: 
 SELECT * FROM Poderes 
     WHERE nome LIKE "%i%" 
@@ -249,7 +249,7 @@ SELECT Persona.nome, COUNT(fkPersonagem) AS "capturas" FROM Joias
 | Paulo      |        6 |
 +------------+----------+			
 
-6 - mostre os a soma dos niveis dos poderes menores que 3 e maiores que 0 que tenham a 2ª letra 'a' e que tenha também a letra 'j'.
+6 - Mostre os a soma dos niveis dos poderes menores que 3 e maiores que 0 que tenham a 2ª letra 'a' e que tenha também a letra 'j'.
 R: 
 SELECT sum(nivel) FROM Poderes 
 	WHERE nivel < 3 AND nivel > 0
@@ -397,6 +397,64 @@ SELECT Lugares.planeta, Momento.momento, Grupos.nome AS 'equipes', Persona.nome 
 +---------------+---------------------+-----------+-------------+----------+---------------+---------------+-------------------+
 
 ------------------CHALLENGE------------------
-1 - Mostre o nome do personagem que possua um martelo, o grupo que ele pertence, o nome das joias que ele possuiu no momento em que estava em um planeta X, o nome dos seus poderes, a quantidade de itens do inventário, a soma do valor das suas armas e a média do valor de seus artefatos agrupados por heróis e agrupados por vilões.
+1 - Mostre o personagem que possua a arma mais cara, o nome do personagem, o grupo que ele pertence, a arma que ele porta, o valor dela, e o nome do seu poder mais forte e o personagem que possua a arma mais barata, o nome do personagem, o grupo que ele pertence, a arma que ele porta, o valor dela, e o nome do seu poder mais fraco.
+R: 
+SELECT Persona.nome AS 'persona', Grupos.nome AS 'grupo', Poderes.nome AS 'poder', Armas.nome AS 'arma', Armas.valor AS 'valor da arma', Artefatos.nome AS 'artefato', Artefatos.valor AS 'valor do artefato' FROM Persona 
+	JOIN Inventario ON idInvent = fkInventory 
+		JOIN Grupos ON idGrupo = fkGroup 
+			JOIN Poderes ON idPersonas = fkPessoa 
+				JOIN Artefatos ON idArtefact = fkArtefato 
+					JOIN Armas ON idWeapon = fkArma 
+						WHERE Armas.valor = (SELECT MAX(valor) FROM Armas) 
+							AND Poderes.nome = 
+								(SELECT nome FROM Poderes 
+									WHERE nivel = (SELECT MAX(nivel) FROM Poderes) 
+										AND fkPessoa = 
+											(SELECT Persona.idPersonas FROM Persona 
+												JOIN Inventario ON idInvent = fkInventory 
+													JOIN Armas ON idWeapon = fkArma 
+														WHERE Armas.valor = (SELECT MAX(valor) FROM Armas))) 
+															UNION 
+SELECT Persona.nome AS 'persona', Grupos.nome AS 'grupo', Poderes.nome AS 'poder', Armas.nome AS 'arma', Armas.valor AS 'valor da arma', Artefatos.nome AS 'artefato', Artefatos.valor AS 'valor do artefato' FROM Persona 
+	JOIN Inventario ON idInvent = fkInventory 
+		JOIN Grupos ON idGrupo = fkGroup 
+			JOIN Poderes ON idPersonas = fkPessoa 
+				JOIN Artefatos ON idArtefact = fkArtefato 
+					JOIN Armas ON idWeapon = fkArma 
+						WHERE Armas.valor = (SELECT MIN(valor) FROM Armas) 
+							AND Poderes.nome = 
+								(SELECT nome FROM Poderes 
+									WHERE nivel = (SELECT MIN(nivel) FROM Poderes) 
+										AND fkPessoa = 
+											(SELECT Persona.idPersonas FROM Persona 
+												JOIN Inventario ON idInvent = fkInventory 
+													JOIN Armas ON idWeapon = fkArma 
+														WHERE Armas.valor = (SELECT MIN(valor) FROM Armas)));
++--------------+-----------------------+------------+---------------+---------------+-----------------------+-------------------+
+| persona      | grupo                 | poder      | arma          | valor da arma | artefato              | valor do artefato |
++--------------+-----------------------+------------+---------------+---------------+-----------------------+-------------------+
+| Vi Vian Doom | Diretoria do infinito | Inner Join | Porte do Homi |     410666.99 | Telescópio de Galileu |              1.99 |
+| Paulo        | SPtechers             | HTML5      | MySqlnir      |      10000.99 | Anel de Gyges         |           3044.99 |
++--------------+-----------------------+------------+---------------+---------------+-----------------------+-------------------+
 
-2 - Mostre o nome do personagem, o nome do grupo que ele pertence, o nome de seus poderes, as joias que ele possuía, o momento que ele possuíu, o planeta que ele capturou, o nome dos itens em seu inventário, juntamente com o seus valores agrupado por vilões e por heróis.
+2 - Mostre os nomes, o nome do chefe (se existir algum), o nome do grupo, o nome do poder, o nome e o valor da arma que este personagem possuí, o nome e o valor do artefato que este personagem possuí, o nome do planeta, o nome da joia e o momento de apenas 3 personagens ordenados de forma decrescente pelo nível e nome.
+R: 
+SELECT Persona.nome AS 'Personagem', Boss.nome AS 'Chefe', Grupos.nome AS 'Grupo', Poderes.nome AS 'Poder', Armas.nome AS 'Arma', Armas.valor AS 'Valor', Artefatos.nome AS 'Artefato', Artefatos.valor AS 'Valor', Lugares.planeta AS 'Planeta', Joias.nome AS 'Joia', Momento AS 'Data e Hora'
+	FROM Momento 
+		JOIN Lugares ON fkPlace = idLugar 
+			JOIN Joias ON fkMoment = idMomentos 
+				RIGHT JOIN Persona ON fkPersonagem = idPersonas 
+					JOIN Grupos ON fkGroup = idGrupo 
+						LEFT JOIN Persona AS Boss ON Boss.fkChefe = Persona.idPersonas 
+							JOIN Inventario ON Persona.fkInventory = Inventario.idInvent 
+								JOIN Armas ON fkArma = idWeapon 
+									JOIN Artefatos ON fkArtefato = idArtefact 
+										JOIN Poderes ON Poderes.fkPessoa = Persona.idPersonas 
+											ORDER BY nivel DESC,  Persona.nome DESC LIMIT 3;
++--------------+-----------------+-----------------------+----------------+----------------+-----------+-----------------------+---------+------------------+---------------------+---------------------+
+| Personagem   | Chefe           | Grupo                 | Poder          | Arma           | Valor     | Artefato              | Valor   | Planeta          | Joia                | Data e Hora         |
++--------------+-----------------+-----------------------+----------------+----------------+-----------+-----------------------+---------+------------------+---------------------+---------------------+
+| Vi Vian Doom | NULL            | Diretoria do infinito | Inner Join     | Porte do Homi  | 410666.99 | Telescópio de Galileu |    1.99 | NULL             | NULL                | NULL                |
+| CaiUltron    | NULL            | Diretoria do infinito | Vetor Colossal | Honjo Masamune | 400040.99 | Livro de Thoth        | 6006.99 | NULL             | NULL                | NULL                |
+| Paulo        | DANtor Estranho | SPtechers             | CSS5           | MySqlnir       |  10000.99 | Anel de Gyges         | 3044.99 | Planeta 11Handar | Ouro Branco da Alma | 2022-05-30 11:15:00 |
++--------------+-----------------+-----------------------+----------------+----------------+-----------+-----------------------+---------+------------------+---------------------+---------------------+
